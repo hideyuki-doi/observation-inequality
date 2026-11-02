@@ -1,0 +1,16 @@
+# データ・結果・認証情報はコミットしない（CLAUDE.md §2-8）
+data/
+.Renviron
+_targets/
+renv/library/
+renv/staging/
+renv/local/
+logs/
+models/*.rds
+models/*.csv
+models/fits/
+*.parquet
+*.zip
+.Rhistory
+.RData
+reports/*_files/
