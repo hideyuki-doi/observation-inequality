@@ -1,0 +1,18 @@
+group_id,variant,rank,values
+prokaryotes,main,kingdom,Pseudomonadati;Bacillati;Fusobacteriati;Thermotogati;Thermoproteati;Methanobacteriati;Nanobdellati;Promethearchaeati
+bacteria,main,kingdom,Pseudomonadati;Bacillati;Fusobacteriati;Thermotogati
+archaea,main,kingdom,Thermoproteati;Methanobacteriati;Nanobdellati;Promethearchaeati
+soil_nematodes,main,phylum,Nematoda
+springtails,main,class,Collembola
+mites,main,order,Sarcoptiformes;Mesostigmata;Trombidiformes
+mites,acari_all,order,Sarcoptiformes;Mesostigmata;Trombidiformes;Ixodida;Opilioacarida;Holothyrida
+ants,main,family,Formicidae
+enchytraeids,main,family,Enchytraeidae
+copepods,main,class,Copepoda
+pteropods,main,order,Pteropoda
+jellyfish,main,class,Scyphozoa;Cubozoa
+jellyfish,plus_hydrozoa,class,Scyphozoa;Cubozoa;Hydrozoa
+mesopelagic_fish,myctophidae_only,family,Myctophidae
+krill,main,species,Euphausia superba
+mammals,main,class,Mammalia
+birds,main,class,Aves

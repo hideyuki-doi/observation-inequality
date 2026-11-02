@@ -4,3 +4,4 @@ write_csv_target <- function(x, path) {
   readr::write_csv(x, path, na = "")
   path
 }
+`%||%` <- function(a, b) if (is.null(a)) b else a

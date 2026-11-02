@@ -1,0 +1,16 @@
+group_id,role,part,group,to_g_wet,conversion_note
+soil_nematodes,main,soil_arthropods,Soil nematodes (all),6.6667e12,Mt C -> g wet: 1e12/0.15 (Bar-On animal C/wet)
+springtails,main,soil_arthropods,Collembola (soil springtails),6.909e12,"Potapov own equivalence 27.5 Mt C ~ 190 Mt fresh (row with B in Mt C)"
+mites,main,harmonized,Acari (soil mites),2.5e12,Mt dry -> g wet: 1e12/0.4 (Rosenberg Acari dry/wet)
+ants,main,soil_arthropods,Formicidae (non-arboreal/soil ants),4.386e12,Mt dry -> g wet: 1e12/0.228 (Rosenberg ants dry/wet)
+enchytraeids,main,harmonized,Enchytraeidae (soil; Bar-On annelid N scope),6.6667e15,Gt C -> g wet: 1e15/0.15
+copepods,main,harmonized,Copepods (mesozooplankton arthropods; Bar-On marine-arthropod N scope),6.6667e15,Gt C -> g wet: 1e15/0.15
+pteropods,main,harmonized,Pteropods (Bar-On mollusc N scope),6.6667e15,Gt C -> g wet: 1e15/0.15
+jellyfish,main,harmonized,Planktonic cnidarians (jellyfish; Bar-On cnidarian N scope),6.6667e15,Gt C -> g wet: 1e15/0.15
+mesopelagic_fish,main,harmonized,Mesopelagic fish (Bar-On fish N scope),6.6667e15,Gt C -> g wet: 1e15/0.15
+krill,main,marine_other,"Antarctic krill (Euphausia superba), post-larvae, standardised net densities",1e12,Mt wet -> g wet
+soil_nematodes,sens_baron,harmonized,"Nematodes, soil only (Bar-On; derived split)",6.6667e15,Gt C -> g wet: 1e15/0.15
+springtails,sens_rosenberg,soil_arthropods,Collembola (soil springtails),3.125e12,Mt dry -> g wet: 1e12/0.32 (row with B in Mt dry; B blank in Rosenberg)
+ants,sens_schultheiss,soil_arthropods,Formicidae - all ants (epigaeic + arboreal + non-foraging),6.6667e12,Mt C -> g wet: 1e12/0.15
+bacteria,dna_only,milo,Bacteria (all environments),4.545e15,Gt C -> g wet: 1e15/0.22 (Bratbak & Dundas 1984 derived)
+archaea,dna_only,milo,Archaea (all environments),4.545e15,Gt C -> g wet: 1e15/0.22
