@@ -1,0 +1,523 @@
+species,set,N,M_g,scope,gbif_name,name_route,dup_target,R,log10M,log10r,resid_med,resid_opt
+Arctocephalus forsteri,census_independent,200000,67979.43,global (source species total),Arctocephalus forsteri,exact,FALSE,39286,4.832377518751123,-0.706786656045195,5.300162608307098,5.701565559638568
+Arctocephalus galapagoensis,census_unclear,40000,45000,global (source species total),Arctocephalus galapagoensis,exact,FALSE,467,4.653212513775344,-1.9322783761194258,4.2037217537401865,4.595517176214858
+Arctocephalus gazella,census_independent,934150.989874685,67979.43,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Arctocephalus gazella,exact,FALSE,208168,4.832377518751123,-0.6520020655139425,5.354947198838351,5.756350150169821
+Arctocephalus philippii,census_unclear,18000,94999.99,global (source species total),Arctocephalus philippii,exact,TRUE,1145,4.977723559573636,-1.1962774115778898,4.7078626992880555,5.115177443557531
+Arctocephalus pusillus,census_independent,1741261.49570504,127551,global (source species total),Arctocephalus pusillus,exact,FALSE,20446,5.105683867828439,-1.9302450197748566,3.88180646291352,4.295902963190695
+Arctocephalus townsendi,census_unclear,7400,101063.71,global (source species total),Arctocephalus philippii,synonym,TRUE,1145,5.004595236935595,-0.8102366262055598,5.074564863654835,5.483303777355222
+Arctocephalus tropicalis,census_unclear,350000,71111.275,global (source species total),Arctocephalus tropicalis,exact,FALSE,859,4.851938465456473,-2.6098221633272045,3.383474035592026,3.7854894212196593
+Balaena mysticetus,census_independent,10891.3543148673,80000000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Balaena mysticetus,exact,FALSE,4065,7.903089986991944,-0.4279679212334092,3.3745753471604334,3.9332426489564725
+Balaenoptera acutorostrata,census_independent,183658.335108023,7500000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Balaenoptera acutorostrata,exact,FALSE,244379,6.8750612633917,0.12405412885448444,4.667495357394823,5.1706171814445305
+Balaenoptera bonaerensis,census_independent,425700.567670206,7500000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Balaenoptera bonaerensis,exact,FALSE,682,6.8750612633917,-2.7950015735948894,1.7484396549454488,2.2515614789951566
+Balaenoptera borealis,census_independent,116609.827652626,20000000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Balaenoptera borealis,exact,FALSE,7127,7.301029995663981,-1.2137979274899284,3.0229320967370685,3.5487859702519295
+Balaenoptera edeni,census_independent,136242.613682706,20000000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Balaenoptera edeni,exact,FALSE,7863,7.301029995663981,-1.238697075430738,2.9980329487962587,3.5238868223111197
+Balaenoptera musculus,census_independent,11209.1195990263,149000000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Balaenoptera musculus,exact,FALSE,15138,8.173186268412275,0.13051134215437277,3.738368694321615,4.3116577247307015
+Balaenoptera physalus,census_independent,145144.459729204,38800000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Balaenoptera physalus,exact,FALSE,215318,7.588831725594207,0.17128088253039006,4.2008335782337,4.741996960318765
+Berardius arnuxii,census_unclear,1500,7000000,global (source species total),Berardius arnuxii,exact,FALSE,96,6.845098040014257,-1.1915639457118887,3.373294748600949,3.874974589129785
+Berardius bairdii,census_independent,7058.12880317077,11400000,global (source species total),Berardius bairdii,exact,FALSE,316,7.056904851336473,-1.348315865144635,3.0635885070217985,3.577018128815561
+Callorhinus ursinus,census_independent,2416919.87866638,55464.82,global (source species total),Callorhinus ursinus,exact,FALSE,2569,4.744017607911231,-2.97341363168401,3.0978143633175748,3.493845191226348
+Caperea marginata,census_unclear,3000,4000000,global (source species total),Caperea marginata,exact,FALSE,146,6.6020599913279625,-1.311283630029534,3.4291773900345834,3.917280270603004
+Cephalorhynchus commersonii,census_unclear,1300,68700,global (source species total),Cephalorhynchus commersonii,exact,FALSE,1170,4.83695673705955,-0.04557193427419364,5.958069633460343,6.3597274692039525
+Cephalorhynchus eutropia,census_unclear,1500,45000,global (source species total),Cephalorhynchus eutropia,exact,FALSE,444,4.653212513775344,-0.5282194937494488,5.607780636110164,5.999576058584835
+Cephalorhynchus heavisidii,census_unclear,3000,60000,global (source species total),Cephalorhynchus heavisidii,exact,FALSE,256,4.778151250383644,-1.0680338852718274,4.978177253569588,5.376469175990255
+Cephalorhynchus hectori,census_unclear,7300,49999.99,global (source species total),Cephalorhynchus hectori,exact,FALSE,582,4.698969917477114,-1.0980269304223993,5.005732044099872,5.399263686110704
+Cystophora cristata,census_independent,2247371.87384835,245448.405,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Cystophora cristata,exact,FALSE,839,5.389960214264573,-3.427654240835845,2.182073237726013,2.6089761778389526
+Delphinapterus leucas,census_independent,109546.978144506,1380000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Delphinapterus leucas,exact,FALSE,4711,6.139879086401237,-1.3664412065861535,3.7063897380079878,4.170243297330867
+Delphinus delphis,census_independent,3837584.61119661,77818.345,global (source species total),Delphinus delphis,exact,TRUE,101572,4.891081990217266,-1.5772818220736085,4.388854181535302,4.791934079299393
+Delphinus tropicalis,census_unclear,10000,77818.345,global (source species total),Delphinus delphis,synonym,TRUE,101572,4.891081990217266,1.0067761418567682,6.972912145465679,7.37599204322977
+Dugong dugon,census_independent,160000,360000,global (source species total),Dugong dugon,exact,FALSE,21077,5.556302500767287,-0.8803008846823863,4.61082831106508,5.045434676323936
+Erignathus barbatus,census_independent,419046.668873777,283333.33,global (source species total),Erignathus barbatus,exact,FALSE,13737,5.4522976658852835,-1.4843546872380875,4.0805910658644455,4.510717430356236
+Eschrichtius robustus,census_independent,18760.4205243501,27300000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Eschrichtius robustus,exact,FALSE,26353,7.4361626470407565,0.1475957328083786,4.2878312325127865,4.820091196299052
+Eubalaena australis,census_independent,10734.9712396029,23000000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Eubalaena australis,exact,FALSE,13795,7.361727836017593,0.1089365602986241,4.301543471693385,4.831055231138075
+Eubalaena glacialis,census_independent,275.747078057873,23000000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Eubalaena glacialis,exact,FALSE,18308,7.361727836017593,1.8221418452240166,6.014748756618777,6.544260516063467
+Eubalaena japonica,census_independent,5898.40088414587,23000000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Eubalaena japonica,exact,FALSE,51,7.361727836017593,-2.0589270569528004,2.1336798544419606,2.6631916138866503
+Eumetopias jubatus,census_independent,56772.1264713333,382466.74,global (source species total),Eumetopias jubatus,exact,FALSE,6669,5.5825936740974385,-0.9300418846875822,4.541855056040247,4.978166227431971
+Feresa attenuata,census_unclear,40000,151500,global (source species total),Feresa attenuata,exact,FALSE,502,5.1804126328383235,-1.900923925235436,3.8579394615953384,4.2754048810568595
+Globicephala macrorhynchus,census_mixed,224745.177942886,726000,global (source species total),Globicephala macrorhynchus,exact,FALSE,11341,5.860936620700094,-1.2970198853106718,3.975523490271728,4.425626262407111
+Globicephala melas,census_independent,1010520.62830603,1060000,global (source species total),Globicephala melas,exact,FALSE,9458,6.02530586526477,-2.0287229152504844,3.126510543966636,3.5843437360908466
+Grampus griseus,census_unclear,308000,425000,global (source species total),Grampus griseus,exact,FALSE,24493,5.628388930050312,-1.0994998684080268,4.339272451285022,4.778178073076277
+Halichoerus grypus,census_mixed,296270.148131615,197570.01,global (source species total),Halichoerus grypus,exact,FALSE,325308,5.295721021830637,0.040607516500151056,5.717864497007133,6.140064063464238
+Histriophoca fasciata,census_independent,135317.570719833,68250,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Histriophoca fasciata,exact,FALSE,10981,4.834102655712794,-1.0906925266324774,4.915010623359471,5.316509597743504
+Hydrurga leptonyx,census_unclear,296454,375671.075,global (source species total),Hydrurga leptonyx,exact,FALSE,3646,5.57480775760934,-1.910081096678096,3.567511319469576,4.003317626433524
+Hyperoodon ampullatus,census_independent,52578.6508825229,5350000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Hyperoodon ampullatus,exact,FALSE,3496,6.7283537820212285,-1.177175905759459,3.472168705406904,3.9671921344109005
+Hyperoodon planifrons,census_unclear,560000,5440000,global (source species total),Hyperoodon planifrons,exact,FALSE,97,6.7355988996981795,-3.7591834113076636,0.8848573931331405,1.3803545504113952
+Indopacetus pacificus,census_unclear,5000,2150000,global (source species total),Indopacetus pacificus,exact,FALSE,107,6.332438459915605,-1.6675615400843946,3.266856814195449,3.740750048156381
+Inia geoffrensis,census_unclear,100000,98500,global (source species total),Inia geoffrensis,exact,FALSE,3245,4.993436230497612,-1.4887183865328575,4.404113856056362,4.812261354653246
+Kogia breviceps,census_unclear,5300,424600,global (source species total),Kogia breviceps,exact,FALSE,979,5.62797998982998,-0.7332714292700339,4.705789077147506,5.144679139027826
+Kogia simus,census_unclear,12500,186649.995,global (source species total),Kogia sima,synonym,FALSE,1317,5.271027982628397,-0.9771593891234722,4.717559830513012,5.138759183975441
+Lagenodelphis hosei,census_unclear,300000,164000,global (source species total),Lagenodelphis hosei,exact,FALSE,1361,5.214843848047698,-2.343103609043679,3.391608803037577,3.810271053775702
+Lagenorhynchus acutus,census_mixed,102829.041473933,186517.55,global (source species total),Lagenorhynchus acutus,exact,FALSE,6497,5.27071970214773,-1.1993694993525383,4.495567727772951,4.91675459406682
+Lagenorhynchus albirostris,census_unclear,26000,183317.43,global (source species total),Lagenorhynchus albirostris,exact,FALSE,4385,5.263203760068263,-0.7729542326263923,4.927298062312345,5.348180488845943
+Lagenorhynchus australis,census_unclear,3000,180000,global (source species total),Lagenorhynchus australis,exact,FALSE,1296,5.2552725051033065,-0.3643487336142922,5.341512327003745,5.762073491168015
+Lagenorhynchus cruciger,census_unclear,145000,72400,global (source species total),Lagenorhynchus cruciger,exact,FALSE,309,4.859738566197147,-2.670707348878838,3.3172042497866423,3.719404168507576
+Lagenorhynchus obliquidens,census_unclear,990000,103000,global (source species total),Lagenorhynchus obliquidens,exact,FALSE,1359,5.012837224705172,-2.862255982674031,3.016614032360239,3.4257897623737006
+Lagenorhynchus obscurus,census_unclear,10000,80000,global (source species total),Lagenorhynchus obscurus,exact,FALSE,291,4.903089986991944,-1.5353614409049672,4.422231589275768,4.825849129284915
+Leptonychotes weddellii,census_unclear,400000,410833.335,global (source species total),Leptonychotes weddellii,exact,FALSE,370915,5.613665674991449,-0.03278500910796219,5.4165530501759225,5.854708435748917
+Lipotes vexillifer,census_unclear,500,97819.16,global (source species total),Lipotes vexillifer,exact,FALSE,6,4.9904239290952495,-1.8860566476931633,4.008943444501801,4.41693129442785
+Lissodelphis borealis,census_independent,331066.055952022,113000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Lissodelphis borealis,exact,FALSE,513,5.05307844348342,-2.809374207091091,3.0405355882936362,3.451844058771141
+Lissodelphis peronii,census_unclear,270000,100000,global (source species total),Lissodelphis peronii,exact,FALSE,92,5,-3.465222031419955,2.422886492248979,2.8313818634312224
+Lobodon carcinophaga,census_independent,8000000,238333.33,global (source species total),Lobodon carcinophaga,exact,FALSE,107662,5.37718478100737,-1.8710255267677187,3.747696743294524,4.174121847411881
+Megaptera novaeangliae,census_independent,57969.1722284151,30000000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Megaptera novaeangliae,exact,FALSE,402971,7.477121254719663,0.8420772330206372,4.952935646092591,5.487266958058707
+Mesoplodon bidens,census_unclear,1500,2350000,global (source species total),Mesoplodon bidens,exact,FALSE,865,6.371067862271737,-0.2388241868442686,4.667704397742157,5.143734466492419
+Mesoplodon bowdoini,census_unclear,1500,1930000,global (source species total),Mesoplodon bowdoini,exact,FALSE,17,6.285557309007774,-1.9330532103693867,3.0349042597408955,3.5065124784766093
+Mesoplodon carlhubbsi,census_unclear,1500,1500000,global (source species total),Mesoplodon carlhubbsi,exact,FALSE,34,6.176091259055681,-1.6382721639824072,3.4085179018089002,3.874270891498317
+Mesoplodon densirostris,census_unclear,15000,1070000,global (source species total),Mesoplodon densirostris,exact,FALSE,52220,6.02938377768521,0.541749766726943,5.69400325729031,6.152097809787981
+Mesoplodon europaeus,census_unclear,1500,5600000,global (source species total),Mesoplodon europaeus,exact,FALSE,388,6.748188027006201,-0.5867002359187481,4.048124666025726,4.54444497426163
+Mesoplodon ginkgodens,census_unclear,1500,1500000,global (source species total),Mesoplodon ginkgodens,exact,FALSE,72,6.176091259055681,-1.3157532524846876,3.73103681330662,4.196789802996037
+Mesoplodon grayi,census_unclear,1500,2900000,global (source species total),Mesoplodon grayi,exact,FALSE,131,6.4623979978989565,-1.0571655062299046,3.783673435256304,4.264506390021969
+Mesoplodon hectori,census_unclear,1500,900000,global (source species total),Mesoplodon hectori,exact,FALSE,16,5.954242509439325,-1.958607314841775,3.247581880970276,3.7018349070498533
+Mesoplodon layardii,census_unclear,1500,1500000,global (source species total),Mesoplodon layardii,exact,FALSE,147,6.176091259055681,-1.0072992387414994,4.039490827049808,4.505243816739225
+Mesoplodon mirus,census_unclear,1500,2100000,global (source species total),Mesoplodon mirus,exact,FALSE,82,6.3222192947339195,-1.2596373105057561,3.68215432082223,4.155487054522809
+Mesoplodon perrini,census_unclear,1500,877763,global (source species total),Mesoplodon perrini,exact,FALSE,5,5.943377270249558,-2.4357285695614372,2.7781726543247727,3.231957145123369
+Mesoplodon peruvianus,census_unclear,2500,1060000,global (source species total),Mesoplodon peruvianus,exact,FALSE,51,6.02530586526477,-1.6861327796308465,3.4691006795862736,3.9269338717104842
+Mesoplodon stejnegeri,census_unclear,1500,1930000,global (source species total),Mesoplodon stejnegeri,exact,FALSE,410,6.285557309007774,-0.5627780976002217,4.4051793725100605,4.876787591245774
+Mesoplodon traversii,census_unclear,1500,2371776.4,global (source species total),Mesoplodon traversii,exact,FALSE,5,6.375073743366986,-2.4357285695614372,2.467825955142227,2.9441594963784166
+Mirounga angustirostris,census_independent,200000,914528.74,global (source species total),Mirounga angustirostris,exact,FALSE,12929,5.961197358174693,-1.1894482651717988,4.011804454989611,4.466357390896251
+Mirounga leonina,census_independent,726995.747342259,1400000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Mirounga leonina,exact,FALSE,999375,6.146128035678238,0.13819682796982063,5.206610183386094,5.670715365702175
+Monachus monachus,census_unclear,380,284940.665,global (source species total),Monachus monachus,exact,FALSE,265,5.454754433531653,-0.15571907119932227,5.4073957081799415,5.837715201297422
+Monodon monoceros,census_independent,65006.636895024,938126.44,global (source species total),Monodon monoceros,exact,FALSE,259,5.972261376218737,-2.3988203363005685,2.7945792647275765,3.249609307738119
+Neomonachus schauinslandi,census_unclear,1463,197758.36,global (source species total),Neomonachus schauinslandi,exact,FALSE,1843,5.296134851841653,0.10039881581682447,5.7773631471058575,6.199579476106901
+Neophoca cinerea,census_unclear,10500,189274.99,global (source species total),Neophoca cinerea,exact,FALSE,116524,5.277093231911125,1.04522794900577,6.735657990931582,7.1571030225828665
+Neophocaena phocaenoides,census_unclear,20000,32500,global (source species total),Neophocaena phocaenoides,exact,FALSE,310,4.511883360978874,-1.808968391151382,4.429506785592693,4.813046596380547
+Odobenus rosmarus,census_independent,251216.144235221,846498.125,global (source species total),Odobenus rosmarus,exact,FALSE,8627,5.927626000480329,-1.4641625776389602,3.760918725446827,4.214023983558667
+Ommatophoca rossii,census_unclear,130000,197959.395,global (source species total),Ommatophoca rossii,exact,FALSE,798,5.296576117858036,-2.211668431832335,3.464983848249283,3.887218051113486
+Orcaella brevirostris,census_unclear,1300,189999.995,global (source species total),Orcaella brevirostris,exact,FALSE,709,5.278753589524027,-0.262990952513344,5.426264930110344,5.847777215988484
+Orcinus orca,census_independent,49426.9748926051,4300000,global (source species total),Orcinus orca,exact,FALSE,24268,6.633468455579586,-0.3089210968372426,4.409044609652853,4.8987038276275445
+Otaria flavescens,census_mixed,567903.340953165,193670.53,global (source species total),Otaria byronia,synonym,FALSE,11767,5.2870635410490525,-1.6835902166498056,3.999789096488203,4.4216379841686715
+Pagophilus groenlandicus,census_independent,11066998.1754617,141125,global (source species total),Pagophilus groenlandicus,exact,FALSE,2337,5.149603954933024,-3.675278218802834,2.1053087383088975,2.5215897060929953
+Peponocephala electra,census_unclear,51000,206000,global (source species total),Peponocephala electra,exact,FALSE,1210,5.313867220369153,-1.6246053823201847,4.039792200285289,4.462753698951559
+Phoca largha,census_independent,459554.476117915,93097.92,global (source species total),Phoca largha,exact,FALSE,30066,4.968939978053164,-1.1842541251245196,4.7263399203113,5.133056451024549
+Phoca vitulina,census_mixed,382692.868242802,94283.33,global (source species total),Phoca vitulina,exact,FALSE,261634,4.974434913002533,-0.16515535795863787,5.741397880240629,6.1484919282241854
+Phocarctos hookeri,census_unclear,12500,273499.99,global (source species total),Phocarctos hookeri,exact,FALSE,35428,5.436957314790309,0.45244275220930685,6.028765458640571,6.457741770533614
+Phocoena dioptrica,census_unclear,3000,72500,global (source species total),Phocoena dioptrica,exact,FALSE,34,4.860338006570994,-1.9393021596463882,4.0481956306727085,4.450409730824128
+Phocoena phocoena,census_independent,579106.903072856,52730.93,global (source species total),Phocoena phocoena,exact,FALSE,423735,4.722065430923849,-0.1356638917006275,5.9515583737864866,6.346229715867986
+Phocoena sinus,census_unclear,567,44060.715,global (source species total),Phocoena sinus,exact,FALSE,139,4.6440515404324305,-0.6090088512832903,5.533446198232932,5.924894016612934
+Phocoena spinipinnis,census_unclear,10000,59999.99,global (source species total),Phocoena spinipinnis,exact,FALSE,240,4.778151178001224,-1.6188849192901495,4.4273262726009985,4.825618190226881
+Phocoenoides dalli,census_mixed,1107797.88318212,106042.53,global (source species total),Phocoenoides dalli,exact,FALSE,3548,5.025480080735252,-2.4944157213818823,3.375355665461072,3.785201452979128
+Physeter macrocephalus,census_independent,859980.141993103,10100000,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Physeter macrocephalus,exact,FALSE,71278,7.004321373782642,-1.0815298712227084,3.3679108225766536,3.8788597744400417
+Platanista gangetica,census_unclear,5000,85250,global (source species total),Platanista gangetica,exact,FALSE,217,4.930694387664535,-1.3615107430453628,4.576761465966539,4.981296893362792
+Platanista minor,census_unclear,5000,85250,global (source species total),Platanista minor,exact,FALSE,368,4.930694387664535,-1.1325325121409484,4.805739696870954,5.2102751242672065
+Pontoporia blainvillei,census_unclear,120000,40416.66,global (source species total),Pontoporia blainvillei,exact,FALSE,4160,4.60656042091843,-1.4600357197015832,4.709339083880074,5.098861227870642
+Pseudorca crassidens,census_mixed,57076.2525275977,1360000,global (source species total),Pseudorca crassidens,exact,FALSE,8757,6.133538908370218,-0.8140753047876187,4.263237721611645,4.726835984483415
+Pusa hispida,census_independent,7201500.06836127,88070,"near-global: sum of modelled populations only (source has no 'rest' row; unlisted populations, if any, omitted)",Pusa hispida,exact,FALSE,34062,4.944827996343216,-2.325146449526732,3.602983569022854,4.008238781095635
+Sotalia fluviatilis,census_unclear,3000,46666.685,global (source species total),Sotalia fluviatilis,exact,FALSE,937,4.669006951574231,-0.505149978319906,5.619721221982013,6.012115948815119
+Sousa chinensis,census_unclear,1300,279999.99,global (source species total),Sousa chinensis,exact,FALSE,426,5.447158015831702,-0.48402431680329494,5.0847899181909035,5.514474234160081
+Sousa plumbea,census_unclear,1200,279999.99,global (source species total),Sousa plumbea,exact,FALSE,774,5.447158015831702,-0.19015982395240003,5.378654411041799,5.808338727010976
+Sousa teuszii,census_unclear,500,100000,global (source species total),Sousa teuszii,exact,FALSE,51,5,-0.9871627752948278,4.900945748374106,5.309441119556349
+Stenella attenuata,census_independent,5350297.69525426,112500,global (source species total),Stenella attenuata,exact,FALSE,9263,5.0511525224473814,-2.76160284136924,3.089692973075663,3.500899371850352
+Stenella clymene,census_unclear,18000,75000,global (source species total),Stenella clymene,exact,FALSE,225,4.8750612633917,-1.9021259588893267,4.075236834123818,4.477770427034052
+Stenella coeruleoalba,census_unclear,2700000,122950,global (source species total),Stenella coeruleoalba,exact,FALSE,22886,5.0897285330747355,-2.0717843824459474,3.751749605322495,4.165000490355409
+Stenella frontalis,census_unclear,80000,99999.995,global (source species total),Stenella frontalis,exact,FALSE,24435,4.999999978285276,-0.5150687569889438,5.373039782307331,5.7815351523387175
+Stenella longirostris,census_independent,2166697.7229556,72666.665,global (source species total),Stenella longirostris,exact,FALSE,21275,4.86133522892406,-2.0079185515906386,3.97889083175605,4.381128523977834
+Steno bredanensis,census_unclear,150000,118250,global (source species total),Steno bredanensis,exact,FALSE,3260,5.072801149409849,-1.662807054512203,4.172908988470039,4.585262740732411
+Tasmacetus shepherdi,census_unclear,1500,5600000,global (source species total),Tasmacetus shepherdi,exact,FALSE,69,6.748188027006201,-1.3341064544655674,3.300718447478906,3.7970387557148104
+Trichechus inunguis,census_independent,30000,294000.595,global (source species total),Trichechus inunguis,exact,FALSE,456,5.468348209340577,-1.8176804728493448,3.73578786750494,4.16669128244145
+Trichechus manatus,census_independent,4000,387500,global (source species total),Trichechus manatus,exact,FALSE,149279,5.588271706842329,1.571940180441527,7.039709981681603,7.47636293739782
+Trichechus senegalensis,census_independent,10000,477000,global (source species total),Trichechus senegalensis,exact,FALSE,139,5.6785183790401135,-1.8554257923903836,3.547719462058157,3.9888325164340523
+Tursiops aduncus,census_unclear,5000,141150,global (source species total),Tursiops aduncus,exact,FALSE,6668,5.149680882482938,0.1250581511720733,5.905590707233321,6.3218747910346265
+Tursiops truncatus,census_mixed,522340.047495487,230000,global (source species total),Tursiops truncatus,exact,FALSE,135039,5.361727836017593,-0.5874925029517506,5.042225803058369,5.467959501221034
+Zalophus californianus,census_mixed,89997.4024821458,158597.43,global (source species total),Zalophus californianus,exact,FALSE,26574,5.200296145491915,-0.529764872942251,5.215303465929578,5.633308258247651
+Zalophus wollebaeki,census_unclear,14000,158597.43,global (source species total),Zalophus wollebaeki,exact,FALSE,5488,5.200296145491915,-0.4066743671359493,5.33839397173588,5.756398764053953
+Ziphius cavirostris,census_unclear,28000,2950000,global (source species total),Ziphius cavirostris,exact,FALSE,3075,6.469822015978163,-0.9592422999824527,3.8762823692265904,4.357480250883284
+Neophocaena asiaeorientalis,census_unclear,48000,32500,partial (IUCN text reports only part of range),Neophocaena asiaeorientalis,exact,FALSE,1773,4.511883360978874,-1.4324100445676258,4.806065132176449,5.189604942964303
+Arctocephalus australis,census_unclear,238000,67979.43,partial (IUCN text reports only part of range),Arctocephalus australis,exact,FALSE,4160,4.832377518751123,-1.7574314307104704,4.249517833641823,4.650920784973293
+Pusa caspica,census_independent,204000,86658.33,global (IUCN total/mature),Pusa caspica,exact,FALSE,56,4.93781031545334,-3.55758171960646,2.3755852274366895,2.7804819649424926
+Sotalia guianensis,census_unclear,10000,80000,partial (IUCN text reports only part of range),Sotalia guianensis,exact,FALSE,5578,4.903089986991944,-0.2534825625853462,5.704110467595388,6.107728007604536
+Sousa sahulensis,census_unclear,10000,279999.99,global (IUCN total/mature),Sousa sahulensis,exact,FALSE,5584,5.447158015831702,-0.2530157047259265,5.315798530268273,5.745482846237449
+Pusa sibirica,census_independent,162200,89499.99,global (IUCN total/mature),Pusa sibirica,exact,FALSE,99,4.951822986791386,-3.2122277691294117,2.71088160695246,3.11649413452751
+Loxodonta africana,census_independent,352271,4565000,"partial: GEC study sites in 18 countries, 'approximately 93% of all savannah elephants in those countries'; Namibia (22,711 in 2015, CITES 2016), South Sudan, CAR and others not included",Loxodonta africana,exact,TRUE,22061,6.659440781870318,-1.2032418546849244,3.4961219991492745,3.987068185586043
+"Loxodonta africana s.l. (L. africana + L. cyclotis, not separated)",census_independent,415428,4565000,"partial: estimates+guesses cover 62% of known/possible range (1,932,732 km2); systematic-survey estimates cover 37% of range; 38% of range unassessed",Loxodonta africana,synonym,TRUE,22061,6.659440781870318,-1.2748607272433552,3.4245031265908437,3.915449313027612
+Diceros bicornis,census_independent,6788,995940.54,global wild: all free-ranging black rhinos in 13 African countries (excl. 214 in zoos/facilities outside Africa),Diceros bicornis,exact,TRUE,1664,5.9982334107924435,-0.610458034152952,4.564506900479254,5.020656920169931
+Ceratotherium simum,census_independent,15752,2230000,"global wild: both subspecies on African continent, 13 countries (excl. 1,299 in zoos/facilities outside Africa)",Ceratotherium simum,exact,TRUE,4219,6.348304863048161,-0.5720747119091796,4.351264063885683,4.825659274243226
+Rhinoceros unicornis,census_independent,4075,1600000,"global wild: India 3,323 + Nepal 752 (excl. 230 in captivity)",Rhinoceros unicornis,exact,TRUE,969,6.204119982655925,-0.6235797996612712,4.402940385406727,4.870277440085958
+Rhinoceros sondaicus,census_independent,50,1750000,"global wild: single population, Ujung Kulon NP, Indonesia",Rhinoceros sondaicus,exact,TRUE,10,6.243038048686294,-0.6777807052660807,4.3207116972546125,4.790131157127569
+Ursus maritimus,census_independent,26000,371703.81,global: 19 subpopulations,Ursus maritimus,exact,TRUE,3682,5.570197012678981,-0.8488305924561494,4.6321346295080446,5.067641960609041
+Odocoileus virginianus,report_land,45000000,65320,global (IUCN/report),Odocoileus virginianus,exact,FALSE,231965,4.81504617606463,-2.287789116271451,3.7316790584546524,4.132117327869974
+Loxodonta africana,report_land,441683.5,4565000,global (IUCN/report),Loxodonta africana,exact,TRUE,22061,6.659440781870318,-1.3014761380434183,3.3978877157907803,3.8888339022275487
+Macropus giganteus,report_land,22000000,41454.945,global (IUCN/report),Macropus giganteus,exact,FALSE,207757,4.617576343284828,-2.0248659701479044,4.136472294890809,4.5266870291800565
+Odocoileus hemionus,report_land,7500000,57000,global (IUCN/report),Odocoileus hemionus,exact,FALSE,101963,4.7558748556724915,-1.8666165287423901,4.195921181829729,4.592737462327128
+Alces alces,report_land,1350000,359750,global (IUCN/report),Alces alces,exact,FALSE,113387,5.556000802608643,-1.0757685885434585,4.41558130241046,4.850168104568625
+Cervus elaphus,report_land,2435500,160166.665,global (IUCN/report),Cervus elaphus,exact,FALSE,571827,5.204572132765708,-0.6293230965425738,5.112763440319268,5.5308993764648005
+Capreolus capreolus,report_land,22500000,21666.685,global (IUCN/report),Capreolus capreolus,exact,FALSE,2459250,4.335792469402984,-0.9613797497521499,5.401921165378064,5.778029165497039
+Macropus rufus,report_land,12000000,35729.195,global (IUCN/report),Osphranter rufus,synonym,FALSE,54765,4.553023231399856,-2.340674188986986,3.868042673139959,4.253914218264288
+Syncerus caffer,report_land,570996,646332.99,global (IUCN/report),Syncerus caffer,exact,FALSE,14824,5.810456323661036,-1.5856530114714693,3.7231058860639856,4.170646667605686
+Rangifer tarandus,report_land,2890410,101250,global (IUCN/report),Rangifer tarandus,exact,FALSE,42339,5.005395031886706,-1.834213726100087,4.050012178870935,4.458793480826622
+Cervus canadensis,report_land,1300000,131250,global (IUCN/report),Cervus canadensis,exact,FALSE,26879,5.1180993120779945,-1.6845221663945646,4.118509952460627,4.53334885373795
+Connochaetes taurinus,report_land,1550000,180500,global (IUCN/report),Connochaetes taurinus,exact,FALSE,8555,5.2564772062416765,-2.258086302540329,3.4469228265197693,3.8675327881497314
+Procyon lotor,report_land,40000000,5075,global (IUCN/report),Procyon lotor,exact,FALSE,143445,3.7054360465852505,-2.4453730626973056,4.369540779933633,4.714273467763707
+Lama guanicoe,report_land,1816590,112500,global (IUCN/report),Lama guanicoe,exact,FALSE,59543,5.0511525224473814,-1.4844225600143615,4.3668732544305415,4.77807965320523
+Equus quagga,report_land,500000,290000,global (IUCN/report),Equus quagga,exact,FALSE,18481,5.4623979978989565,-1.4322327877070227,4.1253839585167125,4.556105775211519
+Hippopotamus amphibius,report_land,122270,2640000,global (IUCN/report),Hippopotamus amphibius,exact,FALSE,9793,6.421603926869831,-1.0963819845462563,3.7736360386275223,4.252485959058369
+Aepyceros melampus,report_land,3000000,52500,global (IUCN/report),Aepyceros melampus,exact,FALSE,14514,4.720159303405957,-2.315319175005369,3.7732753785392967,4.1678451842418385
+Elephas maximus,report_land,46557.56,3220000,global (IUCN/report),Elephas maximus,exact,FALSE,9661,6.507855871695831,-0.6829456534151344,4.125353561480934,4.6084209936388225
+Macropus fuliginosus,report_land,5000000,26907.35,global (IUCN/report),Macropus fuliginosus,exact,FALSE,87369,4.429870927899464,-1.7576101540066806,4.538607089575232,4.919079788911522
+Macropus robustus,report_land,4500000,29647.9,global (IUCN/report),Osphranter robustus,synonym,FALSE,64730,4.4719939371366735,-1.8421035521088378,4.424605375405378,4.806504384651226
+Tragelaphus strepsiceros,report_land,482000,206056.41,global (IUCN/report),Strepsiceros strepsiceros,synonym,FALSE,9788,5.313986129097583,-1.692330893078624,3.9719807259800954,4.394948915707499
+Ursus americanus,report_land,898610,132405,global (IUCN/report),Ursus americanus,exact,FALSE,40164,5.1219043856430195,-1.3497288823563127,4.45057918366779,4.865605422066187
+Giraffa camelopardalis,report_land,97562,800000,global (IUCN/report),Giraffa camelopardalis,exact,FALSE,3543,5.903089986991944,-1.4398482575788112,3.802581126603515,4.2546956459444045
+Kobus kob,report_land,1060660,92517.605,global (IUCN/report),Kobus kob,exact,FALSE,7456,4.966224381678057,-2.1530411686925945,3.759549843328855,4.16607980503988
+Antidorcas marsupialis,report_land,2236068,33571.24,global (IUCN/report),Antidorcas marsupialis,exact,FALSE,4649,4.5259673828092835,-2.682078754490331,3.546579077515578,3.930546885154659
+Oryx gazella,report_land,373000,37500,global (IUCN/report),Oryx gazella,exact,FALSE,4831,4.574031267727719,-1.887626847933315,4.305720708054854,4.6929562017660515
+Tragelaphus oryx,report_land,136000,291250,global (IUCN/report),Taurotragus oryx,synonym,FALSE,5265,5.464265934034075,-1.4120992912664294,4.144215155483964,4.574993980895366
+Sylvicapra grimmia,report_land,4074310,18500,global (IUCN/report),Sylvicapra grimmia,exact,FALSE,7904,4.267171728403014,-2.7121796660769535,3.698303050528015,4.0729764098388825
+Ovibos moschatus,report_land,203109,312500,global (IUCN/report),Ovibos moschatus,exact,FALSE,8553,5.494850021680094,-1.37558530821634,4.15872246173751,4.591118572181443
+Alcelaphus buselaphus,report_land,362000,159938.92,global (IUCN/report),Alcelaphus buselaphus,exact,FALSE,4338,5.20395415908387,-1.9213689687453406,3.821154040829964,4.239265486716592
+Tragelaphus scriptus,report_land,1340000,43250.39,global (IUCN/report),Tragelaphus scriptus,exact,FALSE,8404,4.635990027964632,-2.202592916841558,3.9455423604564293,4.336684292699866
+Antilocapra americana,report_land,1000000,45375,global (IUCN/report),Antilocapra americana,exact,FALSE,14190,4.656816638044169,-1.8480023019762588,4.285458323431492,4.677390500845474
+Ceratotherium simum,report_land,20170,2230000,global (IUCN/report),Ceratotherium simum,exact,TRUE,4219,6.348304863048161,-0.6794449069918833,4.243893868802979,4.718289079160522
+Ursus arctos,report_land,220000,240500,global (IUCN/report),Ursus arctos,exact,FALSE,59803,5.381115080709851,-0.5656960790042654,5.050258987343935,5.47683109537368
+Capreolus pygargus,report_land,1000000,21666.7,global (IUCN/report),Capreolus pygargus,exact,FALSE,8044,4.335792770068036,-2.0945009439812505,4.26879976378912,4.644907770824571
+Kobus ellipsiprymnus,report_land,200000,175333,global (IUCN/report),Kobus ellipsiprymnus,exact,FALSE,7446,5.2438636637783835,-1.4290778018220935,4.284851278037103,4.70495031717683
+Damaliscus lunatus,report_land,300000,118798.717,global (IUCN/report),Damaliscus lunatus,exact,FALSE,2886,5.0748117503856705,-2.0167496928850124,3.817519389799921,4.229979701709053
+Gorilla gorilla,report_land,320000,126215.495,global (IUCN/report),Gorilla gorilla,exact,FALSE,477,5.101112674875699,-2.8261766024001407,2.9891646104701497,3.403018842533905
+Philantomba monticola,report_land,7000000,4896.05,global (IUCN/report),Philantomba monticola,exact,FALSE,3389,3.689845844311773,-3.3149624017687955,3.511056000751469,3.855077596874535
+Capra sibirica,report_land,244428,82500,global (IUCN/report),Capra sibirica,exact,FALSE,704,4.9164539485499255,-2.540269956780499,3.4078154119120376,3.8120313057040627
+Procapra gutturosa,report_land,1000000,28274.27,global (IUCN/report),Procapra gutturosa,exact,FALSE,152,4.451391400898485,-3.8167301563171954,2.464224532917849,2.84561280460166
+Equus kiang,report_land,97211,262500,global (IUCN/report),Equus kiang,exact,FALSE,418,5.419129307741976,-2.366019948368645,3.2231802641464022,3.6511644079878836
+Boselaphus tragocamelus,report_land,137000,180000,global (IUCN/report),Boselaphus tragocamelus,exact,FALSE,2037,5.2552725051033065,-1.8276229497443925,3.878238110873645,4.298799275037915
+Vicugna vicugna,report_land,525000,50000,global (IUCN/report),Vicugna vicugna,exact,FALSE,577,4.698970004336019,-2.958607314841775,3.1451515984787846,3.5386832437853903
+Rupicapra rupicapra,report_land,682500,35383.175,global (IUCN/report),Rupicapra rupicapra,exact,FALSE,420002,4.548796800397141,-0.21085078023638507,6.000988793644513,6.386555247683366
+Lynx rufus,report_land,3500000,9400,global (IUCN/report),Lynx rufus,exact,FALSE,79176,3.9731278535996988,-1.645471744512805,4.977090014823612,5.335713581271907
+Hippotragus equinus,report_land,76000,233500,global (IUCN/report),Hippotragus equinus,exact,FALSE,4701,5.368286884902131,-1.2085771518362438,4.416409854509099,4.842502153080182
+Bison bison,report_land,31000,624577.07,global (IUCN/report),Bos bison,synonym,FALSE,19282,5.79558603600166,-0.206198353799712,5.113436197767635,5.560014850383694
+Damaliscus pygargus,report_land,240987,84500,global (IUCN/report),Damaliscus pygargus,exact,FALSE,1934,4.926856708949693,-2.0954248812124443,3.845489465823795,4.249941207672272
+Philantomba maxwellii,report_land,2137000,6250,global (IUCN/report),Philantomba maxwellii,exact,FALSE,540,3.7958800173440754,-3.59700882387474,3.15177587449196,3.5023417260803877
+Pan troglodytes,report_land,402679,44983.5,global (IUCN/report),Pan troglodytes,exact,FALSE,2162,4.653053243263934,-2.270002865290972,3.866109488271987,4.257898867384251
+Hippotragus niger,report_land,75000,225000,global (IUCN/report),Hippotragus niger,exact,FALSE,1443,5.352182518111363,-1.7156444751749609,3.921068301071802,4.346171074268643
+Bos gaurus,report_land,22913,812571.525,global (IUCN/report),Bos gaurus,exact,FALSE,2782,5.909861599245561,-0.915646782099225,4.321983372721839,4.774382713254912
+Cephalophus dorsalis,report_land,725000,11600,global (IUCN/report),Cephalophus dorsalis,exact,FALSE,583,4.064457989226918,-3.094297146189605,3.4627285200115803,3.8260014225102945
+Kobus leche,report_land,158750,91722.52,global (IUCN/report),Kobus leche,exact,FALSE,997,4.962475978101732,-2.2018008296052276,3.7135466438550377,4.119819079844796
+Equus hemionus,report_land,55000,230000,global (IUCN/report),Equus hemionus,exact,FALSE,6698,5.361727836017593,-0.9143851277868983,4.715333178223221,5.141066876385886
+Ourebia ourebi,report_land,750000,17186.09,global (IUCN/report),Ourebia ourebi,exact,FALSE,2752,4.235177081772822,-2.4353339357479107,3.9975028910211745,4.371151904588054
+Eudorcas thomsonii,report_land,550000,23197.67,global (IUCN/report),Eudorcas thomsonii,exact,FALSE,1905,4.365444366056433,-2.460353736386058,3.88186912891388,4.259287247760833
+Tragelaphus spekii,report_land,155885,87500,global (IUCN/report),Tragelaphus spekii,exact,FALSE,615,4.942008053022313,-2.4035762700405403,3.52657775801962,3.9316889227957628
+Tragelaphus imberbis,report_land,118000,82500,global (IUCN/report),Ammelaphus imberbis,synonym,FALSE,402,4.9164539485499255,-2.467116122602238,3.480969246090299,3.885185139882324
+Pseudois nayaur,report_land,209238,50917.595,global (IUCN/report),Pseudois nayaur,exact,FALSE,636,4.706867882356017,-2.516842152184712,3.581321361570399,3.975183154429122
+Ovis ammon,report_land,93187,160000,global (IUCN/report),Ovis ammon,exact,FALSE,1477,5.204119982655925,-1.7998278410189772,3.9425780479303563,4.360696065394919
+Cephalophus silvicultor,report_land,160000,62006.6,global (IUCN/report),Cephalophus silvicultor,exact,FALSE,313,4.792437918385801,-2.7078824374891894,3.3281488081008312,3.7270961784381225
+Ursus maritimus,report_land,26000,371703.81,global (IUCN/report),Ursus maritimus,exact,TRUE,3682,5.570197012678981,-0.8488305924561494,4.6321346295080446,5.067641960609041
+Okapia johnstoni,report_land,41833,230001.14,global (IUCN/report),Okapia johnstoni,exact,FALSE,33,5.361729988602299,-3.096474203532962,2.533242524938181,2.9589763655833505
+Oryx beisa,report_land,47021.27,103750,global (IUCN/report),Oryx beisa,exact,FALSE,573,5.01598810538413,-1.913760932592967,3.9628415021014787,4.372184225335459
+Kobus vardonii,report_land,130000,75748.965,global (IUCN/report),Kobus vardonii,exact,FALSE,675,4.879376703209199,-2.2843179989487874,3.690106010598231,4.092701427096259
+Elaphodus cephalophus,report_land,387298,33500,global (IUCN/report),Elaphodus cephalophus,exact,FALSE,86,4.525044807036846,-3.6510291468380602,2.5782717716749675,2.962211543321888
+Cynomys ludovicianus,report_land,11052000,1125,global (IUCN/report),Cynomys ludovicianus,exact,FALSE,10420,3.0511525224473814,-3.0255523183144373,4.262704614123941,4.570283228238486
+Tragelaphus derbianus,report_land,12961,562592.69,global (IUCN/report),Taurotragus derbianus,synonym,FALSE,82,5.750194084897636,-2.1961845620685674,3.1557684572672864,3.6002899428508535
+Bos mutus,report_land,12990,583500,global (IUCN/report),Bos mutus,exact,FALSE,25,5.766040860381389,-2.7070689706390727,2.6337338377645647,3.0788410172911806
+Ovis nivicola,report_land,89861,69125,global (IUCN/report),Ovis nivicola,exact,FALSE,36,4.839635144312755,-3.3912783827859028,2.6105110995350382,3.012235415856773
+Ovis dalli,report_land,113973,70194.13,global (IUCN/report),Ovis dalli,exact,FALSE,1522,4.8463007956739785,-1.8742446786295408,4.122943341581571,4.524825352438985
+Tragelaphus eurycerus,report_land,28000,270998.37,global (IUCN/report),Tragelaphus eurycerus,exact,FALSE,260,5.432966678689408,-2.031350303706676,3.547854914523477,3.9766091386848967
+Pantholops hodgsonii,report_land,225000,30116.56,global (IUCN/report),Pantholops hodgsonii,exact,FALSE,97,4.4788053639982035,-3.3631779024128257,2.898742263829453,3.280889083106217
+Cephalophus callipygus,report_land,382000,19079.23,global (IUCN/report),Cephalophus callipygus,exact,FALSE,74,4.280560843455132,-3.7099070901634157,2.6912887931120455,3.0663229090510074
+Canis lupus,report_land,223607,29190.755,global (IUCN/report),Canis lupus,exact,FALSE,65653,4.465245327879191,-0.5322275116223755,5.739112490436212,6.120879497976009
+Lasiorhinus latifrons,report_land,270000,26163.8,global (IUCN/report),Lasiorhinus latifrons,exact,FALSE,2221,4.417700820660648,-2.0847174465820975,4.220130969890304,4.600085901161982
+Oreamnos americanus,report_land,97570,77227.7,global (IUCN/report),Oreamnos americanus,exact,FALSE,6843,4.887773100846625,-1.1540380333981197,4.8144520476227495,5.217383794221975
+Eudorcas albonotata,report_land,278000,25000,global (IUCN/report),Eudorcas albonotata,exact,FALSE,2,4.3979400086720375,-5.046104787246039,1.2727582127779486,1.6518724351571148
+Capricornis crispus,report_land,150000,43030.64,global (IUCN/report),Capricornis crispus,exact,FALSE,12868,4.633777805445824,-1.0665633321737196,5.083130700737556,5.474188692380244
+Pongo pygmaeus,report_land,104700,58941.645,global (IUCN/report),Pongo pygmaeus,exact,FALSE,1747,4.770422252390278,-1.7775294972611233,4.274346294311642,4.67212622932987
+Panthera onca,report_land,64000,81150,global (IUCN/report),Panthera onca,exact,FALSE,142154,4.909288524162251,0.34658063815538054,6.299763778882184,6.703658850231725
+Bos javanicus,report_land,8000,683333.335,global (IUCN/report),Bos javanicus,exact,FALSE,1969,5.8346326073953465,-0.608734001846783,4.682590028780678,5.131448154740831
+Panthera leo,report_land,32000,149061.965,global (IUCN/report),Panthera leo,exact,FALSE,12383,5.173366841991723,-0.41230656983450387,5.351475926197009,5.768719430355525
+Diceros bicornis,report_land,4880,995940.54,global (IUCN/report),Diceros bicornis,exact,TRUE,1664,5.9982334107924435,-0.46713602251002445,4.7078289121221815,5.163978931812859
+Rhinoceros unicornis,report_land,2575,1600000,global (IUCN/report),Rhinoceros unicornis,exact,TRUE,969,6.204119982655925,-0.4242294199624856,4.602290765105512,5.069627819784743
+Ovis canadensis,report_land,62900,69125,global (IUCN/report),Ovis canadensis,exact,FALSE,17716,4.839635144312755,-0.5502727168796957,5.451516765441245,5.85324108176298
+Madoqua kirkii,report_land,971000,4833.4,global (IUCN/report),Madoqua kirkii,exact,FALSE,1620,3.6842527377427166,-2.777570194539776,4.0523219833548305,4.396198541816258
+Capra pyrenaica,report_land,75000,60898.77,global (IUCN/report),Capra pyrenaica,exact,FALSE,95163,4.78460852107939,0.10340914310019798,6.144969343721208,6.5436073572317826
+Cephalophus nigrifrons,report_land,300000,13900,global (IUCN/report),Cephalophus nigrifrons,exact,FALSE,85,4.143014800254095,-3.54515513999149,2.954791173243759,3.322772221356958
+Redunca arundinum,report_land,73000,58000,global (IUCN/report),Redunca arundinum,exact,FALSE,1140,4.763427993562937,-1.8062275705077886,4.250774376797462,4.648090995301432
+Cephalophus leucogaster,report_land,287000,12954.345,global (IUCN/report),Cephalophus leucogaster,exact,FALSE,26,4.112415458998643,-4.0346360227971845,2.4870704373003862,2.8536908993882317
+Litocranius walleri,report_land,95000,41333.33,global (IUCN/report),Litocranius walleri,exact,FALSE,819,4.616300395418823,-2.06417464738233,4.09809447064017,4.488228983856301
+Procapra picticaudata,report_land,150000,23197.67,global (IUCN/report),Procapra picticaudata,exact,FALSE,155,4.365444366056433,-2.984360865692825,3.357861999607113,3.735280118454065
+Enhydra lutris,report_land,125831,27410.93,global (IUCN/report),Enhydra lutris,exact,FALSE,14891,4.4379237705638115,-0.9268492021959149,5.363656877471665,5.744472178946055
+Capra ibex,report_land,47130,77000,global (IUCN/report),Capra ibex,exact,FALSE,151018,4.886490725172482,0.5057327125386923,6.475139404278444,6.878009457274883
+Tragelaphus angasii,report_land,36500,100666.67,global (IUCN/report),Tragelaphus angasii,exact,FALSE,4049,5.0028857026181,-0.9548914611544496,4.931140321694981,5.33978863195133
+Cephalophus weynsi,report_land,188000,10000,global (IUCN/report),Cephalophus weynsi,exact,FALSE,151,4,-3.093745216425356,3.509703483216115,3.869525345092489
+Theropithecus gelada,report_land,200000,15964.11,global (IUCN/report),Theropithecus gelada,exact,FALSE,342,4.203144711609381,-2.7663694198355366,3.6897262470467953,4.0614713339427215
+Hyemoschus aquaticus,report_land,278000,11550,global (IUCN/report),Hyemoschus aquaticus,exact,FALSE,148,4.062581984228163,-3.272318342264845,3.2860735926475257,3.6492308964342257
+Phascolarctos cinereus,report_land,423965,5646.87,global (IUCN/report),Phascolarctos cinereus,exact,FALSE,343727,3.751807789696765,-0.09111572597260777,6.6896436310775,7.037616309080728
+Marmota caudata,report_land,600000,4225,global (IUCN/report),Marmota caudata,exact,FALSE,160,3.625826713285711,-3.572676213642753,3.2991644780154914,3.640043205684619
+Raphicerus melanotis,report_land,231448,10503.14,global (IUCN/report),Raphicerus melanotis,exact,FALSE,1186,4.021319154385223,-2.290185689734551,4.298159059832182,4.658872102193145
+Nesotragus moschatus,report_land,365000,6500,global (IUCN/report),Neotragus moschatus,synonym,FALSE,44627,3.8129133566428557,-0.9126903057946426,5.824064693965942,6.1753046846279664
+Madoqua guentheri,report_land,511000,4550,global (IUCN/report),Madoqua guentheri,exact,FALSE,309,3.6580113966571126,-3.217760246778576,3.630982218054943,3.9735027169678614
+Crocuta crocuta,report_land,35623,63000,global (IUCN/report),Crocuta crocuta,exact,FALSE,7598,4.799340549453582,-0.6710026230828557,5.359958805789077,5.759374238799268
+Rupicapra pyrenaica,report_land,75000,31633.175,global (IUCN/report),Rupicapra pyrenaica,exact,FALSE,45429,4.5001427839416115,-0.21772330642378138,6.0289357039998865,6.412118732466323
+Cephalophus rufilatus,report_land,170000,12500,global (IUCN/report),Cephalophus rufilatus,exact,FALSE,549,4.096910013008056,-2.4904812246187644,4.042416017839027,4.408182661560377
+Capra cylindricornis,report_land,39230,50000,global (IUCN/report),Capra cylindricornis,exact,FALSE,275,4.698970004336019,-2.153496704941732,3.9502622083788275,4.343793853685433
+Cephalophus niger,report_land,100000,18100,global (IUCN/report),Cephalophus niger,exact,FALSE,136,4.2576785748691846,-2.8648673486232252,3.55221772112948,3.926617496315164
+Antilope cervicapra,report_land,52500,37500,global (IUCN/report),Antilope cervicapra,exact,FALSE,1436,4.574031267727719,-1.5628536730779907,4.630493882910178,5.017729376621375
+Connochaetes gnou,report_land,12094.5,132250,global (IUCN/report),Connochaetes gnou,exact,FALSE,1155,5.121395680707224,-1.019817969039906,4.780854278936757,5.195855472006457
+Saiga tatarica,report_land,50000,37992.005,global (IUCN/report),Saiga tatarica,exact,FALSE,203,4.579692213730001,-2.39040559077478,3.7988805753209784,4.186403494923065
+Tremarctos ornatus,report_land,15297,109250,global (IUCN/report),Tremarctos ornatus,exact,FALSE,10510,5.038421445642459,-0.1629828901378793,5.697475041952552,6.108006707618327
+Gazella subgutturosa,report_land,68048,37740.685,global (IUCN/report),Gazella subgutturosa,exact,FALSE,272,4.576809778420866,-2.397448858757287,3.7939052821301984,4.18128185047998
+Gazella bennettii,report_land,88741,22278.415,global (IUCN/report),Gazella bennettii,exact,FALSE,530,4.347884289677641,-2.2234389301259907,4.131442572266783,4.507908771606761
+Madoqua saltiana,report_land,485600,3337.235,global (IUCN/report),Madoqua saltiana,exact,FALSE,157,3.5233867896963815,-3.488998119941582,3.457127783297381,3.7920145817786755
+Ozotoceros bezoarticus,report_land,40000,34620.4,global (IUCN/report),Ozotoceros bezoarticus,exact,FALSE,1274,4.539332081355354,-1.496720151522676,4.722112459599493,5.106995689091599
+Tapirus bairdii,report_land,4500,300000,global (IUCN/report),Tapirella bairdii,synonym,FALSE,5417,5.477121254719663,0.08058640621651185,5.6277698157952765,6.059109464587916
+Hippocamelus antisensis,report_land,18187,68599.675,global (IUCN/report),Hippocamelus antisensis,exact,FALSE,127,4.8363220581842885,-2.1542508820286903,3.8498491318920003,4.25147164069963
+Tapirus indicus,report_land,3750,296250,global (IUCN/report),Acrocodia indica,synonym,FALSE,168,5.471658359018161,-1.3474313625203616,4.203709797322801,4.6347336263187096
+Equus grevyi,report_land,2680,384000,global (IUCN/report),Equus grevyi,exact,FALSE,730,5.5843312243675305,-0.5645145737584732,4.906111331649471,5.342535171514352
+Ammotragus lervia,report_land,10607,92500,global (IUCN/report),Ammotragus lervia,exact,FALSE,8028,4.9661417327390325,-0.12095815714396752,5.79169363238149,6.198217915881189
+Rusa timorensis,report_land,14998.5,63000,global (IUCN/report),Rusa timorensis,exact,FALSE,2346,4.799340549453582,-0.8056272688873602,5.225334159984573,5.624749592994764
+Bubalus depressicornis,report_land,3750,205994.635,global (IUCN/report),Bubalus depressicornis,exact,TRUE,22,5.313855909591306,-2.221848749616356,3.442557009971523,3.8655178721739514
+Raphicerus sharpei,report_land,95000,9396.9,global (IUCN/report),Raphicerus sharpei,exact,FALSE,283,3.972984605201707,-2.5251705420599224,4.097496071064221,4.456110282656785
+Tragelaphus buxtoni,report_land,4000,216500.375,global (IUCN/report),Tragelaphus buxtoni,exact,FALSE,133,5.335458652930907,-1.4765787256273684,4.172527651289984,4.596386067269872
+Propithecus coquereli,report_land,200000,3622.695,global (IUCN/report),Propithecus coquereli,exact,FALSE,210,3.559031771684877,-2.977777895492294,3.941169880308613,4.2794714849023
+Cervus albirostris,report_land,7000,135000,global (IUCN/report),Cervus albirostris,exact,FALSE,41,5.1303337684950066,-2.227049943302164,3.5672235260630587,3.982664772552343
+Choeropsis liberiensis,report_land,3353,215000,global (IUCN/report),Choeropsis liberiensis,exact,FALSE,209,5.332438459915605,-1.2042495261265058,4.446978583906834,4.870728728780937
+Rucervus duvaucelii,report_land,4225,171223.86,global (IUCN/report),Rucervus duvaucelii,exact,FALSE,530,5.233564283380359,-0.9011413250483516,4.820071193755846,5.239753047549255
+Speothos venaticus,report_land,110000,6000,global (IUCN/report),Speothos venaticus,exact,FALSE,189,3.778151250383644,-2.763783470854134,3.9977892907185066,4.347386257074614
+Rucervus eldii,report_land,7000,95471.61,global (IUCN/report),Panolia eldii,synonym,FALSE,89,4.9798742464176335,-1.8932750046983449,4.009317330894123,4.416746059207744
+Cervus hanglu,report_land,2700,160166.665,global (IUCN/report),Cervus hanglu,exact,FALSE,16,5.204572132765708,-2.213879819945081,3.5282067169167615,3.9463426530622927
+Neotragus batesi,report_land,219000,2733.725,global (IUCN/report),Neotragus batesi,exact,FALSE,4,3.436754824427333,-4.6872316010647745,2.322140450335964,2.6515357441681813
+Cephalophus ogilbyi,report_land,35000,19193.21,global (IUCN/report),Cephalophus ogilbyi,exact,FALSE,37,4.283147615105579,-2.970036776622557,3.4293742180467737,3.804468708158236
+Panthera tigris,report_land,3913,128800,global (IUCN/report),Panthera tigris,exact,FALSE,4929,5.109915863023793,0.1002930230493248,5.9092988845032,6.3236196758846415
+Chrysocyon brachyurus,report_land,25500,22250,global (IUCN/report),Chrysocyon brachyurus,exact,FALSE,1951,4.347330015316951,-1.1161716248166877,5.239109440643495,5.615545593156525
+Tapirus pinchaque,report_land,3750,148950,global (IUCN/report),Tapirus pinchaque,exact,FALSE,1868,5.173040507551063,-0.3025381655420625,5.4614751052431085,5.878705390941741
+Gorilla beringei,report_land,3800,139842,global (IUCN/report),Gorilla beringei,exact,FALSE,754,5.14563762655143,-0.7021243525052016,5.081267483102783,5.497387791311691
+Oreotragus oreotragus,report_land,42000,13000,global (IUCN/report),Oreotragus oreotragus,exact,FALSE,2690,4.113943352306837,-1.1934162940153876,5.327187436016114,5.693892032631233
+Pongo abelii,report_land,13846,53408.29,global (IUCN/report),Pongo abelii,exact,FALSE,580,4.727608673167551,-1.3775221032008247,4.705709387765825,5.100676009538653
+Cephalophus natalensis,report_land,42000,10000,global (IUCN/report),Cephalophus natalensis,exact,FALSE,937,4,-1.651278013998144,4.952170685643328,5.311992547519701
+Capra falconeri,report_land,9700,41000,global (IUCN/report),Capra falconeri,exact,FALSE,156,4.6127838567197355,-1.7922573923837777,4.372577175707541,4.762490597987577
+Acinonyx jubatus,report_land,10011,50577.92,global (IUCN/report),Acinonyx jubatus,exact,FALSE,7821,4.703960965160685,-0.10718741173501418,5.993054817285025,6.386775839675709
+Pelea capreolus,report_land,18000,23865.665,global (IUCN/report),Pelea capreolus,exact,FALSE,1141,4.377773540181699,-1.197796589277052,5.1355384706660345,5.513624945452994
+Hylobates pileatus,report_land,70500,5656.805,global (IUCN/report),Hylobates pileatus,exact,FALSE,69,3.752571208105158,-3.0062043124012847,3.7739964952196177,4.1220187770464545
+Camelus ferus,report_land,1425,475000,global (IUCN/report),Camelus ferus,exact,FALSE,67,5.676693609624866,-1.324511091513504,4.079936287651517,4.520963730254429
+Hyaena hyaena,report_land,10606,35070.51,global (IUCN/report),Hyaena hyaena,exact,FALSE,6362,4.544942081495283,-0.2219238274377287,5.992763817549803,6.378052013083261
+Eudorcas rufifrons,report_land,12000,26000,global (IUCN/report),Eudorcas rufifrons,exact,FALSE,45,4.414973347970818,-2.4211698493905125,3.8856129204838803,4.26545181348012
+Capra caucasica,report_land,5477,69546.83,global (IUCN/report),Capra caucasica,exact,FALSE,149,4.842277339290208,-1.5639015482683367,4.436063962258,4.837850787056036
+Panthera uncia,report_land,7500,47812.5,global (IUCN/report),Panthera uncia,exact,FALSE,299,4.679541452497693,-1.3986644366663699,4.718784041776408,5.111578489853013
+Petauroides volans,report_land,237171,1141,global (IUCN/report),Petauroides volans,exact,FALSE,30424,3.0572856444182146,-0.8918381350231737,6.392001200842029,6.699908663549194
+Nanger soemmerringii,report_land,6708,41582.93,global (IUCN/report),Nanger soemmerringii,exact,FALSE,82,4.6189150871599605,-1.910139105384123,4.250222494569834,4.640521398027081
+Macropus irma,report_land,33541,8000,global (IUCN/report),Notamacropus irma,synonym,FALSE,244,3.9030899869919438,-2.137297143170826,4.53507178286373,4.890580093685724
+Dicerorhinus sumatrensis,report_land,235,1260000,global (IUCN/report),Dicerorhinus sumatrensis,exact,FALSE,13,6.1003705451175625,-1.2407340937767302,3.8600267469761853,4.322289437662741
+Neotragus pygmaeus,report_land,62000,4200,global (IUCN/report),Neotragus pygmaeus,exact,FALSE,104,3.6232492903979003,-2.773275399051181,4.100459431627675,4.441162302201398
+Tetracerus quadricornis,report_land,12550,19000,global (IUCN/report),Tetracerus quadricornis,exact,FALSE,61,4.278753600952829,-2.3097686100416404,4.092674281855675,4.467666217507651
+Cephalophus zebra,report_land,15000,15654.75,global (IUCN/report),Cephalophus zebra,exact,FALSE,231,4.194646136501806,-1.8115402637017093,4.650936780347496,5.021966206814932
+Mazama bororo,report_land,12750,25000,global (IUCN/report),Mazama bororo,exact,FALSE,2,4.3979400086720375,-3.7075701760979363,2.611292823926051,2.9904070463052173
+Presbytis potenziani,report_land,36000,6400,global (IUCN/report),Presbytis potenziani,exact,FALSE,3,3.806179973983887,-4.012234456417012,2.72927237740397,3.080249455778241
+Ailuropoda melanoleuca,report_land,1864,117500,global (IUCN/report),Ailuropoda melanoleuca,exact,FALSE,47,5.0700378666077555,-1.5937522983930958,4.243952384081986,4.656159685386246
+Gazella arabica,report_land,8874,24124.67,global (IUCN/report),Gazella arabica,exact,FALSE,867,4.382461381366743,-1.0098499409176247,5.320105766963989,5.698446366355725
+Cephalophus jentinki,report_land,3000,69244.92,global (IUCN/report),Cephalophus jentinki,exact,FALSE,174,4.840387917853552,-1.2353258234244637,4.765944000915951,5.167686126191013
+Pteropus rufus,report_land,450000,776.345,global (IUCN/report),Pteropus rufus,exact,FALSE,140,2.8900547603039204,-3.505536189534245,3.898061903877942,4.197697865114321
+Hylobates klossii,report_land,33541,5900,global (IUCN/report),Hylobates klossii,exact,FALSE,7,3.7708520116421442,-3.650514743238765,3.1162714966451235,3.4655211438509834
+Sarcophilus harrisii,report_land,23717,6500,global (IUCN/report),Sarcophilus harrisii,exact,FALSE,33784,3.8129133566428557,0.15365774230067208,6.890412742061257,7.241652732723281
+Cephalophus adersi,report_land,20000,10000,global (IUCN/report),Cephalophus adersi,exact,FALSE,2,4,-3.9030899869919438,2.7003587126495274,3.0601805745259014
+Macropus eugenii,report_land,33541,5037.24,global (IUCN/report),Notamacropus eugenii,synonym,FALSE,42643,3.7021926433716232,0.10427683592430959,6.921585067025276,7.266085635194407
+Dendrolagus lumholtzi,report_land,25981,6649.97,global (IUCN/report),Dendrolagus lumholtzi,exact,FALSE,637,3.8228196860754586,-1.610175673802066,5.119568449295199,5.471215096998808
+Macaca sylvanus,report_land,15000,10875,global (IUCN/report),Macaca sylvanus,exact,FALSE,2355,4.036429265626675,-0.8040081504814287,5.773430450703869,6.134976233951966
+Macaca siberu,report_land,22583,7151.5,global (IUCN/report),Macaca siberu,exact,FALSE,1,3.8543971429758166,-4.177690375473135,2.529182685731742,2.8826487573941657
+Ornithorhynchus anatinus,report_land,103308.705,1225,global (IUCN/report),Ornithorhynchus anatinus,exact,FALSE,16987,3.0881360887005513,-0.7840074478505394,6.477306435833291,6.7871723878669385
+Hoolock leuconedys,report_land,22711,7200,global (IUCN/report),Hoolock leuconedys,exact,FALSE,4,3.8573324964312685,-3.703023743514424,3.001695537169989,3.3553584870492417
+Neofelis diardi,report_land,6750,22500,global (IUCN/report),Neofelis diardi,exact,FALSE,59,4.352182518111363,-2.0547868071024755,4.296996205698858,4.673695409007795
+Petrogale penicillata,report_land,21213,6465.8,global (IUCN/report),Petrogale penicillata,exact,FALSE,6679,3.8106222668948186,-0.5018581377767444,6.236513713253336,6.587664245811222
+Rhinoceros sondaicus,report_land,83,1750000,global (IUCN/report),Rhinoceros sondaicus,exact,TRUE,10,6.243038048686294,-0.8978887933061359,4.1006036092145575,4.570023069087513
+Lycaon pictus,report_land,6600,24249.995,global (IUCN/report),Lycaon pictus,exact,FALSE,1736,4.384711653393019,-0.5798691478950875,5.74846439295682,6.126926978027412
+Muntiacus crinifrons,report_land,7714,18590.01,global (IUCN/report),Muntiacus crinifrons,exact,FALSE,319,4.269279623389093,-1.3828087720356042,5.026207933612431,5.400942040556179
+Nilgiritragus hylocrius,report_land,1897,74593.205,global (IUCN/report),Nilgiritragus hylocrius,exact,FALSE,472,4.87269926761461,-0.6036655180433808,5.3753057770994035,5.777805531731391
+Petaurus australis,report_land,237171,572.5,global (IUCN/report),Petaurus australis,exact,FALSE,20427,2.7577754910119254,-1.0648463655637854,6.434097946387465,6.7265738686127765
+Vulpes pallida,report_land,47434,10148.9,global (IUCN/report),Vulpes pallida,exact,FALSE,435,4.006418973301598,-2.0371015899061113,4.561799469124171,4.921889656077336
+Hippocamelus bisulcus,report_land,1881,69620.405,global (IUCN/report),Hippocamelus bisulcus,exact,FALSE,4416,4.8427365453595534,0.37068943922254594,6.370337948571626,6.772135637167355
+Cephalophus spadix,report_land,2250,56857.02,global (IUCN/report),Cephalophus spadix,exact,FALSE,17,4.7547840936331545,-2.109144469425068,3.9541926705388932,4.350936696337341
+Potorous tridactylus,report_land,112500,1054.67,global (IUCN/report),Potorous tridactylus,exact,FALSE,21958,3.02311659271595,-0.7095498526061467,6.598730821662617,6.904976313767732
+Ammodorcas clarkei,report_land,4200,28274.905,global (IUCN/report),Ammodorcas clarkei,exact,FALSE,3,4.451401154427021,-3.0791812460476247,3.2017665258785226,3.5831552125188737
+Felis margarita,report_land,40896,2750,global (IUCN/report),Felis margarita,exact,FALSE,58,3.439332693830263,-2.844524966060107,4.163038525349915,4.492523799570897
+Dorcatragus megalotis,report_land,10500,10918.12,global (IUCN/report),Dorcatragus megalotis,exact,FALSE,3,4.038147863284783,-3.4771212547196626,3.099065715361802,3.46071739794166
+Bubalus mindorensis,report_land,430,243861.535,global (IUCN/report),Bubalus mindorensis,exact,FALSE,14,5.3871433031646845,-1.4721004533446116,4.139610326097029,4.566407906063444
+Cuon alpinus,report_land,6874,15750,global (IUCN/report),Cuon alpinus,exact,FALSE,541,4.19728055812562,-1.1036110668398673,5.35688672814252,5.728139122594232
+Oryx leucoryx,report_land,1220,121350,global (IUCN/report),Oryx leucoryx,exact,FALSE,1702,5.084039780667953,0.14472728991007452,5.972355276921933,6.385304664315951
+Aplodontia rufa,report_land,100000,706.8,global (IUCN/report),Aplodontia rufa,exact,FALSE,491,2.8492965408347266,-2.3084764778318454,5.123869079235158,5.421929723129516
+Simias concolor,report_land,10766,7723,global (IUCN/report),Simias concolor,exact,FALSE,5,3.8877860348383715,-3.291691685985425,3.3916768206021324,3.746388185640172
+Bettongia gaimardi,report_land,47434,1385,global (IUCN/report),Bettongia gaimardi,exact,FALSE,1719,3.1414497734004674,-1.4406875690917613,5.781411439715908,6.094949810159104
+Gazella marica,report_land,2910,20200,global (IUCN/report),Gazella marica,exact,FALSE,160,4.3053513694466234,-1.2584179522450165,5.12567231315553,5.501285029641747
+Leopardus guigna,report_land,35201,2200,global (IUCN/report),Leopardus guigna,exact,FALSE,3406,3.342422680822206,-1.0142466079388812,6.063084260074718,6.387408833030826
+Madoqua piacentinii,report_land,30000,3250,global (IUCN/report),Madoqua piacentinii,exact,FALSE,2,3.5118833609788744,-4.079181246047625,2.8751480040402075,3.20950040815097
+Otocolobus manul,report_land,20500,3500,global (IUCN/report),Otocolobus manul,exact,FALSE,685,3.5440680443502757,-1.4757464019302229,5.454658750207756,5.791478796687439
+Marmota menzbieri,report_land,22000,2943.025,global (IUCN/report),Marmota menzbieri,exact,FALSE,4,3.468793951299724,-3.6892101670468627,3.297209214830855,3.628197760271167
+Petrogale godmani,report_land,15000,4750,global (IUCN/report),Petrogale godmani,exact,FALSE,23,3.6766936096248664,-2.805023396783945,4.030302255778258,4.373784758317322
+Petrogale mareeba,report_land,15000,4150,global (IUCN/report),Petrogale mareeba,exact,FALSE,459,3.6180480967120925,-1.5138057433335512,5.363656272723338,5.704099420376233
+Macrogalidia musschenbroekii,report_land,13500,5148.86,global (IUCN/report),Macrogalidia musschenbroekii,exact,FALSE,2,3.7117110833102283,-3.7323937598229686,3.0778097933195068,3.42306941282139
+Dasyurus maculatus,report_land,21000,1782,global (IUCN/report),Dasyurus maculatus,exact,FALSE,13149,3.250907699700856,-0.20331005532025903,6.939280263695042,7.259355373063682
+Cryptoprocta ferox,report_land,7151,9500,global (IUCN/report),Cryptoprocta ferox,exact,FALSE,106,3.9777236052888476,-1.827017170266113,4.79221365410145,5.151104321059166
+Eudorcas tilonura,report_land,2958,26000,global (IUCN/report),Eudorcas tilonura,exact,FALSE,5,4.414973347970818,-2.73063548016663,3.576147289707763,3.955986182704003
+Gazella gazella,report_land,3000,35318.235,global (IUCN/report),Gazella gazella,exact,FALSE,98939,4.547998991935158,1.5182484565663366,7.7306774937225224,8.116186356794078
+Babyrousa togeanensis,report_land,750,92950.09,global (IUCN/report),Babyrousa togeanensis,exact,FALSE,3,4.968249814618778,-2.3309932190414244,3.5801083514926493,3.986777466063902
+Hypogeomys antimena,report_land,54000,1250,global (IUCN/report),Hypogeomys antimena,exact,FALSE,15,3.0969100130080562,-3.5420620616526772,3.712872939794682,4.0232684911931305
+Piliocolobus gordonorum,report_land,15400,8005.25,global (IUCN/report),Piliocolobus gordonorum,exact,FALSE,43,3.9033748992690733,-2.5490314638818257,4.123132683967893,4.478655831456638
+Macaca cyclopis,report_land,10000,6032.805,global (IUCN/report),Macaca cyclopis,exact,FALSE,15822,3.7805192877243865,0.19927510434658416,6.95913520178579,7.308866140714838
+Petrogale purpureicollis,report_land,12500,5283.94,global (IUCN/report),Petrogale purpureicollis,exact,FALSE,99,3.7229578774858547,-2.099086932262331,4.702780249567539,5.048878377598277
+Pseudochirulus cinereus,report_land,54943,977.48,global (IUCN/report),Pseudochirulus cinereus,exact,FALSE,48,2.990107880156398,-3.054170630495294,4.277985879449217,4.58236134425162
+Setonix brachyurus,report_land,17404,2821.15,global (IUCN/report),Setonix brachyurus,exact,FALSE,1152,3.4504261781228966,-1.1790081405589936,5.820593645644743,6.150644968876921
+Equus africanus,report_land,205,171249.245,global (IUCN/report),Equus africanus,exact,FALSE,11,5.233628665460483,-1.2510560207021426,4.470110968863245,4.889795430508714
+Capra walie,report_land,500,80000,global (IUCN/report),Capra walie,exact,FALSE,37,4.903089986991944,-1.1249387366083,4.832654293572435,5.236271833581583
+Petrogale lateralis,report_land,10954,5283.94,global (IUCN/report),Petrogale lateralis,exact,FALSE,7493,3.7229578774858547,-0.1648880249480524,6.636979156881818,6.983077284912556
+Rusa alfredi,report_land,1050,63000,global (IUCN/report),Rusa alfredi,exact,FALSE,53,4.799340549453582,-1.2928355170487096,4.738125911823223,5.137541344833414
+Trachypithecus geei,report_land,5500,9825,global (IUCN/report),Trachypithecus geei,exact,FALSE,144,3.992332559047464,-1.5804948424016771,5.028385997898635,5.387887346417858
+Procapra przewalskii,report_land,1469,25348.83,global (IUCN/report),Procapra przewalskii,exact,FALSE,36,4.403957918846075,-1.6047289313337818,4.70986610110929,5.089236350953348
+Hylobates moloch,report_land,6708,6048.4,global (IUCN/report),Hylobates moloch,exact,FALSE,123,3.7816405047233714,-1.7349260963383635,5.024123089842426,5.373917462030567
+Isoodon obesulus,report_land,47434,717,global (IUCN/report),Isoodon obesulus,exact,FALSE,21904,2.8555191556678,-0.33555640498459616,7.092400236273979,7.390701386088048
+Perameles gunnii,report_land,37723.005,801.5,global (IUCN/report),Perameles gunnii,exact,FALSE,2409,2.9039035266901636,-1.1946793505366704,6.199331748014108,6.499322193187732
+Mesembriomys gouldii,report_land,45000,900,global (IUCN/report),Mesembriomys gouldii,exact,FALSE,8559,2.9542425094393248,-0.720764117507433,6.636904260768183,6.939678104384195
+Leopardus tigrinus,report_land,14323,2250,global (IUCN/report),Leopardus tigrinus,exact,FALSE,1405,3.3521825181113627,-1.0082031419801611,6.062150571914614,6.386945740796776
+Bettongia lesueur,report_land,21750,1447.27,global (IUCN/report),Bettongia lesueur,exact,FALSE,36249,3.16054955984853,0.22184275930632785,7.429943148333032,7.74474694759182
+Dendrolagus matschiei,report_land,3750,7080,global (IUCN/report),Dendrolagus matschiei,exact,FALSE,29,3.850033257689769,-2.104209251749556,4.605865758135531,4.959039137975109
+Microtus abbreviatus,report_land,465531,58.03,global (IUCN/report),Microtus abbreviatus,exact,FALSE,1427,1.7636525705645303,-2.513372489303171,5.701713407196879,5.940796358504988
+Pteropus niger,report_land,62500,465.365,global (IUCN/report),Pteropus niger,exact,FALSE,481,2.6677937169858246,-2.1132837258835218,5.4524515489805125,5.738124357643775
+Macaca maura,report_land,3873,7359.39,global (IUCN/report),Macaca maura,exact,FALSE,67,3.866841818330312,-1.7587437241550579,4.939317386335634,5.293298958475913
+Genetta bourloni,report_land,14775,1750,global (IUCN/report),Genetta bourloni,exact,FALSE,5,3.2430380486862944,-3.4291648000590493,3.7191272303248857,4.0387470623346005
+Propithecus tattersalli,report_land,7746,3545,global (IUCN/report),Propithecus tattersalli,exact,FALSE,58,3.5496162395190853,-2.1219216265678833,4.804235083751998,5.141604775270572
+Indri indri,report_land,3162,8241.74,global (IUCN/report),Indri indri,exact,FALSE,2384,3.9160189098310894,-0.1225645388263043,6.54061377133053,6.896693416137482
+Bdeogale omnivora,report_land,11832,1750,global (IUCN/report),Bdeogale crassicauda,synonym,FALSE,44,3.2430380486862944,-2.4246981500079046,4.723593880376031,5.043213712385745
+Marmota olympus,report_land,4243,6299.995,global (IUCN/report),Marmota olympus,exact,FALSE,476,3.7993402047752847,-0.9496101267922706,5.796723619434678,6.147433631542051
+Beatragus hunteri,report_land,335,119000,global (IUCN/report),Beatragus hunteri,exact,FALSE,33,5.075546961392531,-1,4.833739976636612,5.246239253922826
+Bettongia penicillata,report_land,22045,1101.175,global (IUCN/report),Bettongia penicillata,exact,FALSE,49544,3.0418563430361365,0.3516853467340796,7.6465817699374465,7.953718346227834
+Axis kuhlii,report_land,474,43000,global (IUCN/report),Axis kuhlii,exact,FALSE,3,4.633468455579586,-2.1317102973238096,4.018201706807073,4.4092479604743104
+Genetta piscivora,report_land,15000,1648.05,global (IUCN/report),Genetta piscivora,exact,FALSE,1,3.2169703835714683,-4,3.1667460470927615,3.4852903058035336
+Dasyurus geoffroii,report_land,20125,1300,global (IUCN/report),Dasyurus geoffroii,exact,FALSE,1413,3.113943352306837,-1.1534400762143677,6.089094323514605,6.40053491709892
+Myotis grisescens,report_land,2000000,10.045,global (IUCN/report),Myotis grisescens,exact,FALSE,977,1.001949941084268,-3.3109132295960766,5.451714653026604,5.651057371198924
+Leopardus guttulus,report_land,9070.5,2250,global (IUCN/report),Leopardus guttulus,exact,FALSE,444,3.3521825181113627,-1.3097594623553905,5.760594251539384,6.085389420421546
+Diplogale hosei,report_land,14000,5452.04,global (IUCN/report),Diplogale hosei,exact,FALSE,6,3.7365590334640943,-3.3332146790353825,3.4587013176715633,3.8056831935064004
+Genetta cristata,report_land,10500,1519.535,global (IUCN/report),Genetta cristata,exact,FALSE,2,3.181710707793262,-3.6232492903979003,3.5689424876283025,3.885547465924437
+Isoodon auratus,report_land,45000,467.5,global (IUCN/report),Isoodon auratus,exact,FALSE,969,2.6697816152085365,-1.6666647003606194,5.89761766761072,6.183418117684869
+Wyulda squamicaudata,report_land,10607,1799.21,global (IUCN/report),Wyulda squamicaudata,exact,FALSE,2812,3.2550818562407984,-0.5765000377322547,6.563066025727851,6.883382619625058
+Pseudoryx nghetinhensis,report_land,195,97842.2,global (IUCN/report),Pseudoryx nghetinhensis,exact,FALSE,1,4.990526209329929,-2.113943352306837,3.780983132324735,4.188976402991056
+Felis nigripes,report_land,13867,2125,global (IUCN/report),Felis nigripes,exact,FALSE,38,3.3273589343863303,-2.556521786044303,4.531388883918826,4.855176152549323
+Dasyurus viverrinus,report_land,16432,982,global (IUCN/report),Dasyurus viverrinus,exact,FALSE,3810,2.99211148778695,-0.6347084602905255,6.696028632818324,7.00048777603602
+Mirza zaza,report_land,54118,290,global (IUCN/report),Mirza zaza,exact,FALSE,3,2.462397997898956,-4.189273693963086,3.5231180855590196,3.7990648689554547
+Brachyteles hypoxanthus,report_land,1282.5,10839.905,global (IUCN/report),Brachyteles hypoxanthus,exact,FALSE,237,4.035025476099364,-0.7323937598229685,5.846067202022097,6.207526484295301
+Trachypithecus francoisi,report_land,2021,7604.75,global (IUCN/report),Trachypithecus francoisi,exact,FALSE,30,3.881084941544166,-1.8212664741685183,4.866918384087101,5.22128079298655
+Eulemur cinereiceps,report_land,7265,2413.593,global (IUCN/report),Eulemur cinereiceps,exact,FALSE,6,3.3826640376103434,-3.048322261991185,3.999306154791009,4.326505607786432
+Cynogale bennettii,report_land,3735,4123.285,global (IUCN/report),Cynogale bennettii,exact,FALSE,8,3.615243354119728,-2.642871680437125,4.2365079797805905,4.576903311667568
+Gazella leptoceros,report_land,636,24645.75,global (IUCN/report),Gazella leptoceros,exact,FALSE,26,4.391742038798527,-1.3802112417116061,4.943054263241633,5.321897960607221
+Nanger dama,report_land,212,73000,global (IUCN/report),Nanger dama,exact,FALSE,81,4.863322860120456,-0.4151782521887748,5.570259020745458,5.972543735915433
+Petrogale concinna,report_land,10607,1324.1,global (IUCN/report),Petrogale concinna,exact,FALSE,30,3.1219207855630375,-2.541292729504888,4.695236327298649,5.007363974970931
+Macrotis lagotis,report_land,11619,1269.75,global (IUCN/report),Macrotis lagotis,exact,FALSE,136338,3.1037182215006354,1.069449759862909,8.319435008076317,8.630241507046996
+Liberiictis kuhni,report_land,7800,1825.47,global (IUCN/report),Liberiictis kuhni,exact,FALSE,4,3.261374700095105,-3.238882088915137,3.8962678948090383,4.216805339205972
+Brachyteles arachnoides,report_land,1300,10839.905,global (IUCN/report),Brachyteles arachnoides,exact,FALSE,118,4.035025476099364,-1.0402250019607142,5.538235959884352,5.899695242157556
+Bubalus quarlesi,report_land,75,165859.43,global (IUCN/report),Bubalus depressicornis,synonym,TRUE,22,5.219740168532857,-0.5228787452803376,5.208289321412804,5.62723170388227
+Rhynchocyon udzungwensis,report_land,18974,711,global (IUCN/report),Rhynchocyon udzungwensis,exact,FALSE,13,2.851869600729766,-3.147825127749657,4.282705606521413,4.580865699948344
+Bettongia tropica,report_land,10607,1184.35,global (IUCN/report),Bettongia tropica,exact,FALSE,170,3.073480064385569,-1.793868185523157,5.478173992294272,5.787082333070975
+Prionailurus planiceps,report_land,3749,5141.88,global (IUCN/report),Prionailurus planiceps,exact,FALSE,16,3.7111219369614603,-2.3564314962076445,4.454214293367125,4.7994244406692275
+Conilurus penicillatus,report_land,75000,159.51,global (IUCN/report),Conilurus penicillatus,exact,FALSE,2888,2.202787915033841,-1.4143888915142686,6.484317640954029,6.747023059981017
+Macaca pagensis,report_land,2787,7151.5,global (IUCN/report),Macaca pagensis,exact,FALSE,1,3.8543971429758166,-3.269045709657623,3.4378273515472544,3.791293423209678
+Lagostrophus fasciatus,report_land,6364,1933.48,global (IUCN/report),Lagostrophus fasciatus,exact,FALSE,8113,3.2863396840715815,0.1054780695232017,7.2229054774438355,7.544522174993326
+Pentalagus furnessi,report_land,5000,2295.21,global (IUCN/report),Pentalagus furnessi,exact,FALSE,1153,3.3608224274196075,-0.6369524054789065,6.427084226555686,6.752436537759201
+Trachypithecus poliocephalus,report_land,1219,7604.75,global (IUCN/report),Trachypithecus poliocephalus,exact,FALSE,31,3.881084941544166,-1.5876931518287813,5.100491706426838,5.454854115326287
+Acerodon jubatus,report_land,10000,1087.04,global (IUCN/report),Acerodon jubatus,exact,FALSE,50,3.036245525189934,-2.2967086218813386,5.002195143653314,5.309064922843218
+Cynomys parvidens,report_land,12000,807.3,global (IUCN/report),Cynomys parvidens,exact,FALSE,517,2.907034952483417,-1.3652708919186696,6.026554881050226,6.326643034610231
+Urocyon littoralis,report_land,5500,1906.835,global (IUCN/report),Urocyon littoralis,exact,FALSE,3368,3.2803131148133033,-0.2129261378055467,6.908814655531826,7.23013568050343
+Nomascus concolor,report_land,1612,6410.47,global (IUCN/report),Nomascus concolor,exact,FALSE,13,3.806889872096599,-2.077031268974066,4.663974580690476,5.014979377812713
+Geocapromys ingrahami,report_land,13000,733.52,global (IUCN/report),Geocapromys ingrahami,exact,FALSE,15,2.865411959721528,-2.923611654136545,4.497367424591515,4.796050934233615
+Rhinopithecus brelichi,report_land,750,14500,global (IUCN/report),Rhinopithecus brelichi,exact,FALSE,2,4.161368002234975,-2.4771212547196626,4.009657189577721,4.378570638641533
+Microtus tatricus,report_land,223607,40,global (IUCN/report),Microtus tatricus,exact,FALSE,12,1.6020599913279625,-4.252575381974614,4.078626531486913,4.309321851991257
+Semnopithecus ajax,report_land,500,12679.29,global (IUCN/report),Semnopithecus ajax,exact,FALSE,27,4.10309493511391,-1.2596373105057561,5.268796073431388,5.634903294269483
+Lagorchestes hirsutus,report_land,6000,1358.57,global (IUCN/report),Lagorchestes hirsutus,exact,FALSE,1952,3.1330820202515373,-0.48756020783430565,6.7405381174398515,7.053655673515848
+Mastacomys fuscus,report_land,67082,136.86,global (IUCN/report),Mastacomys fuscus,exact,FALSE,2367,2.136276535660292,-1.4523160146191354,6.495156552475242,6.753436856458514
+Potorous longipes,report_land,4500,1742.53,global (IUCN/report),Potorous longipes,exact,FALSE,3707,3.241180263798628,-0.08413135407492404,7.065506676683726,7.385019031577169
+Pteropus rodricensis,report_land,30000,303.085,global (IUCN/report),Pteropus rodricensis,exact,FALSE,33,2.481564443202236,-2.9520764476828174,4.746362918841399,5.023484485033537
+Rhynchocyon chrysopygus,report_land,14142,537.6,global (IUCN/report),Rhynchocyon chrysopygus,exact,FALSE,1646,2.7304592600457687,-0.9339490978600408,6.585273737047282,6.875681956960624
+Addax nasomaculatus,report_land,78,94288.68,global (IUCN/report),Addax nasomaculatus,exact,FALSE,44,4.974459555848295,-0.2437345917095488,5.662800524894031,6.069896265909434
+Poiana leightoni,report_land,12278,570.08,global (IUCN/report),Poiana leightoni,exact,FALSE,1,2.7559358050069402,-3.913036369988597,3.587241632680202,3.8796103215246216
+Onychogalea fraenata,report_land,1407,5226.025,global (IUCN/report),Onychogalea fraenata,exact,FALSE,65543,3.7181714829527452,1.6682355314044308,8.47360464337513,8.819391770953779
+Pygathrix cinerea,report_land,620,9875,global (IUCN/report),Pygathrix cinerea,exact,FALSE,18,3.9945371042984976,-1.5252199610952402,5.082099028260732,5.441692530890272
+Leontopithecus chrysomelas,report_land,9487,582.66,global (IUCN/report),Leontopithecus chrysomelas,exact,FALSE,190,2.7654152045058793,-1.697233920569044,5.796025669576908,6.089093171278216
+Rhinopithecus strykeri,report_land,439,11250,global (IUCN/report),Rhinopithecus strykeri,exact,FALSE,0,4.0511525224473814,-2.9434945159061026,3.623221339266142,3.9856743639801553
+Pteropus seychellensis,report_land,10000,492.2,global (IUCN/report),Pteropus seychellensis,exact,FALSE,705,2.6921416093667836,-1.1515029819096334,6.396316563992944,6.68367317336369
+Pteropus mariannus,report_land,10049,458.58,global (IUCN/report),Pteropus mariannus,exact,FALSE,28,2.6614151099686176,-2.5472779862166512,5.023007467217717,5.308382501988781
+Uromys hadrourus,report_land,30000,149.11,global (IUCN/report),Uromys hadrourus,exact,FALSE,3,2.1735067702081046,-3.933053210369387,3.987466863588777,4.2478795043430555
+Porcula salvania,report_land,474,8000,global (IUCN/report),Porcula salvania,exact,FALSE,5,3.9030899869919438,-1.9354156521798411,4.736953273854715,5.092461584676709
+Phascogale tapoatafa,report_land,22500,157,global (IUCN/report),Phascogale tapoatafa,exact,FALSE,5966,2.1958996524092336,-0.5764628731513435,7.327523569687972,7.589541253427012
+Eupetaurus cinereus,report_land,1732,2521.1,global (IUCN/report),Eupetaurus cinereus,exact,FALSE,1,3.401590072406656,-3.0624566286256467,3.9715347289333707,4.2997538846210945
+Canis simensis,report_land,295.5,13518.43,global (IUCN/report),Canis simensis,exact,FALSE,115,4.130926256551707,-0.40797550098911106,6.100381659385918,6.468010889494264
+Hapalemur alaotrensis,report_land,2500,1275.105,global (IUCN/report),Hapalemur alaotrensis,exact,FALSE,7,3.105545948725282,-2.5228787452803374,4.725777695398632,5.03669451708732
+Chinchilla lanigera,report_land,8025,485,global (IUCN/report),Chinchilla lanigera,exact,FALSE,38,2.6857417386022635,-2.318984311568409,5.233481755960859,5.520458424214594
+Lasiorhinus krefftii,report_land,120,28632.6,global (IUCN/report),Lasiorhinus krefftii,exact,FALSE,20,4.456860786176825,-0.7674273849918705,5.50966631181516,5.891269319074759
+Petrogale sharmani,report_land,800,4250,global (IUCN/report),Petrogale sharmani,exact,FALSE,50,3.6283889300503116,-1.1997986088732822,5.670159118690849,6.011212665944355
+Propithecus perrieri,report_land,500,6414.495,global (IUCN/report),Propithecus perrieri,exact,FALSE,36,3.807162470945337,-1.136677139879544,5.604136333299082,5.95515177434141
+Pteropus dasymallus,report_land,6364,463.43,global (IUCN/report),Pteropus dasymallus,exact,FALSE,199,2.6659841442850727,-1.503787270951777,6.063254787153522,6.348827194376021
+Martes gwatkinsii,report_land,1500,2038.49,global (IUCN/report),Martes gwatkinsii,exact,FALSE,37,3.3093085853219155,-1.6020599913279623,5.4989279268190145,5.821671513308606
+Sapajus flavius,report_land,1000,2500,global (IUCN/report),Sapajus flavius,exact,FALSE,202,3.3979400086720375,-0.6935749724493127,6.343087888967708,6.671068916620508
+Zyzomys maini,report_land,30000,93.995,global (IUCN/report),Zyzomys maini,exact,FALSE,518,1.9731047522149807,-1.7623724939946026,6.302481232639908,6.552161566046589
+Saguinus oedipus,report_land,6000,445.5,global (IUCN/report),Oedipomidas oedipus,synonym,FALSE,1331,2.6488477083728936,-0.6538100796086835,6.925684558303097,7.210228676327234
+Dasycercus cristicauda,report_land,27000,90,global (IUCN/report),Dasycercus cristicauda,exact,FALSE,402,1.9542425094393248,-1.8265978794550999,6.2516977965352805,6.500511009103196
+Notoryctes typhlops,report_land,47434,55,global (IUCN/report),Notoryctes typhlops,exact,FALSE,207,1.7403626894942439,-2.3590716482016822,5.872741398809742,6.110623786986666
+Romerolagus diazi,report_land,5480,480.04,global (IUCN/report),Romerolagus diazi,exact,FALSE,93,2.681277427074529,-1.7679689476118514,5.787753507189109,6.074449995856307
+Presbytis chrysomelas,report_land,354,6466.75,global (IUCN/report),Presbytis chrysomelas,exact,FALSE,8,3.8106860717528783,-1.619584336311495,5.118742486816102,5.469895510704432
+Lycalopex fulvipes,report_land,733.5,3990,global (IUCN/report),Lycalopex fulvipes,exact,FALSE,1321,3.6009728956867484,0.25566704928842765,7.1453940101812226,7.48495568034844
+Mesocapromys auritus,report_land,1335,1533.2,global (IUCN/report),Mesocapromys auritus,exact,FALSE,0,3.1855988105823148,-3.4265112613645754,3.7628028027820872,4.079693426431726
+Trachypithecus delacouri,report_land,224,7325,global (IUCN/report),Trachypithecus delacouri,exact,FALSE,78,3.864807629026147,-0.4553783615889103,6.244059835896304,6.598020447244837
+Antechinomys laniger,report_land,67082,25.8,global (IUCN/report),Antechinomys laniger,exact,FALSE,521,1.41161970596323,-2.1093516895318967,6.358617683678014,6.579505734677129
+Leporillus conditor,report_land,5196,332.5,global (IUCN/report),Leporillus conditor,exact,FALSE,735,2.5217916496391233,-0.8490864653374414,6.8205461127086355,7.099656329754322
+Myzopoda aurita,report_land,172867,9.1,global (IUCN/report),Myzopoda aurita,exact,FALSE,30,0.9590413923210935,-3.7534122558024094,5.0401385932979,5.23716404416804
+Macroderma gigas,report_land,11906,139,global (IUCN/report),Macroderma gigas,exact,FALSE,936,2.143014800254095,-1.1042580965044784,6.8382698136733495,7.097002598177303
+Tarsius sangirensis,report_land,8909,173,global (IUCN/report),Tarsius sangirensis,exact,FALSE,7,2.2380461031287955,-3.0747676955436134,4.799145001487743,5.063138797221702
+Antechinus bellus,report_land,37723,36.365,global (IUCN/report),Antechinus bellus,exact,FALSE,343,1.560683591907453,-2.040679482214713,6.320301947518036,6.5488020180314965
+Procyon pygmaeus,report_land,465,2958.03,global (IUCN/report),Procyon pygmaeus,exact,FALSE,197,3.471002574247888,-0.3718858529274749,6.612948417874113,6.944049659091777
+Myzopoda schliemanni,report_land,136437,9.1,global (IUCN/report),Myzopoda schliemanni,exact,FALSE,31,0.9590413923210935,-3.6366216077096873,5.156929241390623,5.353954692260762
+Pseudomys shortridgei,report_land,16500,64,global (IUCN/report),Pseudomys shortridgei,exact,FALSE,1021,1.806179973983887,-1.2082455732454398,6.976085809720518,7.217571672283146
+Saimiri oerstedii,report_land,1530,647.09,global (IUCN/report),Saimiri oerstedii,exact,FALSE,1588,2.8109646883736272,0.016295788345567476,7.476221363809975,7.7722565576143285
+Xeromys myoides,report_land,23717,45.2,global (IUCN/report),Xeromys myoides,exact,FALSE,259,1.655138434811382,-1.9609223914013358,6.332843063942619,6.5655892135755884
+Lepilemur jamesorum,report_land,1386,780,global (IUCN/report),Lepilemur jamesi,synonym,FALSE,8,2.8920946026904804,-2.212344304561495,5.189815053409525,5.489529855162696
+Notomys cervinus,report_land,28460,34.2,global (IUCN/report),Notomys cervinus,exact,FALSE,119,1.534026106056135,-2.376866990464109,6.002110970990362,6.230386167016313
+Hapalemur aureus,report_land,630,1476.205,global (IUCN/report),Hapalemur aureus,exact,FALSE,204,3.1691466719766557,-0.48864723711022107,6.713002909908628,7.028525543089852
+Leontopithecus chrysopygus,report_land,1500,654.5,global (IUCN/report),Leontopithecus chrysopygus,exact,FALSE,130,2.8159096508867747,-1.0604807473813815,6.395815487162166,6.692183380211947
+Pteropus livingstonii,report_land,1300,715.385,global (IUCN/report),Pteropus livingstonii,exact,FALSE,121,2.8545398297386924,-1.0293670743725059,6.3992803020781315,6.697543600652877
+Leontopithecus rosalia,report_land,1500,623.51,global (IUCN/report),Leontopithecus rosalia,exact,FALSE,236,2.794843423187444,-0.8022601139818508,6.669298014816921,6.9644481654110315
+Dasyuroides byrnei,report_land,7500,105,global (IUCN/report),Dasyuroides byrnei,exact,FALSE,746,2.0211892990699383,-1.0020314513306559,7.029098948309257,7.280446244140562
+Pseudomys australis,report_land,15000,65,global (IUCN/report),Pseudomys australis,exact,FALSE,2170,1.8129133566428555,-0.8395314688809625,7.339905535761388,7.5817968548749795
+Perameles bougainville,report_land,3354,226,global (IUCN/report),Perameles bougainville,exact,FALSE,3441,2.3541084391474008,0.011184715619685164,7.8011040259788205,8.07171631770593
+Callicebus coimbrai,report_land,707,1390.8,global (IUCN/report),Callicebus coimbrai,exact,FALSE,25,3.1432646820112207,-1.442879233362944,5.777889592217377,6.091548206814089
+Pseudomys oralis,report_land,7500,65,global (IUCN/report),Pseudomys oralis,exact,FALSE,1211,1.8129133566428555,-0.791737844918175,7.387699159724176,7.629590478837767
+Pseudomys fieldi,report_land,15000,45,global (IUCN/report),Pseudomys fieldi,exact,FALSE,1,1.6532125137753437,-4,4.295080664797249,4.5277955523342825
+Myrmecobius fasciatus,report_land,1200,471.5,global (IUCN/report),Myrmecobius fasciatus,exact,FALSE,1613,2.6734816970733473,0.12858772369229893,7.690075548099512,7.976203820494579
+Notomys aquilo,report_land,15000,38.995,global (IUCN/report),Notomys aquilo,exact,FALSE,116,1.5910089246773103,-2.1097653336936433,6.229657080992229,6.459499278039329
+Marmota vancouverensis,report_land,108,4750,global (IUCN/report),Marmota vancouverensis,exact,FALSE,125,3.6766936096248664,0.06521997033010722,6.900545622892309,7.244028125431374
+Cercopithecus dryas,report_land,200,4454.455,global (IUCN/report),Chlorocebus dryas,synonym,FALSE,8,3.6487945759438207,-1.3716110699496884,5.48365371262467,5.8257964409389436
+Caprolagus hispidus,report_land,219,2498.495,global (IUCN/report),Caprolagus hispidus,exact,FALSE,2,3.397678484667306,-1.9425041061680808,5.094350166259378,5.422314132238228
+Gymnobelideus leadbeateri,report_land,3750,133.66,global (IUCN/report),Gymnobelideus leadbeateri,exact,FALSE,3004,2.1260014567876744,-0.09625905937846137,7.858753541074405,8.116343864280934
+Tarsius tumpara,report_land,4115.126,104,global (IUCN/report),Tarsius tumpara,exact,FALSE,2,2.0170333392987803,-3.2164431286325,4.817558232994648,5.068805206686159
+Nomascus nasutus,report_land,69,8000,global (IUCN/report),Nomascus nasutus,exact,FALSE,4,3.9030899869919438,-1.1856365769619117,5.486732349072644,5.842240659894639
+Mustela felipei,report_land,2000,211.3,global (IUCN/report),Neogale felipei,synonym,FALSE,7,2.3248994970523134,-2.425968732272281,5.38448628854386,5.654035497877356
+Callicebus barbarabrownae,report_land,390,1390.8,global (IUCN/report),Callicebus barbarabrownae,exact,FALSE,164,3.1432646820112207,-0.37489870474050613,6.845870120839816,7.159528735436527
+Microcebus berthae,report_land,12000,33.45,global (IUCN/report),Microcebus berthae,exact,FALSE,4,1.524396122103842,-3.425968732272281,4.960077685726034,5.187704414509671
+Pseudantechinus bilarni,report_land,17321,23.05,global (IUCN/report),Pseudantechinus bilarni,exact,FALSE,482,1.362670929725667,-1.5550756440168176,6.947723789972471,7.166414297683918
+Pteralopex taki,report_land,822,286.7,global (IUCN/report),Pteralopex taki,exact,FALSE,11,2.4574276929464847,-1.8541739771864387,5.861835987467287,6.137478122367083
+Sminthopsis psammophila,report_land,10607,33.5,global (IUCN/report),Sminthopsis psammophila,exact,FALSE,504,1.5250448070368452,-1.3227313982787443,7.0628653906181,7.290509291881204
+Galidictis grandidieri,report_land,237,1400,global (IUCN/report),Galidictis fasciata,synonym,FALSE,16,3.146128035678238,-1.1572644017961977,6.0614058139702385,6.375254135936156
+Sminthopsis leucopus,report_land,13416,23.36,global (IUCN/report),Sminthopsis leucopus,exact,FALSE,3389,1.368472838440362,-0.5974874113525681,7.901074055702105,8.120134591205037
+Microtus breweri,report_land,5477,54,global (IUCN/report),Microtus breweri,exact,FALSE,10,1.7323937598229686,-2.717353441858847,5.520262747457327,5.757654613110352
+Pseudomys calabyi,report_land,22500,12,global (IUCN/report),Pseudomys calabyi,exact,FALSE,43,1.0791812460476249,-2.7136932611567253,5.993047519287776,6.196789802996037
+Leontopithecus caissara,report_land,400,629.255,global (IUCN/report),Leontopithecus caissara,exact,FALSE,19,2.7988266750964947,-1.3120253799654444,6.156732417993815,6.452027398154739
+Eumops floridanus,report_land,5809,38.4,global (IUCN/report),Eumops floridanus,exact,FALSE,131,1.5843312243675307,-1.645175623650452,6.699258575599597,6.928540788289039
+Spalax giganteus,report_land,1000,211.245,global (IUCN/report),Spalax giganteus,exact,FALSE,3,2.3247864383407464,-2.4559319556497243,5.35460728570356,5.62414764697429
+Pseudomys novaehollandiae,report_land,12000,17.4,global (IUCN/report),Pseudomys novaehollandiae,exact,FALSE,2569,1.2405492482825997,-0.6693326240264331,7.921116378399164,8.13357177196968
+Zyzomys palatalis,report_land,1500,123,global (IUCN/report),Zyzomys palatilis,synonym,FALSE,364,2.089905111439398,-0.6143937264016879,7.366991846628106,7.622273427489893
+Ochotona iliensis,report_land,1000,240.3,global (IUCN/report),Ochotona iliensis,exact,FALSE,1,2.3807537708039,-2.8239087409443187,4.947261916066143,5.21885930670426
+Pteropus pselaphon,report_land,346,321.49,global (IUCN/report),Pteropus pselaphon,exact,FALSE,17,2.507167468668134,-1.296038050106482,6.383809420916277,6.662454198965941
+Nomascus hainanus,report_land,20,7790,global (IUCN/report),Nomascus hainanus,exact,FALSE,1,3.8915374576725643,-1.1249387366083,5.5557334679234875,5.910640186461169
+Burramys parvus,report_land,3375,44.3,global (IUCN/report),Burramys parvus,exact,FALSE,1213,1.6464037262230695,-0.4442339964990902,7.855496382168379,8.088100747536709
+Aproteles bulmerae,report_land,222,623.91,global (IUCN/report),Aproteles bulmerae,exact,FALSE,0,2.7951219465375834,-2.6473829701146196,4.823979436143981,5.119139627044838
+Pteropus aldabrensis,report_land,400,401.245,global (IUCN/report),Pteropus aldabrensis,exact,FALSE,9,2.603409633609965,-1.6243363860391147,5.987207799519114,6.269994419738754
+Zyzomys pedunculatus,report_land,1200,100,global (IUCN/report),Zyzomys pedunculatus,exact,FALSE,5477,2,0.6594011401851181,8.705175380157652,8.956005035036297
+Potorous gilbertii,report_land,73.5,1087.335,global (IUCN/report),Potorous gilbertii,exact,FALSE,3,3.0363633676715183,-1.3222192947339193,5.976600305679386,6.283475688336247
+Nyctalus azoreum,report_land,3162,14.235,global (IUCN/report),Nyctalus azoreum,exact,FALSE,283,1.1533574714829737,-1.047408802367265,7.605994257230739,7.813623444828597
+Phalanger matanim,report_land,60,1442.38,global (IUCN/report),Phalanger matanim,exact,FALSE,0,3.159079691841178,-2.079181246047625,5.129996438969747,5.4447028542427685
+Parantechinus apicalis,report_land,1050,70.655,global (IUCN/report),Parantechinus apicalis,exact,FALSE,1,1.8491429007291502,-2.845098040014257,5.308227607357708,5.552077254350822
+Caenolestes condorensis,report_land,1500,48,global (IUCN/report),Caenolestes condorensis,exact,FALSE,3,1.6812412373755872,-2.6320232147054057,5.642624214186732,5.877086521895382
+Lonchophylla dekeyseri,report_land,2500,7.2,global (IUCN/report),Lonchophylla dekeyseri,exact,FALSE,80,0.8573324964312685,-1.4921441283041692,7.373481518885235,7.566238102259499
+Cavia intermedia,report_land,57,578.88,global (IUCN/report),Cavia intermedia,exact,FALSE,4,2.7625885451797196,-1.1026623418971477,6.392725660775164,6.685549189500884
+Hipposideros halophyllus,report_land,7500,4,global (IUCN/report),Hipposideros halophyllus,exact,FALSE,3,0.6020599913279624,-3.3309932190414244,5.7149250113403625,5.897570681591112
+Hipposideros inornatus,report_land,821,40.45,global (IUCN/report),Hipposideros inornatus,exact,FALSE,9,1.6069185259482912,-1.936619551830593,6.390970784666567,6.622038659055058
+Chalinolobus neocaledonicus,report_land,1500,15.87,global (IUCN/report),Chalinolobus neocaledonicus,exact,FALSE,6,1.2005769267548483,-2.3631779024128257,6.255952649979296,6.46637470793512
+Rungwecebus kipunji,report_land,1117,13,global (IUCN/report),Rungwecebus kipunji,exact,FALSE,15,1.1139433523068367,-1.8577214749453175,6.823574879404142,7.029586851701304
+Lepilemur septentrionalis,report_land,11,713,global (IUCN/report),Lepilemur septentrionalis,exact,FALSE,4,2.8530895298518657,-0.38818017138288136,7.041490126182273,7.339697370233719
+Pseudomys fumeus,report_land,106,70,global (IUCN/report),Pseudomys fumeus,exact,FALSE,2479,1.845098040014257,1.3690582473623585,9.525292245067268,9.768930115537366
+Phyllonycteris aphylla,report_land,375,14.15,global (IUCN/report),Phyllonycteris aphylla,exact,FALSE,2,1.150756439860309,-2.1760912590556813,6.479144525749852,6.686675009221958
+Myotis planiceps,report_land,360,2.99,global (IUCN/report),Myotis planiceps,exact,FALSE,3,0.4756711883244297,-2.0122344564170116,7.125075931280449,7.30058864621788
+Lonchorhina fernandezi,report_land,225,11.59,global (IUCN/report),Lonchorhina fernandezi,exact,FALSE,0,1.064083435963596,-2.6532125137753435,6.064874045396145,6.2673357571001045
+Reithrodontomys spectabilis,report_land,152,20.19,global (IUCN/report),Reithrodontomys spectabilis,exact,FALSE,0,1.3051363189436394,-2.482873583608754,6.061481644782006,6.276972765279998
+Rhinopoma hadramauticum,report_land,225,9.13,global (IUCN/report),Rhinopoma hadramauticum,exact,FALSE,0,0.960470777534299,-2.6532125137753435,6.139303558154866,6.336410862719635
+Pseudantechinus mimulus,report_land,106,39.99,global (IUCN/report),Pseudantechinus mimulus,exact,FALSE,190,1.6019514041335217,0.25458911474686785,8.585871746169818,8.816558740175697
+Santamartamys rufodorsalis,report_land,11,144.8,global (IUCN/report),Santamartamys rufodorsalis,exact,FALSE,0,2.1607685618611283,-1.3424226808222062,6.58737424692449,6.847002172788219
+Coleura seychellensis,report_land,106,10.64,global (IUCN/report),Coleura seychellensis,exact,FALSE,3,1.0269416279590293,-1.4812378209144947,7.263311071390123,7.464071655297331
+Dipodomys gravipes,report_land,10.5,83.96,global (IUCN/report),Dipodomys gravipes,exact,FALSE,8,1.9240724299103629,-0.09177037335564533,8.00818547446739,8.25545190155529
+Peromyscus mekisturus,report_land,11,40,global (IUCN/report),Peromyscus mekisturus,exact,FALSE,1,1.6020599913279625,-0.8653014261025438,7.465900487358983,7.696595807863327
+Pipistrellus maderensis,report_land,47,4.91,global (IUCN/report),Pipistrellus maderensis,exact,FALSE,56,0.6910814921229684,0.07995058988372107,9.062580966415272,9.249166823319587
