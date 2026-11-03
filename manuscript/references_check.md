@@ -95,3 +95,8 @@ So "a 30% decline over 10 years or 3 generations" is the **Vulnerable threshold 
 
 * `@misc` becomes CSL `document`. The PNAS CSL then prints only author, title and year, and **drops the URL/DOI/howpublished of lpd2016 and gbif2026**. I tested the alternatives: `@online` (CSL webpage) prints "Available at: <url> [Accessed 3 November 2026]", and `@dataset` prints "… https://doi.org/10.15468/dl.jeesns. Deposited November 2026". The entries are left as `@misc`, as requested. Switch the type if the URL/DOI should appear.
 * The PNAS CSL prints no DOI for journal articles that have a volume (by design).
+
+| meyer2016 | yes | Crossref (added at revision) |
+| taylor1993 | yes | Crossref (added at revision) |
+| boyd2023 | yes | Crossref (added at revision) |
+| eisenhauer2019 | yes | Crossref (added at revision) |

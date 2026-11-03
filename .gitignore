@@ -3,6 +3,7 @@ data/raw/
 data/derived/*.parquet
 data/derived/gbif_agg/
 data/derived/gbif_cells/
+data/derived/gbif_events/
 data/derived/harmonized_*
 .Renviron
 _targets/

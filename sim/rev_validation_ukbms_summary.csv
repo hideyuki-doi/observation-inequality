@@ -1,0 +1,4 @@
+method,n_species,pearson_slopes,spearman_slopes,uk_declines,detected_of_uk_declines,uk_not_declining,false_declines,opposite_sign_sig
+a,48,0.41639994888772425,0.44984802431610943,14,8,34,9,2
+b,48,0.4047102921368702,0.3785280069474598,14,11,34,20,11
+c,48,0.4171126134221666,0.4349761181068172,14,0,34,1,12

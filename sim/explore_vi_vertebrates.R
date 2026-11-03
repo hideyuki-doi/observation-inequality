@@ -5,6 +5,8 @@ source("sim/explore_common.R")
 tar_load(c(tb_main, mam_gy, mam_sp))
 vc <- readr::read_csv("docs/provenance_parts/vert_census.csv", show_col_types = FALSE) |>
   filter(class == "Mammalia", method_class %in% c("independent", "mixed", "unclear"), !is.na(N_est), N_est > 0, !is.na(mass_g)) |>
+  # 改訂：ゾウの二重計上（2 種を合わせた行）と未確認のホッキョクグマを除く（Reviewers 2, 5）
+  filter(!grepl("s\\.l\\.", species), !(species == "Ursus maritimus" & verified != "yes")) |>
   transmute(species, set = paste0("census_", method_class), N = N_est, M_g = mass_g, scope)
 rep <- mam_sp |> filter(report_based, !is.na(M_g), !is.na(N), N > 0) |> transmute(species, set = "report_land", N, M_g, scope = "global (IUCN/report)")
 sp <- bind_rows(vc, rep)

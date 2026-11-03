@@ -1,5 +1,5 @@
 ---
-title: "Supplementary Information for: Body size governs how often animals are recorded and how long their declines stay hidden"
+title: "Supplementary Information for: Biodiversity records follow species, not individuals, leaving declines of most small animals undetectable"
 author: "Hideyuki Doi"
 bibliography: references.bib
 csl: pnas.csl
@@ -7,220 +7,194 @@ csl: pnas.csl
 
 ## Supplementary Methods
 
-### Preregistration
+### 1. Preregistration and its limitations
 
-Before any records-per-individual value was computed, I fixed the analysis plan in a preregistration (PREREG v1.0, 3 November 2026). It covers:
-- the data versions, model equations and priors
-- decision criteria for each hypothesis
-- exclusion rules
-- 15 sensitivity analyses
+The analysis plan (PREREG v1.0, Japanese original with an English translation in `PREREG_en.md`) was finalised at commit 01a2fe7 on 3 November 2026. It fixed the data versions, models, priors, decision criteria, exclusion rules and 15 sensitivity analyses.
 
-Later changes were only appended, each with its date and reason. These include:
-- implementation changes to the species-level model and to the detection simulations (described below)
-- an addendum on interpreting H3
+**What was already known when the plan was written.** Before the plan was written, I had already inspected:
+- the census values for each group
+- the total GBIF records per group and their breakdown by record type
 
-All analyses outside the plan are reported as exploratory.
+Records per individual and all regressions had not been computed.
 
-### Global census data
+**Repository history.** All commits, from setup to the first manuscript, are dated the same day. During review, the repository history was rewritten to remove files derived from the Living Planet Database, whose terms do not allow redistribution. Commits before 01a2fe7 were unaffected, so the preregistration commit is unchanged.
 
-**Sources.** I compiled global estimates of abundance (N) and biomass (B) for animal groups from:
-- Bar-On et al. 2018 (data repository, commit 36cf0a8)
-- van den Hoogen et al. 2019
-- Rosenberg et al. 2023
-- Potapov et al. 2023
-- Schultheiss et al. 2022
-- Atkinson et al. 2009
-- Irigoien et al. 2014
-- Greenspoon et al. 2023 and 2025
-- Callaghan et al. 2021
+**Changes after finalisation.** All were appended to the plan with dates and reasons (Section 11). Peer review identified two problems with the plan itself:
+- records per individual on body mass is not identifiable when abundance and mass are collinear
+- the H3 mapping double-counted effort declines
 
-For each estimate I recorded the source location, uncertainty and estimation method.
+Both are reported, and every analysis added in revision is labelled exploratory.
 
-**Method classes.** I classified each estimate as one of four types:
-- **independent:** extrapolated from field samples such as soil cores, net hauls, acoustic or aerial surveys, or population models fitted to catch and survey data
-- **occurrence-derived:** using citizen-science or other occurrence data
-- **allometry-derived:** density predicted from body size or other traits
+### 2. Census data
+
+**Sources and classification.** Global abundance (N) and biomass (B) estimates were compiled with their sources, uncertainties and estimation methods (`docs/data_provenance.md`, verbatim quotations). Each was classified into one of four classes:
+- **independent:** extrapolated from field samples, or from survey- or catch-based population models
+- **occurrence-derived:** using citizen-science or occurrence data
+- **allometry-derived:** density predicted from body mass or traits
 - **mixed**
 
-Only independent estimates entered the main analysis, because occurrence- or allometry-derived abundances would build the tested relationship into the data.
+Birds [@callaghan2021pnas] were classed occurrence-derived because eBird data inform every species' density. For 92% of land mammal species, abundances in ref. [@greenspoon2023] come from a model with body mass among its predictors, so these were classed allometry-derived.
 
-Two classifications mattered most:
-- **Birds:** the only species-level global bird abundances (Callaghan et al. 2021) predict every species' density from eBird data, so I classed them as occurrence-derived.
-- **Land mammals:** for 92% of species, abundance in Greenspoon et al. 2023 comes from a support-vector regression with body mass among its predictors, so I classed those as allometry-derived.
+**The ten groups analysed.** Ten groups had independent estimates (Table S1):
+- soil nematodes [@vandenhoogen2019]
+- springtails [@potapov2023]
+- soil mites, obtained by rerunning the code of ref. [@rosenberg2023] with a fixed seed
+- non-arboreal ants [@rosenberg2023]
+- Antarctic krill [@atkinson2009]
+- enchytraeids, copepods, pteropods, planktonic cnidarians and mesopelagic fishes [@baron2018]
 
-**Main analysis groups.** Ten groups met the criterion and were analysed:
-- soil nematodes (van den Hoogen et al. 2019)
-- springtails (Potapov et al. 2023)
-- soil mites, derived by rerunning the Rosenberg et al. 2023 code with a fixed seed
-- non-arboreal ants (Rosenberg et al. 2023)
-- Antarctic krill (Atkinson et al. 2009)
-- five groups from Bar-On et al. 2018: enchytraeids, copepods, pteropods, planktonic cnidarians and mesopelagic fishes
+For the five Bar-On groups, abundance is biomass divided by an assumed individual mass. Biomass was realigned to the same subgroup, and the assumed mass entered the model as an observation.
 
-For the five Bar-On groups, abundance is biomass divided by an assumed individual mass. I therefore realigned biomass to the subgroup the abundance refers to, and treated the assumed mass as an observation (see the model below).
+**Unit conversion.** Wet mass used each source's factors (Rosenberg dry-to-wet ratios; the Potapov carbon-to-fresh equivalence) or a carbon-to-wet-mass ratio of 0.15 [@baron2018].
 
-**Units.** Biomass was converted to wet mass using each source's own factors where given: Rosenberg et al. dry-to-wet ratios, and the Potapov et al. carbon-to-fresh-mass equivalence. Otherwise I used the carbon-to-wet-mass ratio of 0.15 that Bar-On et al. 2018 applied to animals. Typical individual mass was M = B/N.
+**Uncertainty.** Census uncertainties were converted to log-normal standard deviations:
+- 95% intervals and ranges: (ln hi − ln lo)/3.92
+- fold f: ln f/1.96
+- otherwise a default fold of 10 (assumed masses: fold 3)
 
-**Uncertainty.** I converted every census uncertainty to a log-normal standard deviation:
-- 95% intervals and reported ranges: σ = (ln hi − ln lo)/3.92
-- fold uncertainty f: σ = ln f / 1.96
-- no reported uncertainty: a default fold of 10, with an assumed individual mass given fold 3, both varied in sensitivity analyses
+### 3. Occurrence records
 
-### Occurrence records
+**GBIF snapshot.** All records in the GBIF snapshot of 1 November 2026 were read from the AWS open-data bucket with the R package arrow (GBIF.org, https://doi.org/10.15468/dl.jeesns; 3,887,364,403 records). Absences and fossil specimens were excluded, leaving 3.75 × 10⁹ records. The records were aggregated three ways:
+1. taxon × year × basis of record × dataset class
+2. for the analysed groups and mammals, species × year × dataset × basis of record
+3. unique sampling events (species × dataset × 0.1° cell × date)
 
-**GBIF.** I aggregated all records from the GBIF public monthly snapshot of 1 November 2026: 10,346 Parquet files, 3.75 × 10⁹ records, read with the R package arrow from the AWS open-data buckets. Records were counted by taxon, year, basis of record and dataset class. I excluded records with occurrenceStatus = ABSENT and fossil specimens.
+The event count was used as an alternative response because some datasets publish one record per individual or per sequence variant (e.g. KRILLBASE).
 
-**Record types.** Dataset classes were taken from the GBIF API: eBird, iNaturalist research-grade, and datasets with the DNA-derived data extension. I defined four record types:
-- human observation
-- preserved specimen
-- DNA-derived (records from datasets with the DNA-derived data extension)
-- all records
+**Dataset classes.** These were obtained from the GBIF API: eBird, iNaturalist research-grade, and datasets with the DNA-derived data extension. DNA-extension datasets were further classified from their titles and descriptions into three types (`data/derived/dna_dataset_types.csv`):
+- specimen barcodes (the International Barcode of Life dataset)
+- reference sequence databases (EUKARYOME, excluded from DNA comparisons)
+- metabarcoding and environmental DNA (148 datasets)
 
-I did not treat MATERIAL_SAMPLE as DNA-derived. Many such records are non-genetic net samples; 87% of Antarctic krill records, for example.
+**Taxonomic matching.** Census groups were matched to GBIF taxa (COL eXtended Release taxonomy) by explicit rules (Table S1). In revision, scope-corrected variants were defined (`docs/taxon_scope_variants.csv`; lists compiled during review):
+- **mites:** excluding water-mite, plant-associated, animal-associated and stored-product families
+- **nematodes:** excluding marine-dominated orders and animal-parasitic families and orders
+- **mesopelagic fishes:** 15 families instead of Myctophidae only
 
-**Taxonomy.** The snapshot uses the Catalogue of Life eXtended Release taxonomy. Census groups were matched to GBIF taxa by explicit rules: phylum Nematoda, class Collembola, three mite orders, family Formicidae, family Enchytraeidae, class Copepoda, order Pteropoda, classes Scyphozoa and Cubozoa, family Myctophidae, and *Euphausia superba*. Species-level census names were resolved to accepted names with the GBIF species-matching service. The response R was the number of records from 2000 to 2024.
+**Described species.** Counts came from the Catalogue of Life (ChecklistBank dataset 316595), with Scyphozoa plus Cubozoa (297) for jellyfish. Alternative counts for mites (55,000) and nematodes (29,000) come from literature compilations (Table S20).
 
-**BOLD.** I also obtained barcode record counts from the BOLD portal API.
+**Species-level names.** Census names were resolved to accepted names with the GBIF species-matching service.
 
-### Scaling model (main analysis)
+### 4. Preregistered models
 
-I fitted an errors-in-variables model in Stan (CmdStan 2.40 via cmdstanr). Each group g has latent abundance ln N_g and individual mass ln M_g. Census observations inform N, B = N·M, or the assumed mass M, each with the standard deviation above.
+**Tier B (records per individual on body mass).** ln R_gk ~ Normal(ln N_g + a_k + b_k(ln M_g − c), √(τ_k² + 1/R_gk)). Latent ln N_g and ln M_g were informed by the census observations, four record types were fitted jointly, and the priors were b ~ N(0, 2), a ~ N(−25, 10) and τ ~ Half-Normal(0, 2). The 1/R term approximates Poisson variance; a Poisson likelihood mixed poorly in parameter-recovery tests at these counts.
 
-Records of type k were modelled as
+**Tier A (mammals).** A Poisson–log-normal model with order effects for 388 species with reported population sizes. The measurement error on ln N and the residual were combined into one term with a centred parameterisation, after the planned brms implementation failed to converge. This is equivalent to the plan only with a flat prior on latent abundance.
 
-ln R_gk ~ Normal(ln N_g + a_k + b_k (ln M_g − c), √(τ_k² + 1/R_gk)),
+**Detection simulations.** Annual counts were simulated as NegBin(λ₀E_te^(−dt), φ) with:
+- φ estimated from report-based mammals using species and year fixed effects
+- E_t, each group's observed record trajectory
+- d, a 30% decline per decade
 
-where c is the mean observed ln M and the 1/R_gk term approximates Poisson variance. A Poisson likelihood mixed poorly in parameter-recovery tests because counts are large (all R > 10³).
+Three analysis methods were compared (effort-offset NB regression, binomial relative reporting rate, raw counts). T_detect was found by bisection.
 
-**Priors:**
-- b ~ N(0, 2)
-- a ~ N(−25, 10)
-- τ ~ Half-Normal(0, 2)
-- weakly informative priors on latent N and M
+### 5. Review-driven models of record allocation (exploratory)
 
-**Sampling and diagnostics.** I ran four chains of 1,000 warm-up and 1,000 sampling iterations with adapt_delta = 0.99. Convergence required R̂ < 1.01 and bulk and tail ESS > 400. Simulated datasets mimicking the census structure recovered true slopes of 0.67, 1 and 1.5.
+**Free-coefficient model.** ln R_g ~ Normal(a + γ(ln N_g − c_N) + δ(ln M_g − c_M) + Xη, √(τ² + 1/R_g)), with latent N and M as above, fitted to all records only (no joint fitting of overlapping record types).
+- **Covariates X:** log described species, and/or a soil-versus-marine indicator.
+- **Priors:** N(0, 2) for γ, δ and η, with N(0, 5) in sensitivity.
+- **Variants:**
+  - responses: scope-corrected records; sampling events; records without the three largest datasets of each group
+  - census alternatives: jellyfish mass ×50 for gelatinous carbon content; nematode carbon-to-fresh 0.105; krill abundance from unadjusted nets
+- **Posterior predictive checks:** coverage of observed ln R by 95% prediction intervals.
 
-**Decision criteria (preregistered):**
-- **H1:** "clean scaling" if the 95% interval of β = b_all is narrower than 0.3 and the Bayesian R² exceeds 0.7, with a secondary description of "scaling with limited precision" for widths below 0.6.
-- **H2:** "human interest dominant" if P(β − 2/3 > 0.2) > 0.95, and "flatter than optical" for the mirror case.
-- **H4:** supported if P(b_DNA < b_human) > 0.9.
+**Ratio null.** Records were permuted among groups (5,000 times), and records-per-individual slopes were computed by OLS on point estimates.
 
-**Sensitivity analyses (preregistered):**
-- cumulative records
-- individualCount weighting
-- species-level records only
-- alternative census sources
-- alternative taxon matching
-- default uncertainty folds of 5 and 20
-- alternative carbon-to-wet conversion
-- adding occurrence- or allometry-derived groups (birds, mammals)
-- leave-one-group-out
-- excluding iNaturalist, or using iNaturalist only
-- adding prokaryotes
-- Monte Carlo propagation with ordinary regression instead of the errors-in-variables model
-- a strict DNA definition
+**DNA contrast.** log(R_DNA/R_human) was regressed on log M, so that abundance cancels. Census uncertainty was propagated by Monte Carlo (4,000 draws) and the residual sampling uncertainty of the slope by t draws.
 
-### Species-level models
+### 6. Detection: analytic results, overdispersion and simulations (exploratory unless stated)
 
-**Data.** For mammals with reported population sizes in Greenspoon et al. 2023 (388 species after merging names that resolve to the same accepted species), I modelled species record counts R_s (2000–2024). Body masses came from COMBINE (Soria et al. 2021).
+**Analytic detection time.** For a log-linear decline at rate d observed for T years with residual variance σ² on the log scale, the slope's standard error is σ/√(T(T²−1)/12). For a negative binomial count with mean λ and shape φ, σ² ≈ 1/λ + 1/φ. Power 1 − β at one-sided α therefore requires
 
-**Model.** The model was Poisson–log-normal:
+T(T² − 1)/12 = (1/λ + 1/φ)(z_α + z_β)²/d²,
 
-log λ_s = ln N̂_s + α + β ln M_s + u_order + ε_s.
+which gives the floor T ≈ [12(z_α + z_β)²/(φd²)]^(1/3) as λ → ∞. Also reported (Table S15):
+- the minimum decline per decade detectable within 10 years
+- the share of the population lost by the time of detection
 
-**Deviation from the plan.** The plan specified a brms model with measurement error on ln N. It mixed poorly because each species contributes one count. The measurement error on ln N and the residual ε are independent Gaussian terms entering the linear predictor additively, so I combined them into a single term with SD √(sdN² + τ²). I fitted this equivalent model directly in Stan with a centred parameterisation.
+**Overdispersion net of trends.** For each species recorded at least once per year on average, three negative binomial regressions were fitted to annual records 2000–2024, all with an offset for the group's total records:
+- intercept only
+- linear trend
+- quadratic trend
 
-**Sensitivity analyses** used all 4,795 Greenspoon species, and the Callaghan et al. 2021 birds with AVONET masses (Tobias et al. 2022).
+φ and the lag-1 autocorrelation of Pearson residuals were summarised by group, data source and record-rate stratum, with up to 200 species per stratum. Groups included eBird and non-eBird bird records, and mammal records with and without machine observations.
 
-### Detection simulations
+**Simulations with record-rate-dependent φ.** T_detect for a 30% decline per decade under constant effort was recomputed for each group, using the trend-removed φ of the record-rate stratum corresponding to λ₀ (31 values from 10⁻² to 10⁴, 500 replicates).
 
-**Overdispersion.** I estimated the negative-binomial shape φ from yearly record counts of the report-based mammals, using a model with species and year fixed effects (brms).
+**Autocorrelation.** Latent log-normal year effects followed AR(1) with ρ = 0.44, with variance chosen so that the marginal overdispersion equalled φ = 0.69. These were analysed with the effort-offset method for stable and declining series.
 
-**Simulated series.** Species series were simulated as y_t ~ NegBin(λ₀ E_t e^{−dt}, φ), with a 30% decline per decade (d = −ln 0.7/10) or no decline. E_t was the observed effort trajectory of each group from 2000 to 2024, held constant thereafter.
+### 7. Validation against structured monitoring (exploratory)
 
-**Analysis methods compared:**
-- (a) negative-binomial regression with log effort as offset
-- (b) relative reporting rate tested with a binomial model, the denominator being the group's other records
-- (c) negative-binomial regression on raw counts
+For 48 British butterfly species, two trend estimates for 2000–2019 were compared:
+- **From GBIF:** unstructured records (UKBMS and the Wider Countryside Butterfly Survey removed; GBIF download https://doi.org/10.15468/dl.u8s7s5), analysed with the three methods.
+- **From UKBMS:** site indices (2024 release; values of −2, which denote insufficient monitoring, treated as missing), using a quasi-Poisson GLM with site fixed effects and a linear year term.
 
-Tests were one-sided at α = 0.05.
+2019 was the last year before the largest unstructured dataset ends. A trend was classed as significant at two-sided α = 0.05.
 
-**Time to detection.** T_detect was the shortest monitoring period with power ≥ 0.8 over 1,000 replicates. It was found by bisection over 3–100 years, assuming power increases with T, and evaluated for 36 values of λ₀ between 10⁻² and 10⁵. Bisection replaced the planned evaluation of every T because evaluating every T would have required about 10⁸ model fits.
+### 8. Detectability of described species (exploratory)
 
-**Mapping to body mass.** I combined the scaling model's posterior with log-normal species abundance distributions (log₁₀ SD = 1.5; 1 and 2 in sensitivity analyses) and the described species richness of each group.
+For every described species in each group, λ was the mean annual records 2015–2024, with λ = 0 for species without records. The time to detect a 30% decline per decade was read from the group's curve in Section 6 (taking the lower adjacent grid point, which is conservative). For mammals and birds, species with body masses (COMBINE [@soria2021]; AVONET [@tobias2022]) were binned by order of magnitude; birds used the eBird curve.
 
-### Exploratory analyses
+### 9. Other exploratory analyses retained from the first version
 
-**Observed record rates.** For every described species in each group, I took λ as the mean annual GBIF records from 2015 to 2024, setting λ = 0 for described species without records. These values were compared with detection thresholds under constant effort (Fig. 2b).
+- **Vertebrates with survey-based censuses.** 50 mammal species, after removing a duplicated elephant entry and an unverified polar bear value. Compared with the extrapolated preregistered relationship (Table S7).
+- **Occupancy index.** Occupied 1° cells per species and year, compared with record counts (Table S6, Fig. S3).
+- **Multi-species indicators.** Pooled NB regressions of K species with independent noise.
+- **Never-recorded species (H5).** Predicted from the observation model with literature totals of species richness. It shares those totals with the benchmark and over-predicts the number of recorded species by 4–11 times in four groups (Table S8), so it is reported as unsupported.
 
-Overdispersion for invertebrate groups was estimated by the same species-plus-year model in three record-rate strata. Up to 300 species were sampled per stratum.
+The Living Planet Database analysis of the first version was removed. It used an outdated public release, its data-use terms were uncertain, and indicators are not built from occurrence records.
 
-**Occupancy-based index.** I re-aggregated the snapshot with coordinates into species × 1° cell × year. I then compared φ, and the resulting T_detect, between record counts and the number of occupied cells, assuming the occupancy index declines in proportion to abundance.
+### 10. Software, reproducibility and AI assistance
 
-**Multi-species indicators.** I simulated pooled indicators of K = 10 and 100 species with independent species-level noise.
+R 4.6.1 with renv, targets, cmdstanr (CmdStan 2.40), brms, arrow and tidyverse; seed 20261103. All figures and tables are generated by code in the public repository (https://github.com/hideyuki-doi/observation-inequality), which also contains the review reports and the response.
 
-**Vertebrates with survey-based censuses.** The 45 marine mammals come from Greenspoon et al. 2025 (abundance recovered as biomass ÷ the source's mass). The remaining species are rhinoceroses (CITES CoP20 report), the African savanna elephant (Great Elephant Census, 18 countries) and two seals from IUCN text, 52 species in total. Each species was compared with the extrapolated main relationship across its posterior draws.
+The work was carried out with Claude (Anthropic), an AI system, under the author's direction. The system wrote and ran code, retrieved and summarised literature and data documentation, and drafted text. The author approved each analysis stage at predefined gates and checked the results. Bibliographic entries were verified against Crossref or original documents. Census values were checked against source files, with verbatim quotations recorded.
 
-**Never-recorded species.** I predicted the share of species never recorded as E[exp(−r N_s T/25)] over the species abundance distribution. Predictions were compared with literature estimates of the undescribed share:
-- nematodes, mites and springtails: Chapman 2009
-- marine copepods and scyphozoans: Appeltans et al. 2012
-- ants: Oberski et al. 2025
+### 11. Deviations from the preregistration
 
-**Living Planet Database.** Body-size representation used the 2016 public release distributed with the rlpi package; the data are used under the Living Planet Index data-use terms. Species were matched by name to COMBINE (mammals) and AVONET (birds).
-
-### Software and reproducibility
-
-All analyses used R 4.6 with renv, targets, cmdstanr, brms, arrow and tidyverse; the random seed was 20261103. All figures and tables are generated by code. The GBIF snapshot will be cited through a GBIF derived-dataset DOI [to register before submission].
-
-### Deviations from the preregistration
-
-All changes were appended to PREREG.md with dates and reasons before the corresponding results were interpreted.
-
-1. **Likelihood for record counts (implementation).** A Poisson likelihood mixed poorly in parameter-recovery tests because counts are large. It was replaced by a Gaussian likelihood on ln R with variance τ² + 1/R, an approximation that is essentially exact at these counts. This change was made before the plan was finalised.
-2. **Species-level model (implementation).** The planned brms model with measurement error on ln N hit the maximum tree depth in 99–100% of transitions. It was replaced by an equivalent model in which the measurement error and the residual are combined into a single normal term, written in Stan with a centred parameterisation.
-3. **Detection simulations (implementation).** Evaluating every T from 1 to 100 would have required about 10⁸ model fits, so T_detect was found by bisection, assuming power increases with T. The minimum T was 3 years. The denominator of the relative reporting rate was the group's other records. Failed fits counted as non-detections.
-4. **Interpretation of H3 (addendum).** The preregistered rule treated a majority of undetectable species in the smallest third of the size range as satisfying the criterion. In the data, detection within 25 years failed in every size third. The criterion was therefore formally met without a size gradient, and H3 is reported as not substantively supported.
-5. **Exploratory analyses.** The following were all added after the preregistered analyses and are labelled exploratory:
-   - observed-rate detectability
-   - group-specific overdispersion
-   - occupancy index
-   - multi-species pooling
-   - vertebrates with survey-based censuses
-   - never-recorded species
-   - Living Planet Database
+1. **Likelihood (implementation, before finalisation).** A Gaussian likelihood on ln R with variance τ² + 1/R was used instead of a Poisson likelihood.
+2. **Species-level model (implementation).** The single combined error term described in Section 4 replaced brms with me(); it is equivalent only under a flat prior on latent abundance.
+3. **Detection simulations (implementation).** T_detect was found by bisection, with a minimum T of 3. The denominator of the relative reporting rate was the group's other records. Failed fits counted as non-detections.
+4. **H3 mapping (error disclosed in review).** λ₀ was scaled to the 2024 record rate while the effort trajectory started in 2000, which double-counts effort declines. This affects krill and mesopelagic fishes in the upper size third.
+5. **H3 interpretation (addendum after results).** The criterion was met formally because detection failed in every size third, not because of a size gradient. H3 is reported as not substantively supported.
+6. **Preregistered sensitivity analyses not run in the first version.** S5b (Rosenberg springtails), S6c (nematodes without parasitic families), S6d (extended mesopelagic families) and S15 (undescribed-species correction). S6c and S6d were run in revision as scope corrections (Table S20). S5b and S15 were not run.
+7. **H1/H2 interpretation (review).** The records-per-individual exponent is not identifiable from the records (ratio artefact; Tables S11–S12). The preregistered decisions are reported but not interpreted as evidence about detection.
+8. **Tier A consistency (preregistered check).** The within-mammal exponent (0.32) did not overlap the Tier B exponent (0.72). This was not reported in the first version.
+9. **All revision analyses** are exploratory (Sections 5–8).
 
 ### Supplementary figures
 
-![**Fig. S1.** Scaling exponent β (posterior median and 95% CrI) in the main analysis and all sensitivity analyses, for all records, human observations and DNA-derived records. Dashed line, 2/3.](../figs/phase4_sensitivity_beta.png){width=100%}
+![**Fig. S1.** Preregistered scaling exponents β (posterior median and 95% CrI) of records per individual on body mass in the main and sensitivity analyses (dashed line, 2/3). The exponent is not identifiable from the records (Table S11).](../figs/phase4_sensitivity_beta.png){width=100%}
 
-![**Fig. S2.** Years to detect a 30% decline per decade (power 0.8) against initial expected records per species-year, by group, for the three analysis methods (preregistered simulations with each group's observed effort trajectory). 110 denotes no detection within 100 years.](../figs/phase5_tdetect_vs_lambda.png){width=100%}
+![**Fig. S2.** Preregistered simulations: years to detect a 30% decline per decade against initial expected records per species-year by group and method, using mammal overdispersion (φ = 0.69) and each group's effort trajectory.](../figs/phase5_tdetect_vs_lambda.png){width=100%}
 
-![**Fig. S3.** Years to detect a 30% decline per decade using record counts (black) or the number of occupied 1° cells (blue), by group and recording stratum (exploratory; constant effort; occupancy index assumed to decline in proportion to abundance).](../figs/supp_occupancy_vs_records.png){width=100%}
+![**Fig. S3.** Years to detect a 30% decline per decade using record counts or the number of occupied 1° cells, by group and recording stratum (exploratory).](../figs/supp_occupancy_vs_records.png){width=100%}
 
-![**Fig. S4.** Annual GBIF records by group and record type, 1950–2025 (shaded: 2000–2024 analysis window).](../figs/phase2_records_by_year.png){width=100%}
+![**Fig. S4.** Annual GBIF records by group and record type, 1950–2025 (shaded: 2000–2024).](../figs/phase2_records_by_year.png){width=100%}
 
-![**Fig. S5.** Records per individual against body mass for mammal species with reported population sizes (descriptive; the model estimate is in Table S3).](../figs/phase4_tierA_mammals.png){width=100%}
+![**Fig. S5.** Preregistered analysis of records per individual against body mass (first version's Fig. 1), with mammal species with census abundances (exploratory). Records per individual largely mirror abundance (main text).](../figs/supp_prereg_scaling.png){width=100%}
 
 ## Supplementary tables
 
-### Table S1. Census estimates and GBIF matching for the ten main groups
+### Table S1. Census estimates and GBIF matching for the ten groups with independent censuses
 
-|Group            |N (individuals) |B (g wet) |M (g wet) |Census source                                                                                                                                                        |GBIF rule                                           |R 2000–2024 |
-|:----------------|:---------------|:---------|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------|:-----------|
-|soil_nematodes   |4.40e+20        |2.10e+14  |4.76e-07  |van den Hoogen J, Geisen S, Routh D, et al. (2019) Soil nematode abundance and functional group composition at a global scale. Nature 572:194-198                    |phylum: Nematoda                                    |416,187     |
-|springtails      |2.00e+18        |1.90e+14  |9.50e-05  |Potapov AM, Guerra CA, van den Hoogen J, et al. (2023) Globally invariant metabolism but density-diversity mismatch in springtails. Nat Commun 14:674                |class: Collembola                                   |1,241,382   |
-|mites            |6.54e+18        |6.53e+13  |9.97e-06  |Rosenberg Y, Bar-On YM, Fromm A, Ostikar M, Shoshany A, Giz O, Milo R (2023) The global biomass and number of terrestrial arthropods. Sci Adv 9:eabq4049             |order: Sarcoptiformes, Mesostigmata, Trombidiformes |1,315,602   |
-|ants             |5.00e+16        |1.10e+14  |2.19e-03  |Rosenberg Y, Bar-On YM, Fromm A, Ostikar M, Shoshany A, Giz O, Milo R (2023) The global biomass and number of terrestrial arthropods. Sci Adv 9:eabq4049             |family: Formicidae                                  |2,509,986   |
-|enchytraeids     |7.71e+17        |1.29e+14  |1.67e-04  |Bar-On YM, Phillips R, Milo R (2018) The biomass distribution on Earth. PNAS 115:6506-6511                                                                           |family: Enchytraeidae                               |87,719      |
-|copepods         |1.41e+20        |3.76e+15  |2.67e-05  |Bar-On YM, Phillips R, Milo R (2018) The biomass distribution on Earth. PNAS 115:6506-6511                                                                           |class: Copepoda                                     |2,421,706   |
-|pteropods        |4.97e+17        |8.80e+14  |1.77e-03  |Bar-On YM, Phillips R, Milo R (2018) The biomass distribution on Earth. PNAS 115:6506-6511                                                                           |order: Pteropoda                                    |63,888      |
-|jellyfish        |1.97e+16        |2.67e+14  |1.36e-02  |Bar-On YM, Phillips R, Milo R (2018) The biomass distribution on Earth. PNAS 115:6506-6511                                                                           |class: Scyphozoa, Cubozoa                           |173,734     |
-|mesopelagic_fish |1.12e+15        |3.45e+15  |3.09e+00  |Bar-On YM, Phillips R, Milo R (2018) The biomass distribution on Earth. PNAS 115:6506-6511                                                                           |family: Myctophidae                                 |127,567     |
-|krill            |7.80e+14        |3.79e+14  |4.86e-01  |Atkinson A, Siegel V, Pakhomov EA, Jessopp MJ, Loeb V (2009) A re-appraisal of the total biomass and annual production of Antarctic krill. Deep-Sea Res I 56:727-740 |species: Euphausia superba                          |95,798      |
+|Group            |N (individuals) |B (g wet) |M (g wet) |Census source                                                                                                                                                        |GBIF rule                                           |Records 2000–2024 |
+|:----------------|:---------------|:---------|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------|:-----------------|
+|soil_nematodes   |4.40e+20        |2.10e+14  |4.76e-07  |van den Hoogen J, Geisen S, Routh D, et al. (2019) Soil nematode abundance and functional group composition at a global scale. Nature 572:194-198                    |phylum: Nematoda                                    |416,187           |
+|springtails      |2.00e+18        |1.90e+14  |9.50e-05  |Potapov AM, Guerra CA, van den Hoogen J, et al. (2023) Globally invariant metabolism but density-diversity mismatch in springtails. Nat Commun 14:674                |class: Collembola                                   |1,241,382         |
+|mites            |6.54e+18        |6.53e+13  |9.97e-06  |Rosenberg Y, Bar-On YM, Fromm A, Ostikar M, Shoshany A, Giz O, Milo R (2023) The global biomass and number of terrestrial arthropods. Sci Adv 9:eabq4049             |order: Sarcoptiformes, Mesostigmata, Trombidiformes |1,315,602         |
+|ants             |5.00e+16        |1.10e+14  |2.19e-03  |Rosenberg Y, Bar-On YM, Fromm A, Ostikar M, Shoshany A, Giz O, Milo R (2023) The global biomass and number of terrestrial arthropods. Sci Adv 9:eabq4049             |family: Formicidae                                  |2,509,986         |
+|enchytraeids     |7.71e+17        |1.29e+14  |1.67e-04  |Bar-On YM, Phillips R, Milo R (2018) The biomass distribution on Earth. PNAS 115:6506-6511                                                                           |family: Enchytraeidae                               |87,719            |
+|copepods         |1.41e+20        |3.76e+15  |2.67e-05  |Bar-On YM, Phillips R, Milo R (2018) The biomass distribution on Earth. PNAS 115:6506-6511                                                                           |class: Copepoda                                     |2,421,706         |
+|pteropods        |4.97e+17        |8.80e+14  |1.77e-03  |Bar-On YM, Phillips R, Milo R (2018) The biomass distribution on Earth. PNAS 115:6506-6511                                                                           |order: Pteropoda                                    |63,888            |
+|jellyfish        |1.97e+16        |2.67e+14  |1.36e-02  |Bar-On YM, Phillips R, Milo R (2018) The biomass distribution on Earth. PNAS 115:6506-6511                                                                           |class: Scyphozoa, Cubozoa                           |173,734           |
+|mesopelagic_fish |1.12e+15        |3.45e+15  |3.09e+00  |Bar-On YM, Phillips R, Milo R (2018) The biomass distribution on Earth. PNAS 115:6506-6511                                                                           |family: Myctophidae                                 |127,567           |
+|krill            |7.80e+14        |3.79e+14  |4.86e-01  |Atkinson A, Siegel V, Pakhomov EA, Jessopp MJ, Loeb V (2009) A re-appraisal of the total biomass and annual production of Antarctic krill. Deep-Sea Res I 56:727-740 |species: Euphausia superba                          |95,798            |
 
-*Method class of all ten census abundances: independent. Full provenance, verbatim quotes and uncertainty conversions in docs/data_provenance.md.*
+*All ten abundances classified independent. Provenance, verbatim quotations and uncertainty conversions: docs/data_provenance.md.*
 
 
-### Table S2. Scaling exponents in the main analysis and all sensitivity analyses
+### Table S2. Preregistered analysis: exponents of records per individual on body mass (main and sensitivity analyses)
 
 |Analysis                  |β all             |β human obs.      |β specimen        |β DNA             |R² (all) |H1                          |H2                             |P(β_DNA<β_human) |H4           |
 |:-------------------------|:-----------------|:-----------------|:-----------------|:-----------------|:--------|:---------------------------|:------------------------------|:----------------|:------------|
@@ -254,177 +228,341 @@ All changes were appended to PREREG.md with dates and reasons before the corresp
 |S14_dna_strict            |0.73 [0.51, 0.95] |0.75 [0.50, 1.01] |0.66 [0.38, 0.95] |0.50 [0.24, 0.76] |0.90     |scaling (limited precision) |indistinguishable from optical |0.949            |supported    |
 |S13_mc_ols                |0.73 [0.61, 0.88] |0.75 [0.62, 0.90] |0.67 [0.53, 0.79] |0.51 [0.38, 0.64] |NA       |NA                          |NA                             |NA               |NA           |
 
-*Posterior medians and 95% CrI. S13 uses Monte Carlo propagation with ordinary least squares (no CrI-based decisions). Decision rules in PREREG v1.0 §3.*
+*Preregistered decision labels are reported as computed; they are not interpretable as evidence about detection because the exponent is not identifiable (Tables S11–S12).*
 
 
-### Table S3. Species-level scaling within mammals and birds
+### Table S3. Species-level models within mammals and birds
 
-|Set                                        | Species| Zero-record species| Orders|β [95% CrI]       |SD order |τ    |R̂ max | Divergences|
-|:------------------------------------------|-------:|-------------------:|------:|:-----------------|:--------|:----|:-----|-----------:|
-|mammals_report (main)                      |     388|                   8|     15|0.32 [0.18, 0.47] |1.20     |2.48 |1.002 |           0|
-|mammals_all (sens; SVR allometry-derived)  |    4726|                 664|     26|0.48 [0.41, 0.55] |1.48     |3.19 |1.006 |           0|
-|birds_callaghan (sens; occurrence-derived) |    9263|                   4|     41|0.11 [0.06, 0.16] |0.65     |0.63 |1.009 |           0|
+|Model                                                                   | Species|Exponent [95% CrI]                   |Note                                            |
+|:-----------------------------------------------------------------------|-------:|:------------------------------------|:-----------------------------------------------|
+|Preregistered PLN, mammals_report (main)                                |     388|0.32 [0.18, 0.47]                    |exponent of records per individual on body mass |
+|Preregistered PLN, mammals_all (sens; SVR allometry-derived)            |    4726|0.48 [0.41, 0.55]                    |exponent of records per individual on body mass |
+|Preregistered PLN, birds_callaghan (sens; occurrence-derived)           |    9263|0.11 [0.06, 0.16]                    |exponent of records per individual on body mass |
+|OLS log10(R+0.5) ~ log10 N + log10 M, mammals with reported populations |     388|N: 0.64 (SE 0.05); M: 0.20 (SE 0.04) |exploratory                                     |
 
-### Table S4a. Overdispersion of annual record counts (preregistered estimate)
+### Table S4. Overdispersion of annual record counts: preregistered estimate and by recording intensity (mammals, species + year effects)
 
-|Set                                           | Species| Observations|φ [95% CrI]       |
-|:---------------------------------------------|-------:|------------:|:-----------------|
-|Mammals, reported populations (preregistered) |     382|         9550|0.69 [0.66, 0.71] |
+|Set                                |φ                 |
+|:----------------------------------|:-----------------|
+|Preregistered (382 species)        |0.69 [0.66, 0.71] |
+|Mean records/yr <1 (85 spp.)       |0.46 (SE 0.054)   |
+|Mean records/yr 1-10 (96 spp.)     |0.56 (SE 0.023)   |
+|Mean records/yr 10-100 (102 spp.)  |0.73 (SE 0.020)   |
+|Mean records/yr 100-1000 (67 spp.) |0.93 (SE 0.030)   |
+|Mean records/yr >1000 (32 spp.)    |0.87 (SE 0.039)   |
 
-### Table S4b. Overdispersion by recording intensity, mammals (exploratory)
+### Table S5. Spurious significant trends in preregistered simulations without decline, by record rate
 
-|Mean records/yr | Species|φ    |SE    |
-|:---------------|-------:|:----|:-----|
-|<1              |      85|0.46 |0.054 |
-|1-10            |      96|0.56 |0.023 |
-|10-100          |     102|0.73 |0.020 |
-|100-1000        |      67|0.93 |0.030 |
-|>1000           |      32|0.87 |0.039 |
+| Years|Records/species-yr |(a) false decline |(b) false decline |(c) false decline |(c) false increase |
+|-----:|:------------------|:-----------------|:-----------------|:-----------------|:------------------|
+|    10|<1                 |1.8%              |2.4%              |1.4%              |2.5%               |
+|    10|1–10               |10.0%             |22.3%             |9.7%              |14.8%              |
+|    10|≥10                |11.8%             |47.1%             |13.0%             |16.5%              |
+|    25|<1                 |3.7%              |6.6%              |1.6%              |15.3%              |
+|    25|1–10               |6.7%              |27.3%             |11.6%             |37.5%              |
+|    25|≥10                |7.1%              |47.5%             |13.9%             |40.8%              |
+|    50|<1                 |3.2%              |6.1%              |8.7%              |12.2%              |
+|    50|1–10               |5.6%              |24.9%             |36.9%             |20.9%              |
+|    50|≥10                |6.1%              |45.3%             |37.9%             |21.6%              |
 
-### Table S4c. Overdispersion of record counts and occupied 1° cells by group and stratum (exploratory)
-
-|Group            |Stratum | Species|Mean records/yr |Mean occupied cells/yr |φ records |φ occupied cells |
-|:----------------|:-------|-------:|:---------------|:----------------------|:---------|:----------------|
-|ants             |<1      |     300|0.28            |0.12                   |0.09      |1.11             |
-|ants             |1-10    |     300|3.30            |0.83                   |0.21      |1.40             |
-|ants             |>=10    |     300|45.61           |7.08                   |0.43      |2.29             |
-|copepods         |<1      |     300|0.21            |0.10                   |0.08      |0.44             |
-|copepods         |1-10    |     300|3.45            |0.88                   |0.14      |0.59             |
-|copepods         |>=10    |     300|176.32          |21.76                  |0.55      |1.45             |
-|enchytraeids     |<1      |     166|0.25            |0.11                   |0.08      |0.62             |
-|enchytraeids     |1-10    |      91|3.57            |0.94                   |0.25      |1.21             |
-|enchytraeids     |>=10    |      31|21.06           |4.13                   |0.63      |2.63             |
-|jellyfish        |<1      |     106|0.27            |0.17                   |0.23      |1.55             |
-|jellyfish        |1-10    |      49|4.16            |1.75                   |0.62      |3.45             |
-|jellyfish        |>=10    |      35|158.74          |20.27                  |1.25      |7.23             |
-|mammals          |<1      |     300|0.30            |0.18                   |0.24      |9.95             |
-|mammals          |1-10    |     300|3.49            |1.20                   |0.33      |3.72             |
-|mammals          |>=10    |     300|945.43          |26.45                  |0.68      |4.51             |
-|mesopelagic_fish |<1      |      51|0.37            |0.24                   |0.18      |0.49             |
-|mesopelagic_fish |1-10    |      98|4.14            |1.73                   |0.37      |0.97             |
-|mesopelagic_fish |>=10    |      58|54.63           |12.17                  |0.54      |1.36             |
-|mites            |<1      |     300|0.19            |0.11                   |0.12      |0.61             |
-|mites            |1-10    |     300|3.29            |1.02                   |0.20      |0.87             |
-|mites            |>=10    |     300|73.75           |6.93                   |0.34      |1.17             |
-|pteropods        |<1      |      38|0.27            |0.16                   |0.20      |0.51             |
-|pteropods        |1-10    |      26|3.07            |1.31                   |0.33      |0.88             |
-|pteropods        |>=10    |      19|50.44           |11.77                  |0.72      |1.77             |
-|soil_nematodes   |<1      |     300|0.19            |0.08                   |0.06      |0.30             |
-|soil_nematodes   |1-10    |     300|2.56            |0.50                   |0.10      |0.42             |
-|soil_nematodes   |>=10    |      27|39.74           |2.79                   |0.21      |0.67             |
-|springtails      |<1      |     300|0.19            |0.09                   |0.09      |0.95             |
-|springtails      |1-10    |     300|3.31            |0.79                   |0.16      |0.91             |
-|springtails      |>=10    |     206|114.36          |7.75                   |0.40      |1.84             |
-
-*Up to 300 species sampled per stratum (seed 20261103); negative binomial with species and year fixed effects.*
+*Ten groups, 1,000 replicates each; independent years. (a) NB regression with effort offset; (b) binomial relative reporting rate; (c) NB regression on raw counts.*
 
 
-### Table S5. Rates of spurious significant trends in simulations without decline
+### Table S6. Record counts versus occupied 1° cells: overdispersion and years to detect a 30% decline per decade (exploratory)
 
-| Monitoring years|(a) false decline |(b) false decline |(c) false decline |(c) false increase |
-|----------------:|:-----------------|:-----------------|:-----------------|:------------------|
-|               10|8.8%              |31.3%             |9.3%              |12.4%              |
-|               25|6.1%              |33.3%             |10.2%             |33.3%              |
-|               50|5.2%              |31.6%             |29.7%             |18.9%              |
+|Group            |Stratum | Species|φ records |φ cells |Years, records |Years, cells |
+|:----------------|:-------|-------:|:---------|:-------|:--------------|:------------|
+|ants             |<1      |     300|0.09      |1.11    |>100           |>100         |
+|ants             |1-10    |     300|0.21      |1.40    |72             |64           |
+|ants             |>=10    |     300|0.43      |2.29    |51             |35           |
+|copepods         |<1      |     300|0.08      |0.44    |>100           |>100         |
+|copepods         |1-10    |     300|0.14      |0.59    |82             |70           |
+|copepods         |>=10    |     300|0.55      |1.45    |49             |36           |
+|enchytraeids     |<1      |     166|0.08      |0.62    |>100           |>100         |
+|enchytraeids     |1-10    |      91|0.25      |1.21    |67             |62           |
+|enchytraeids     |>=10    |      31|0.63      |2.63    |47             |37           |
+|jellyfish        |<1      |     106|0.23      |1.55    |>100           |>100         |
+|jellyfish        |1-10    |      49|0.62      |3.45    |51             |46           |
+|jellyfish        |>=10    |      35|1.25      |7.23    |37             |23           |
+|mammals          |<1      |     300|0.24      |9.95    |>100           |>100         |
+|mammals          |1-10    |     300|0.33      |3.72    |62             |52           |
+|mammals          |>=10    |     300|0.68      |4.51    |44             |26           |
+|mesopelagic_fish |<1      |      51|0.18      |0.49    |>100           |>100         |
+|mesopelagic_fish |1-10    |      98|0.37      |0.97    |59             |52           |
+|mesopelagic_fish |>=10    |      58|0.54      |1.36    |49             |37           |
+|mites            |<1      |     300|0.12      |0.61    |>100           |>100         |
+|mites            |1-10    |     300|0.20      |0.87    |72             |63           |
+|mites            |>=10    |     300|0.34      |1.17    |57             |41           |
+|pteropods        |<1      |      38|0.20      |0.51    |>100           |>100         |
+|pteropods        |1-10    |      26|0.33      |0.88    |63             |60           |
+|pteropods        |>=10    |      19|0.72      |1.77    |44             |35           |
+|soil_nematodes   |<1      |     300|0.06      |0.30    |>100           |>100         |
+|soil_nematodes   |1-10    |     300|0.10      |0.42    |90             |91           |
+|soil_nematodes   |>=10    |      27|0.21      |0.67    |67             |53           |
+|springtails      |<1      |     300|0.09      |0.95    |>100           |>100         |
+|springtails      |1-10    |     300|0.16      |0.91    |77             |68           |
+|springtails      |>=10    |     206|0.40      |1.84    |53             |36           |
 
-*Averaged over the ten groups and 36 values of λ0; 1,000 replicates each. (a) NB regression with effort offset; (b) binomial model of relative reporting rate; (c) NB regression on raw counts.*
+### Table S7. Mammal species with census abundances relative to the extrapolated preregistered relationship (exploratory)
 
+|Set                | Species|log10 M range |Median residual (log10) |95% interval over line uncertainty |Within-set slope |
+|:------------------|-------:|:-------------|:-----------------------|:----------------------------------|:----------------|
+|census_independent |      50|4.7–8.2       |3.82                    |1.73 to 5.93                       |0.63             |
+|census_mixed       |       9|5–6.1         |4.50                    |2.51 to 6.51                       |0.08             |
+|census_unclear     |      72|4.5–6.8       |4.41                    |2.46 to 6.38                       |-0.05            |
+|report_land        |     389|0.5–6.7       |4.87                    |3.20 to 6.67                       |0.11             |
 
-### Table S6. Years to detect a 30% decline per decade: record counts vs occupied cells (exploratory)
-
-|Group            |Stratum |Years, record counts |Years, occupied cells |
-|:----------------|:-------|:--------------------|:---------------------|
-|ants             |<1      |>100                 |>100                  |
-|ants             |1-10    |72                   |64                    |
-|ants             |>=10    |51                   |35                    |
-|copepods         |<1      |>100                 |>100                  |
-|copepods         |1-10    |82                   |70                    |
-|copepods         |>=10    |49                   |36                    |
-|enchytraeids     |<1      |>100                 |>100                  |
-|enchytraeids     |1-10    |67                   |62                    |
-|enchytraeids     |>=10    |47                   |37                    |
-|jellyfish        |<1      |>100                 |>100                  |
-|jellyfish        |1-10    |51                   |46                    |
-|jellyfish        |>=10    |37                   |23                    |
-|mammals          |<1      |>100                 |>100                  |
-|mammals          |1-10    |62                   |52                    |
-|mammals          |>=10    |44                   |26                    |
-|mesopelagic_fish |<1      |>100                 |>100                  |
-|mesopelagic_fish |1-10    |59                   |52                    |
-|mesopelagic_fish |>=10    |49                   |37                    |
-|mites            |<1      |>100                 |>100                  |
-|mites            |1-10    |72                   |63                    |
-|mites            |>=10    |57                   |41                    |
-|pteropods        |<1      |>100                 |>100                  |
-|pteropods        |1-10    |63                   |60                    |
-|pteropods        |>=10    |44                   |35                    |
-|soil_nematodes   |<1      |>100                 |>100                  |
-|soil_nematodes   |1-10    |90                   |91                    |
-|soil_nematodes   |>=10    |67                   |53                    |
-|springtails      |<1      |>100                 |>100                  |
-|springtails      |1-10    |77                   |68                    |
-|springtails      |>=10    |53                   |36                    |
-
-*Constant effort; occupancy index assumed to decline in proportion to abundance (optimistic).*
+*census_independent: survey- or survey/catch-model-based abundances (duplicated elephant entry and unverified polar bear removed).*
 
 
-### Table S7. Mammal species with census abundances, relative to the main relationship (exploratory)
+### Table S8. Never-recorded species predicted by the observation model (H5; exploratory, not supported)
 
-|Set                | Species|log10 M range |Median residual (log10) |95% interval over line uncertainty |Residual vs 2/3 line |Within-set slope (OLS) |
-|:------------------|-------:|:-------------|:-----------------------|:----------------------------------|:--------------------|:----------------------|
-|census_independent |      52|4.7–8.2       |3.82                    |1.73 to 5.93                       |4.30                 |0.62                   |
-|census_mixed       |       9|5–6.1         |4.50                    |2.51 to 6.51                       |4.92                 |0.08                   |
-|census_unclear     |      72|4.5–6.8       |4.41                    |2.46 to 6.38                       |4.82                 |-0.05                  |
-|report_land        |     389|0.5–6.7       |4.87                    |3.20 to 6.67                       |5.24                 |0.11                   |
+|Group          |Estimated total species |Literature undescribed share |Predicted never recorded (25 yr) |Predicted recorded species |Observed recorded 2000–2024 |Ratio predicted/observed |
+|:--------------|:-----------------------|:----------------------------|:--------------------------------|:--------------------------|:---------------------------|:------------------------|
+|ants           |34,293                  |0.58                         |0.79 [0.68, 0.89]                |7,136                      |9,503                       |0.8                      |
+|copepods       |50,125                  |0.69                         |0.62 [0.43, 0.74]                |18,929                     |3,435                       |5.5                      |
+|jellyfish      |360                     |0.32                         |0.43 [0.28, 0.59]                |207                        |194                         |1.1                      |
+|mites          |223,607                 |0.87                         |0.88 [0.81, 0.94]                |26,207                     |6,767                       |3.9                      |
+|soil_nematodes |500,000                 |0.96                         |0.91 [0.77, 0.96]                |46,468                     |4,203                       |11.1                     |
+|springtails    |50,000                  |0.82                         |0.75 [0.64, 0.85]                |12,657                     |2,530                       |5.0                      |
 
-*census_independent: survey- or survey/catch-model-based (Greenspoon et al. 2025; CITES CoP20; Great Elephant Census; IUCN). report_land: populations reported in Greenspoon et al. 2023. Species lists in sim/explore_vertebrates_species.csv.*
+*The prediction and the benchmark share the literature richness totals; predicted recorded species exceed observed by 4–11 times in four groups.*
 
 
-### Table S8. Predicted share of species never recorded vs literature undescribed share (exploratory)
+### Table S9. Records, sampling events and dataset concentration, 2000–2024 (exploratory)
 
-|Group          | Window (yr)|Estimated total species |Described |Recorded 2000–2024 |Literature undescribed share |Predicted never recorded [95%] |
-|:--------------|-----------:|:-----------------------|:---------|:------------------|:----------------------------|:------------------------------|
-|ants           |          25|34,293                  |14,438    |9,503              |0.58                         |0.79 [0.68, 0.89]              |
-|ants           |         250|34,293                  |14,438    |9,503              |0.58                         |0.58 [0.44, 0.72]              |
-|copepods       |          25|50,125                  |15,297    |3,435              |0.69                         |0.62 [0.43, 0.74]              |
-|copepods       |         250|50,125                  |15,297    |3,435              |0.69                         |0.38 [0.21, 0.50]              |
-|jellyfish      |          25|360                     |244       |194                |0.32                         |0.43 [0.28, 0.59]              |
-|jellyfish      |         250|360                     |244       |194                |0.32                         |0.21 [0.11, 0.35]              |
-|mites          |          25|223,607                 |29,017    |6,767              |0.87                         |0.88 [0.81, 0.94]              |
-|mites          |         250|223,607                 |29,017    |6,767              |0.87                         |0.72 [0.60, 0.82]              |
-|soil_nematodes |          25|500,000                 |19,667    |4,203              |0.96                         |0.91 [0.77, 0.96]              |
-|soil_nematodes |         250|500,000                 |19,667    |4,203              |0.96                         |0.76 [0.54, 0.87]              |
-|springtails    |          25|50,000                  |8,926     |2,530              |0.82                         |0.75 [0.64, 0.85]              |
-|springtails    |         250|50,000                  |8,926     |2,530              |0.82                         |0.52 [0.40, 0.65]              |
+|Group            |Records   |Sampling events | Datasets|Top-1 share |Top-3 share |Human obs. |Specimens |DNA barcodes (iBOL) |DNA metabarcoding/eDNA |
+|:----------------|:---------|:---------------|--------:|:-----------|:-----------|:----------|:---------|:-------------------|:----------------------|
+|ants             |2,509,986 |916,499         |     2150|0.23        |0.54        |956,418    |1,138,904 |351,240             |28,059                 |
+|copepods         |2,421,706 |681,129         |     1281|0.22        |0.46        |370,836    |996,952   |23,075              |229,643                |
+|enchytraeids     |87,719    |11,739          |      308|0.36        |0.51        |22,532     |17,253    |3,061               |35,373                 |
+|jellyfish        |173,734   |105,392         |      646|0.24        |0.46        |142,976    |4,148     |2,060               |4,062                  |
+|krill            |95,798    |8,447           |       47|0.85        |0.91        |10,599     |2,807     |552                 |1                      |
+|mesopelagic_fish |127,567   |46,525          |      270|0.21        |0.42        |44,674     |62,948    |4,095               |2,493                  |
+|mites            |1,315,602 |256,657         |     1527|0.27        |0.51        |469,382    |504,560   |193,093             |104,065                |
+|pteropods        |63,888    |16,098          |      317|0.25        |0.33        |12,265     |30,507    |2,548               |2,667                  |
+|soil_nematodes   |416,187   |34,621          |     1110|0.17        |0.29        |79,717     |80,978    |13,505              |145,054                |
+|springtails      |1,241,382 |134,716         |      962|0.24        |0.58        |146,621    |233,306   |299,298             |497,056                |
 
-### Table S9. Body-size representation in the Living Planet Database 2016 public release (exploratory)
+*Sampling event = unique species × dataset × 0.1° cell × date.*
 
-|Class    | Species with mass| Species in LPD|Median mass, all (g) |Median mass, LPD species (g) |Median mass, population-weighted (g) |Ratio (species) |KS p     |
-|:--------|-----------------:|--------------:|:--------------------|:----------------------------|:------------------------------------|:---------------|:--------|
-|Aves     |             11009|           1270|35.5                 |108.1                        |416.0                                |3.0             |1.9e-70  |
-|Mammalia |              5745|            487|69.6                 |7294.5                       |50000.0                              |104.8           |1.5e-100 |
 
-### Table S10a. Share of described species whose decline is undetectable within 100 years, invertebrate and small marine groups (exploratory)
+### Table S10. DNA-derived records by dataset type (all analysed groups and mammals, 2000–2024)
 
-|Group            |log10 M |Described species |Recorded 2015–2024 |λ threshold (records/yr) | Detection floor (yr)|Undetectable within 100 yr |
-|:----------------|:-------|:-----------------|:------------------|:------------------------|--------------------:|:--------------------------|
-|ants             |-2.66   |14,438            |6,683              |0.79                     |                   50|76.0%                      |
-|copepods         |-4.57   |15,297            |1,910              |0.79                     |                   47|94.7%                      |
-|enchytraeids     |-3.78   |840               |217                |0.79                     |                   44|86.4%                      |
-|jellyfish        |-1.87   |244               |171                |0.50                     |                   36|49.2%                      |
-|krill            |-0.31   |1                 |1                  |0.32                     |                   43|0.0%                       |
-|mesopelagic_fish |0.49    |252               |180                |0.50                     |                   46|41.7%                      |
-|mites            |-5.00   |29,017            |3,758              |0.79                     |                   54|95.6%                      |
-|pteropods        |-2.75   |141               |70                 |0.50                     |                   42|68.1%                      |
-|soil_nematodes   |-6.32   |19,667            |2,196              |0.79                     |                   61|96.5%                      |
-|springtails      |-4.02   |8,926             |1,586              |0.79                     |                   52|92.2%                      |
+|Type                | Datasets|Records   |Largest dataset                                                                                                                                  |
+|:-------------------|--------:|:---------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+|barcode_specimen    |        1|931,748   |International Barcode of Life project (iBOL)                                                                                                     |
+|metabarcoding_other |      147|1,130,734 |CO1 Amplicon Sequence Variants of bulk arthropod samples (mild lysis) collected with Malaise traps from the Insect Biome Atlas project in Sweden |
+|reference_db        |        1|20,701    |EUKARYOME: the rRNA gene reference database for identification of eukaryotes                                                                     |
 
-### Table S10b. Same, mammals and birds (φ = 0.69)
+### Table S11. Ratio artefact: exponent of records per individual on body mass under null record allocations
 
-|Group   | Species with mass|Median λ |Undetectable within 100 yr |
-|:-------|-----------------:|:--------|:--------------------------|
-|birds   |              9302|431.4    |0.5%                       |
-|mammals |              4784|1.4      |36.5%                      |
+|Allocation                                |Exponent          |
+|:-----------------------------------------|:-----------------|
+|Observed records (OLS on point estimates) |0.73              |
+|Identical records in every group          |0.89              |
+|Records permuted among groups (5,000)     |0.88 [0.69, 1.08] |
+|Preregistered EIV estimate                |0.72 [0.49, 0.94] |
+
+### Table S12. Errors-in-variables models of log records with free coefficients (exploratory)
+
+|Analysis                                             |Parameter   |Estimate [95% CrI]  |P(>0) |
+|:----------------------------------------------------|:-----------|:-------------------|:-----|
+|free: N + M                                          |gamma (lnN) |-0.01 [-1.03, 0.80] |0.49  |
+|free: N + M                                          |delta (lnM) |-0.17 [-1.09, 0.59] |0.32  |
+|free: N + M + log S                                  |gamma (lnN) |-0.06 [-0.87, 0.65] |0.43  |
+|free: N + M + log S                                  |delta (lnM) |0.01 [-0.74, 0.72]  |0.51  |
+|free: N + M + log S                                  |lnS         |0.43 [-0.02, 0.84]  |0.97  |
+|free: N + M + soil                                   |gamma (lnN) |0.18 [-1.10, 1.18]  |0.65  |
+|free: N + M + soil                                   |delta (lnM) |0.06 [-1.20, 1.08]  |0.55  |
+|free: N + M + soil                                   |soil        |0.75 [-2.00, 3.59]  |0.70  |
+|free: N + M + log S + soil                           |gamma (lnN) |-0.21 [-1.16, 0.98] |0.35  |
+|free: N + M + log S + soil                           |delta (lnM) |-0.14 [-1.03, 1.06] |0.40  |
+|free: N + M + log S + soil                           |lnS         |0.48 [-0.04, 0.93]  |0.97  |
+|free: N + M + log S + soil                           |soil        |-0.51 [-3.01, 2.55] |0.37  |
+|scope-corrected records, N + M + log S               |gamma (lnN) |0.06 [-0.74, 0.76]  |0.57  |
+|scope-corrected records, N + M + log S               |delta (lnM) |0.20 [-0.56, 0.88]  |0.74  |
+|scope-corrected records, N + M + log S               |lnS         |0.48 [0.05, 0.89]   |0.98  |
+|species-events, N + M + log S                        |gamma (lnN) |-0.01 [-0.92, 0.77] |0.49  |
+|species-events, N + M + log S                        |delta (lnM) |0.20 [-0.64, 0.94]  |0.70  |
+|species-events, N + M + log S                        |lnS         |0.61 [0.12, 1.07]   |0.99  |
+|records without top-3 datasets, N + M + log S        |gamma (lnN) |0.10 [-0.45, 0.59]  |0.67  |
+|records without top-3 datasets, N + M + log S        |delta (lnM) |0.17 [-0.33, 0.66]  |0.78  |
+|records without top-3 datasets, N + M + log S        |lnS         |0.58 [0.27, 0.87]   |1.00  |
+|main (priors N(0,2)), N + M + log S                  |gamma (lnN) |-0.06 [-0.85, 0.71] |0.43  |
+|main (priors N(0,2)), N + M + log S                  |delta (lnM) |0.01 [-0.72, 0.77]  |0.51  |
+|main (priors N(0,2)), N + M + log S                  |lnS         |0.43 [-0.00, 0.87]  |0.97  |
+|wider priors N(0,5), N + M + log S                   |gamma (lnN) |-0.07 [-0.97, 0.71] |0.42  |
+|wider priors N(0,5), N + M + log S                   |delta (lnM) |0.00 [-0.82, 0.77]  |0.51  |
+|wider priors N(0,5), N + M + log S                   |lnS         |0.44 [-0.01, 0.91]  |0.97  |
+|jellyfish mass ×50 (gelatinous C/wet), N + M + log S |gamma (lnN) |-0.14 [-0.86, 0.49] |0.32  |
+|jellyfish mass ×50 (gelatinous C/wet), N + M + log S |delta (lnM) |-0.06 [-0.65, 0.48] |0.39  |
+|jellyfish mass ×50 (gelatinous C/wet), N + M + log S |lnS         |0.42 [-0.00, 0.83]  |0.97  |
+|nematode C/fresh 0.105, N + M + log S                |gamma (lnN) |-0.08 [-0.86, 0.66] |0.41  |
+|nematode C/fresh 0.105, N + M + log S                |delta (lnM) |-0.01 [-0.73, 0.74] |0.49  |
+|nematode C/fresh 0.105, N + M + log S                |lnS         |0.43 [0.01, 0.89]   |0.98  |
+|krill N, unadjusted nets, N + M + log S              |gamma (lnN) |-0.07 [-0.90, 0.66] |0.41  |
+|krill N, unadjusted nets, N + M + log S              |delta (lnM) |0.02 [-0.77, 0.78]  |0.53  |
+|krill N, unadjusted nets, N + M + log S              |lnS         |0.46 [0.02, 0.92]   |0.98  |
+|S5b springtails from Rosenberg re-run, N + M + log S |gamma (lnN) |-0.11 [-0.93, 0.58] |0.37  |
+|S5b springtails from Rosenberg re-run, N + M + log S |delta (lnM) |-0.04 [-0.75, 0.60] |0.44  |
+|S5b springtails from Rosenberg re-run, N + M + log S |lnS         |0.42 [-0.02, 0.86]  |0.97  |
+
+*γ = 1 would mean records proportional to individuals. Posterior predictive coverage of observed records by 95% intervals was 10/10 in all variants (sim/rev_free_sensitivity.csv).*
+
+
+### Table S13. Records per described species and share of species without records
+
+|Group            |log10 M |Described species |Recorded 2015–2024 |No records 2015–2024 |Records/species/yr (2000–2024) |Median λ, recorded species |
+|:----------------|:-------|:-----------------|:------------------|:--------------------|:------------------------------|:--------------------------|
+|soil_nematodes   |-6.32   |19,667            |2,196              |88.8%                |0.8                            |0.40                       |
+|mites            |-5.00   |29,017            |3,758              |87.0%                |1.8                            |0.30                       |
+|copepods         |-4.57   |15,297            |1,910              |87.5%                |6.3                            |0.50                       |
+|springtails      |-4.02   |8,926             |1,586              |82.2%                |5.6                            |0.50                       |
+|enchytraeids     |-3.78   |840               |217                |74.2%                |4.2                            |0.90                       |
+|pteropods        |-2.75   |141               |70                 |50.4%                |18.1                           |1.45                       |
+|ants             |-2.66   |14,438            |6,683              |53.7%                |7.0                            |0.80                       |
+|jellyfish        |-1.87   |297               |171                |42.4%                |23.4                           |2.00                       |
+|krill            |-0.31   |1                 |1                  |0.0%                 |3831.9                         |357.60                     |
+|mesopelagic_fish |0.49    |252               |180                |28.6%                |20.2                           |2.65                       |
+|birds            |1.56    |10,868            |11,244             |0.0%                 |6813.4                         |289.90                     |
+|mammals          |1.81    |6,368             |4,844              |23.9%                |240.8                          |3.40                       |
+
+### Table S14. DNA-derived relative to human-observation records against body mass (abundance cancels; exploratory)
+
+|Contrast                      |Slope per log10 g [95%] |P(<0) |
+|:-----------------------------|:-----------------------|:-----|
+|dna_all / human_obs           |-0.24 [-0.42, -0.06]    |0.993 |
+|dna_barcode / human_obs       |-0.11 [-0.32, 0.09]     |0.879 |
+|dna_metabarcoding / human_obs |-0.44 [-0.80, -0.08]    |0.989 |
+|specimen / human_obs          |-0.09 [-0.29, 0.13]     |0.810 |
+
+### Table S15. Analytic detection metrics (power 0.8, one-sided α = 0.05)
+
+|    φ|Records/species-yr |Years, 30%/decade |Years, 50%/decade |Min. decline detectable in 10 yr |Lost at detection (30%/decade) |
+|----:|:------------------|:-----------------|:-----------------|:--------------------------------|:------------------------------|
+| 0.06|10                 |99.3              |63.7              |100%                             |97%                            |
+| 0.06|∞                  |99.1              |63.6              |100%                             |97%                            |
+| 0.12|10                 |78.9              |50.7              |100%                             |94%                            |
+| 0.12|∞                  |78.6              |50.5              |100%                             |94%                            |
+| 0.25|10                 |62.1              |39.9              |100%                             |89%                            |
+| 0.25|∞                  |61.6              |39.5              |100%                             |89%                            |
+| 0.50|10                 |49.7              |31.9              |98%                              |83%                            |
+| 0.50|∞                  |48.9              |31.4              |98%                              |82%                            |
+| 0.69|10                 |44.9              |28.8              |97%                              |80%                            |
+| 0.69|∞                  |43.9              |28.2              |96%                              |79%                            |
+| 1.00|10                 |40.0              |25.7              |94%                              |76%                            |
+| 1.00|∞                  |38.8              |24.9              |94%                              |75%                            |
+| 1.33|10                 |36.8              |23.6              |92%                              |73%                            |
+| 1.33|∞                  |35.3              |22.7              |91%                              |72%                            |
+| 2.00|10                 |32.7              |21.0              |88%                              |69%                            |
+| 2.00|∞                  |30.8              |19.8              |86%                              |67%                            |
+| 4.00|10                 |27.3              |17.6              |80%                              |62%                            |
+| 4.00|∞                  |24.4              |15.7              |75%                              |58%                            |
+| 6.00|10                 |25.0              |16.0              |76%                              |59%                            |
+| 6.00|∞                  |21.4              |13.7              |67%                              |53%                            |
+
+### Table S16. Overdispersion and residual autocorrelation estimated per species with an effort offset (exploratory)
+
+|Set                       |Records/yr | Species|φ, no trend |φ, linear trend |φ, quadratic trend |Lag-1 autocorrelation |
+|:-------------------------|:----------|-------:|:-----------|:---------------|:------------------|:---------------------|
+|ants                      |1-10       |     200|0.27        |0.40            |0.55               |-0.02                 |
+|ants                      |10-100     |     200|0.65        |0.83            |0.96               |0.12                  |
+|ants                      |>=100      |     124|1.29        |2.01            |2.55               |0.22                  |
+|birds (eBird)             |1-10       |     200|1.03        |1.49            |1.69               |0.02                  |
+|birds (eBird)             |10-100     |     200|3.05        |4.67            |5.79               |0.16                  |
+|birds (eBird)             |>=100      |     200|8.10        |13.79           |20.09              |0.50                  |
+|birds (excluding eBird)   |1-10       |     200|0.83        |1.10            |1.40               |0.03                  |
+|birds (excluding eBird)   |10-100     |     200|1.37        |2.76            |3.40               |0.20                  |
+|birds (excluding eBird)   |>=100      |     200|1.81        |4.27            |6.11               |0.50                  |
+|copepods                  |1-10       |     200|0.20        |0.37            |0.48               |0.03                  |
+|copepods                  |10-100     |     200|0.69        |1.09            |1.31               |0.19                  |
+|copepods                  |>=100      |      83|1.62        |3.08            |3.20               |0.39                  |
+|enchytraeids              |1-10       |      91|0.28        |0.40            |0.48               |0.01                  |
+|enchytraeids              |10-100     |      30|0.76        |1.01            |1.01               |0.13                  |
+|jellyfish                 |1-10       |      49|0.83        |1.14            |1.40               |-0.02                 |
+|jellyfish                 |10-100     |      23|1.14        |2.40            |2.49               |0.03                  |
+|jellyfish                 |>=100      |      12|3.94        |5.63            |5.84               |0.37                  |
+|mammals                   |1-10       |     200|0.41        |0.66            |0.88               |0.03                  |
+|mammals                   |10-100     |     200|0.76        |1.25            |1.48               |0.19                  |
+|mammals                   |>=100      |     200|1.54        |3.00            |4.26               |0.38                  |
+|mammals (no machine obs.) |1-10       |     200|0.39        |0.62            |0.76               |0.04                  |
+|mammals (no machine obs.) |10-100     |     200|0.83        |1.30            |1.90               |0.18                  |
+|mammals (no machine obs.) |>=100      |     200|1.69        |3.79            |5.66               |0.43                  |
+|mesopelagic_fish          |1-10       |      98|0.40        |0.44            |0.52               |-0.08                 |
+|mesopelagic_fish          |10-100     |      51|0.77        |0.81            |0.81               |-0.07                 |
+|mesopelagic_fish          |>=100      |       7|1.65        |1.90            |1.07               |0.02                  |
+|mites                     |1-10       |     200|0.29        |0.56            |0.69               |0.01                  |
+|mites                     |10-100     |     200|0.43        |0.80            |0.89               |0.17                  |
+|mites                     |>=100      |      37|0.43        |0.78            |1.59               |0.32                  |
+|pteropods                 |1-10       |      26|0.25        |0.46            |0.61               |-0.06                 |
+|pteropods                 |10-100     |      17|0.77        |0.93            |1.08               |0.05                  |
+|soil_nematodes            |1-10       |     200|0.14        |0.25            |0.49               |-0.05                 |
+|soil_nematodes            |10-100     |      24|0.30        |0.44            |0.50               |0.16                  |
+|springtails               |1-10       |     200|0.17        |0.34            |0.48               |0.01                  |
+|springtails               |10-100     |     175|0.45        |0.64            |0.76               |0.07                  |
+|springtails               |>=100      |      31|0.83        |1.64            |2.04               |0.07                  |
+
+### Table S17. Effect of year-to-year autocorrelation on the effort-offset method (φ = 0.69; exploratory)
+
+|Scenario                   | Records/species-yr| Years|ρ = 0 |ρ = 0.44 |
+|:--------------------------|------------------:|-----:|:-----|:--------|
+|no decline: false declines |                  1|    10|7.5%  |9.2%     |
+|30%/10yr: power            |                  1|    10|8.9%  |11.5%    |
+|no decline: false declines |                  1|    25|7.7%  |11.6%    |
+|30%/10yr: power            |                  1|    25|22.2% |25.4%    |
+|no decline: false declines |                  1|    50|5.3%  |11.7%    |
+|30%/10yr: power            |                  1|    50|59.2% |58.9%    |
+|no decline: false declines |                 10|    10|11.7% |18.0%    |
+|30%/10yr: power            |                 10|    10|17.1% |25.5%    |
+|no decline: false declines |                 10|    25|8.7%  |17.4%    |
+|30%/10yr: power            |                 10|    25|38.9% |44.0%    |
+|no decline: false declines |                 10|    50|9.3%  |16.9%    |
+|30%/10yr: power            |                 10|    50|92.0% |87.1%    |
+|no decline: false declines |                100|    10|11.4% |21.1%    |
+|30%/10yr: power            |                100|    10|22.1% |29.1%    |
+|no decline: false declines |                100|    25|11.7% |18.1%    |
+|30%/10yr: power            |                100|    25|46.1% |50.1%    |
+|no decline: false declines |                100|    50|9.4%  |17.5%    |
+|30%/10yr: power            |                100|    50|97.0% |91.1%    |
+
+*Share of 1,000 series flagged as significantly declining (one-sided α = 0.05).*
+
+
+### Table S18. British butterflies 2000–2019: GBIF record-based trends versus UK Butterfly Monitoring Scheme trends (48 species; exploratory)
+
+|Method                      |Pearson r |Spearman ρ |UKBMS declines detected |False declines | Opposite significant sign|
+|:---------------------------|:---------|:----------|:-----------------------|:--------------|-------------------------:|
+|(a) effort offset           |0.42      |0.45       |8/14                    |9/34           |                         2|
+|(b) relative reporting rate |0.40      |0.38       |11/14                   |20/34          |                        11|
+|(c) raw counts              |0.42      |0.43       |0/14                    |1/34           |                        12|
+
+### Table S19. Share of described species by time to detect a 30% decline per decade (exploratory)
+
+|Group            | Species|Never recorded 2015–2024 |Undetectable within 100 yr |Among recorded species |Detectable within 50 yr |Detectable within 25 yr |
+|:----------------|-------:|:------------------------|:--------------------------|:----------------------|:-----------------------|:-----------------------|
+|ants             |   14438|53.7%                    |74.6%                      |45.2%                  |6.3%                    |0.0%                    |
+|birds            |    9269|0.2%                     |0.4%                       |0.3%                   |98.8%                   |89.2%                   |
+|copepods         |   15297|87.5%                    |92.9%                      |43.1%                  |1.9%                    |0.0%                    |
+|enchytraeids     |     840|74.2%                    |85.5%                      |43.8%                  |3.9%                    |0.0%                    |
+|jellyfish        |     297|42.4%                    |55.9%                      |23.4%                  |26.3%                   |5.7%                    |
+|mammals          |    4727|24.3%                    |36.4%                      |16.0%                  |33.7%                   |0.0%                    |
+|mesopelagic_fish |     252|28.6%                    |39.3%                      |15.0%                  |17.5%                   |0.0%                    |
+|mites            |   29017|87.0%                    |93.8%                      |52.0%                  |1.0%                    |0.0%                    |
+|pteropods        |     141|50.4%                    |64.5%                      |28.6%                  |11.3%                   |0.0%                    |
+|soil_nematodes   |   19667|88.8%                    |96.1%                      |65.3%                  |0.0%                    |0.0%                    |
+|springtails      |    8926|82.2%                    |89.6%                      |41.3%                  |2.7%                    |0.0%                    |
+
+### Table S20. Taxonomic scope corrections (exploratory)
+
+|Group            |Records, main rule |Records, corrected |Described species used |Below 0.32 records/yr |Same, alternative species count |
+|:----------------|:------------------|:------------------|:----------------------|:---------------------|:-------------------------------|
+|mesopelagic_fish |127,567            |246,448            |968                    |62.1%                 |                                |
+|mites            |1,315,602          |670,906            |29,017                 |97.3%                 |98.6% (55,000)                  |
+|soil_nematodes   |416,187            |207,898            |19,667                 |96.6%                 |97.7% (29,000)                  |
+
+*Mites: water-mite, plant-, animal-associated and stored-product families excluded; nematodes: marine-dominated orders and animal-parasitic taxa excluded; mesopelagic fishes: 15 families (species count = species ever recorded). Alternative counts from literature compilations.*
+
 
 
 ## SI References
