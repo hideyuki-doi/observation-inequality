@@ -106,6 +106,16 @@ list(
   tar_target(h5_csv, write_csv_target(h5, "sim/h5_unrecorded.csv"), format = "file"),
   tar_target(fig_h5_file, fig_h5(h5), format = "file"),
 
+  # Phase 7: 主図（探索的解析の出力 CSV は sim/explore_*.R が生成）
+  tar_target(ex_const_csv, "sim/explore_const_grid.csv", format = "file"),
+  tar_target(ex_inv_csv, "sim/explore_empirical_inverts.csv", format = "file"),
+  tar_target(ex_vert_csv, "sim/explore_empirical_vert_bins.csv", format = "file"),
+  tar_target(lpd_bins_csv, "sim/lpd2016_mass_bias_bins.csv", format = "file"),
+  tar_target(fig_main1_file, fig_main1(tb_main, dplyr::bind_rows(c(list(tb_main_pts), unname(purrr::map(sens, "pts"))))), format = "file"),
+  tar_target(fig_main2_file, fig_main2(readr::read_csv(ex_const_csv, show_col_types = FALSE), readr::read_csv(ex_inv_csv, show_col_types = FALSE),
+                                       readr::read_csv(ex_vert_csv, show_col_types = FALSE)), format = "file"),
+  tar_target(fig_main3_file, fig_main3(h5, readr::read_csv(lpd_bins_csv, show_col_types = FALSE)), format = "file"),
+
   # Phase 4: Tier A（PREREG §4）
   tar_target(ta_mam_report_d, tierA_data(mam_sp, mam_gy, subset = "report")),
   tar_target(ta_mam_all_d, tierA_data(mam_sp, mam_gy, subset = "all")),
