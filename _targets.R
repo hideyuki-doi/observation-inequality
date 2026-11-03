@@ -42,6 +42,45 @@ list(
     arrow::write_parquet(dplyr::bind_rows(dplyr::mutate(mam_gy, class = "Mammalia"), dplyr::mutate(bird_gy, class = "Aves")), f); f},
     format = "file"),
 
+  # Phase 4: Tier B 主解析（PREREG v1.0 §3）
+  tar_target(tb_groups, tibble::tibble(
+    group_id = c("soil_nematodes", "springtails", "mites", "ants", "enchytraeids", "copepods", "pteropods", "jellyfish", "mesopelagic_fish", "krill"),
+    variant = c(rep("main", 8), "myctophidae_only", "main")) |> dplyr::mutate(label = group_id)),
+  tar_target(tb_cm, dplyr::filter(census_main, role == "main")),
+  tar_target(tb_obs, census_obs(tb_cm)),
+  tar_target(tb_R, R_table(group_recs, tb_groups)),
+  tar_target(tb_main, fit_tierB(tb_obs, tb_R)),
+  tar_target(tb_main_sum, summarise_tierB(tb_main, "main")),
+  tar_target(tb_main_h4, h4_test(tb_main, "main")),
+  tar_target(tb_main_pts, tierB_points(tb_main, "main")),
+  tar_target(sens_name, sens_names),
+  tar_target(sens, run_sens(sens_name, census_main = census_main, group_recs = group_recs, tb_groups = tb_groups,
+                            mam_sp = mam_sp, bird_sp = bird_sp, mam_gy = mam_gy, bird_gy = bird_gy),
+             pattern = map(sens_name), iteration = "list"),
+  tar_target(s13, s13_mc_ols(tb_obs, tb_R)),
+  tar_target(tb_sum_all, dplyr::bind_rows(c(list(tb_main_sum), unname(purrr::map(sens, "sum"))))),
+  tar_target(tb_h4_all, dplyr::bind_rows(c(list(tb_main_h4), unname(purrr::map(sens, "h4"))))),
+  tar_target(tb_sum_csv, write_csv_target(dplyr::bind_rows(tb_sum_all, s13), "models/tierB_summary.csv"), format = "file"),
+  tar_target(tb_h4_csv, write_csv_target(tb_h4_all, "models/tierB_h4.csv"), format = "file"),
+  tar_target(tb_pts_csv, write_csv_target(dplyr::bind_rows(c(list(tb_main_pts), unname(purrr::map(sens, "pts")))), "models/tierB_points.csv"), format = "file"),
+
+  tar_target(fig_p4_scaling, fig_tierB_scaling(tb_main, dplyr::bind_rows(c(list(tb_main_pts), unname(purrr::map(sens, "pts"))))), format = "file"),
+  tar_target(fig_p4_sens, fig_sensitivity(tb_sum_all, s13), format = "file"),
+  tar_target(fig_p4_tierA, fig_tierA(ta_mam_report_d), format = "file"),
+
+  # Phase 4: Tier A（PREREG §4）
+  tar_target(ta_mam_report_d, tierA_data(mam_sp, mam_gy, subset = "report")),
+  tar_target(ta_mam_all_d, tierA_data(mam_sp, mam_gy, subset = "all")),
+  tar_target(ta_bird_d, tierA_data(dplyr::mutate(bird_sp, report_based = TRUE, order = NA_character_) |>
+                                     dplyr::left_join(dplyr::distinct(dplyr::select(readr::read_csv(unz("data/raw/callaghan2021/zenodo_4723365/Tables.zip",
+                                       "Tables/all_species_summary_table.csv"), show_col_types = FALSE), species = `Scientific name`, order2 = Order)), by = "species") |>
+                                     dplyr::mutate(order = order2), bird_gy, subset = "all")),
+  tar_target(ta_fit_mam_report, dplyr::mutate(fit_tierA(ta_mam_report_d), set = "mammals_report (main)")),
+  tar_target(ta_fit_mam_all, dplyr::mutate(fit_tierA(ta_mam_all_d), set = "mammals_all (sens; SVR allometry-derived)")),
+  tar_target(ta_fit_bird, dplyr::mutate(fit_tierA(ta_bird_d), set = "birds_callaghan (sens; occurrence-derived)")),
+  tar_target(ta_fits, dplyr::bind_rows(ta_fit_mam_report, ta_fit_mam_all, ta_fit_bird)),
+  tar_target(ta_fits_csv, write_csv_target(ta_fits, "models/tierA_summary.csv"), format = "file"),
+
   # Phase 2: BOLD と NCBI（API 取得、取得日時を記録）
   tar_target(bold_tbl, bold_counts(taxon_groups_csv)),
   tar_target(bold_year, bold_by_year(bold_tbl)),

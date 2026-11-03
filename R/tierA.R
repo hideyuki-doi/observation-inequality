@@ -3,7 +3,7 @@
 mammal_species <- function(dir = "data/raw/greenspoon2023/mammal_biomass", combine = "data/raw/combine/trait_data_reported.csv") {
   res <- readr::read_csv(file.path(dir, "results/wild_land_mammal_biomass_inluding_populations.csv"), show_col_types = FALSE)
   rep <- readr::read_csv(file.path(dir, "data/species_w_pop_reports.csv"), show_col_types = FALSE)
-  cb <- readr::read_csv(combine, show_col_types = FALSE) |> dplyr::select(iucn2020_binomial, adult_mass_g) |>
+  cb <- readr::read_csv(combine, show_col_types = FALSE) |> dplyr::select(iucn2020_binomial, order, adult_mass_g) |>
     dplyr::filter(!is.na(adult_mass_g)) |> dplyr::distinct(iucn2020_binomial, .keep_all = TRUE)
   res |> dplyr::transmute(species = binomial, N = estimated_population, N_lo = estimated_population_2pt5,
                           N_hi = estimated_population_97pt5, B_g = biomass_g) |>
