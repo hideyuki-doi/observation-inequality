@@ -68,6 +68,36 @@ list(
   tar_target(fig_p4_sens, fig_sensitivity(tb_sum_all, s13), format = "file"),
   tar_target(fig_p4_tierA, fig_tierA(ta_mam_report_d), format = "file"),
 
+  # Phase 5: 検出の遅れ（PREREG §5）
+  tar_target(p5_phi, estimate_phi(mam_sp, mam_gy), packages = c("tidyverse", "brms")),
+  tar_target(p5_phi_csv, write_csv_target(p5_phi, "sim/phi_estimate.csv"), format = "file"),
+  tar_target(p5_eff, effort_paths(rec_group_year, tb_groups)),
+  tar_target(p5_grid_main, run_tdetect_grid(p5_eff, p5_phi$phi_med)),
+  tar_target(p5_control, run_control(p5_eff, p5_phi$phi_med)),
+  tar_target(p5_grid_grow, run_tdetect_grid(p5_eff, p5_phi$phi_med, scenario_E = "E_grow")),
+  tar_target(p5_grid_philo, run_tdetect_grid(p5_eff, p5_phi$phi_lo)),
+  tar_target(p5_grid_phihi, run_tdetect_grid(p5_eff, p5_phi$phi_hi)),
+  tar_target(p5_grid_csv, write_csv_target(dplyr::bind_rows(p5_grid_main, p5_grid_grow, p5_grid_philo, p5_grid_phihi), "sim/tdetect_grid.csv"), format = "file"),
+  tar_target(p5_control_csv, write_csv_target(p5_control, "sim/control_false_trends.csv"), format = "file"),
+  tar_target(p5_S, described_species(census_main)),
+  tar_target(p5_cases, tidyr::expand_grid(grid = c("main", "grow", "philo", "phihi"), sigma10 = c(1, 1.5, 2), Tcol = c("T_a", "T_b", "T_c")) |>
+               dplyr::filter(grid == "main" | (sigma10 == 1.5 & Tcol == "T_a"))),
+  tar_target(p5_maps, {
+    g <- list(main = p5_grid_main, grow = p5_grid_grow, philo = p5_grid_philo, phihi = p5_grid_phihi)[[p5_cases$grid]]
+    mp <- map_tdetect(tb_main, g, p5_eff, p5_S, sigma10 = p5_cases$sigma10, Tcol = p5_cases$Tcol)
+    h <- h3_summary(mp, tb_main$lnM_obs)
+    list(case = p5_cases, h3 = dplyr::mutate(h$tercile, grid = p5_cases$grid, sigma10 = p5_cases$sigma10, method = p5_cases$Tcol,
+                                              ratio_med = h$ratio_med, ratio_lo = h$ratio_lo, ratio_hi = h$ratio_hi, both_undetectable = h$share_draws_both_undetectable,
+                                              lower_majority_undetectable = h$lower_majority_undetectable, H3 = h$H3),
+         gu = dplyr::mutate(group_undetect(mp), grid = p5_cases$grid))
+  }, pattern = map(p5_cases), iteration = "list"),
+  tar_target(p5_h3, dplyr::bind_rows(unname(purrr::map(p5_maps, "h3")))),
+  tar_target(p5_gu, dplyr::bind_rows(unname(purrr::map(p5_maps, "gu")))),
+  tar_target(p5_h3_csv, write_csv_target(p5_h3, "sim/h3_summary.csv"), format = "file"),
+  tar_target(p5_gu_csv, write_csv_target(p5_gu, "sim/undetectable_by_group.csv"), format = "file"),
+  tar_target(fig_p5_lambda, fig_tdetect_lambda(p5_grid_main), format = "file"),
+  tar_target(fig_p5_mass, fig_tdetect_mass(dplyr::filter(p5_gu, grid == "main")), format = "file"),
+
   # Phase 4: Tier A（PREREG §4）
   tar_target(ta_mam_report_d, tierA_data(mam_sp, mam_gy, subset = "report")),
   tar_target(ta_mam_all_d, tierA_data(mam_sp, mam_gy, subset = "all")),
