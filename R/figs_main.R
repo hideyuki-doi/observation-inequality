@@ -82,7 +82,7 @@ fig_main3 <- function(h5, lpd_bins, out = "figs/main_3_consequences.pdf") {
     ggplot2::labs(x = expression(log[10]~"body mass (g)"), y = "species with ≥1 Living Planet population", colour = NULL, tag = "b") +
     theme_main() + ggplot2::theme(legend.position = c(0.2, 0.85))
   p <- patchwork::wrap_plots(pa, pb) +
-    patchwork::plot_annotation(caption = "Exploratory. (a) ×: literature share undescribed (1 − described/estimated total; Chapman 2009, Appeltans 2012, Oberski 2025).\n(b) PROVISIONAL: Living Planet Database 2016 public release; to be replaced with LPD 2026.1.")
+    patchwork::plot_annotation(caption = "Exploratory. (a) ×: literature share undescribed (1 − described/estimated total; Chapman 2009, Appeltans 2012, Oberski 2025).\n(b) Living Planet Database, 2016 public release (rlpi repository).")
   ggplot2::ggsave(out, p, width = 10, height = 4.6, device = grDevices::cairo_pdf); out
 }
 

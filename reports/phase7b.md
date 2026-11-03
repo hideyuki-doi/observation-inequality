@@ -21,3 +21,7 @@ Doi の指示：(1) 脊椎動物の独立センサス、(2) 占有ベースの�
    * 想定される反論：Outhwaite 2020（占有モデルでの英国の無脊椎動物の傾向）、指数 3/4 との区別、記載年は体サイズより分布域に左右される（Collen 2004）。
 
 更新したもの：`figs/main_1_scaling.*`、`figs/main_2_detection.*`、`figs/supp_occupancy_vs_records.*`、`reports/summary.md`、`reports/results_draft_en.md`。
+
+## 決定（2026-11-03、Doi）
+* LPI の解析は LPD 2016 公開版（rlpi リポジトリ）で確定とする（「10 年前なら許容範囲」）。2026.1 は使わない。
+* SquamBase（爬虫類の体重）と海鳥の資料は必須にしない。限界として記載する。
