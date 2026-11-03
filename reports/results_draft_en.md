@@ -14,7 +14,7 @@ By contrast, birds and land mammals lay about five orders of magnitude above the
 - 52 marine mammals and megafauna with survey- or model-based censuses lay 3.8 orders of magnitude above the extrapolated relationship (95% interval over line uncertainty, 1.7–5.9) and 4.3 orders above the optical expectation.
 - 389 land mammals with reported population sizes lay 4.9 orders above it (3.2–6.7).
 
-Records from DNA-derived datasets scaled less steeply with body mass than human observations (β = 0.51 vs 0.75; posterior probability 0.935; Fig. 1b) [P]. This held in 23 of 27 sensitivity analyses.
+Records from DNA-derived datasets scaled less steeply with body mass than human observations (β = 0.51 vs 0.75; posterior probability 0.935; Fig. 1b) [P]. This held in 24 of 27 sensitivity analyses.
 
 Within mammals with independently reported population sizes (n = 388 species), the among-species exponent was shallower (β = 0.32, 0.18–0.47) than the cross-taxon exponent.
 
