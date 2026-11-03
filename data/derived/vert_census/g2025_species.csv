@@ -1,0 +1,123 @@
+"sci","N25","N25lo","N25hi","npop","nmodel","comps","entire","rest"
+"Arctocephalus forsteri",350000,136000,2200000,2,0,"unexploited:entire[New Zealand fur seal|entire]; unexploited:entire[New Zealand fur seal|entire]",TRUE,FALSE
+"Arctocephalus galapagoensis",40000,30000,50000,1,0,"unexploited:entire[Galapagos fur seal|entire]",TRUE,FALSE
+"Arctocephalus gazella",934150.989874685,934150.989874685,934150.989874685,1,1,"model[Antarctic Fur seal|G]",FALSE,FALSE
+"Arctocephalus philippii",18000,15000,30000,1,0,"unexploited:entire[Juan Fernandez fur seal|entire]",TRUE,FALSE
+"Arctocephalus pusillus",1741261.49570504,1366419.49522618,2266543.07567315,2,1,"model[South African and Australian fur seal|G]; unexploited:rest[South African and Australian fur seal|rest]",FALSE,TRUE
+"Arctocephalus townsendi",7400,3000,10000,1,0,"unexploited:entire[Guadalupe fur seal|entire]",TRUE,FALSE
+"Arctocephalus tropicalis",350000,310000,4e+05,1,0,"unexploited:entire[Subantarctic fur seal|entire]",TRUE,FALSE
+"Balaena mysticetus",10891.3543148673,10891.3543148673,10891.3543148673,1,1,"model[Bowhead whale|A]",FALSE,FALSE
+"Balaenoptera acutorostrata",183658.335108023,138283.307950922,232787.080502145,2,2,"model[Common minke whale|NA]; model[Common minke whale|NP]",FALSE,FALSE
+"Balaenoptera bonaerensis",425700.567670206,368185.228674185,490516.693446121,1,1,"model[Antarctic minke whale|SH]",FALSE,FALSE
+"Balaenoptera borealis",116609.827652626,39500.7797780642,192295.353980237,3,3,"model[Sei whale|NA]; model[Sei whale|NP]; model[Sei whale|SH]",FALSE,FALSE
+"Balaenoptera edeni",136242.613682706,90281.0353236413,186987.358293494,2,2,"model[Bryde's whale|NP]; model[Bryde's whale|SH]",FALSE,FALSE
+"Balaenoptera musculus",11209.1195990263,9048.04446942762,13061.5164376726,3,3,"model[Blue whale|NA]; model[Blue whale|NP]; model[Blue whale|SH]",FALSE,FALSE
+"Balaenoptera physalus",145144.459729204,109925.812630552,190586.705235209,3,3,"model[Fin whale|NA]; model[Fin whale|NP]; model[Fin whale|SH]",FALSE,FALSE
+"Berardius arnuxii",1500,1000,3000,1,0,"unexploited:entire[Arnoux's beaked whale|entire]",TRUE,FALSE
+"Berardius bairdii",7058.12880317077,3770.50670314395,8838.94985194818,2,1,"model[Baird's beaked whale|Japan]; unexploited:rest[Baird's beaked whale|rest]",FALSE,TRUE
+"Callorhinus ursinus",2416919.87866638,1528926.67805717,2580772.85315495,2,1,"model[Northern fur seal|G]; unexploited:rest[Northern fur seal|rest]",FALSE,TRUE
+"Caperea marginata",3000,1000,10000,1,0,"unexploited:entire[Pygmy right whale|entire]",TRUE,FALSE
+"Cephalorhynchus commersonii",1300,800,5000,1,0,"unexploited:entire[Commerson's dolphin|entire]",TRUE,FALSE
+"Cephalorhynchus eutropia",1500,1000,3000,1,0,"unexploited:entire[Black dolphin|entire]",TRUE,FALSE
+"Cephalorhynchus heavisidii",3000,1000,5000,1,0,"unexploited:entire[Heaviside's dolphin|entire]",TRUE,FALSE
+"Cephalorhynchus hectori",7300,5300,10000,1,0,"unexploited:entire[Hector's dolphin|entire]",TRUE,FALSE
+"Cystophora cristata",2247371.87384835,1791207.12626414,2494594.3623167,2,2,"model[Hooded seal|Jan_Mayen]; model[Hooded seal|NWA]",FALSE,FALSE
+"Delphinapterus leucas",109546.978144506,59013.1043794475,170609.72952488,1,1,"model[Beluga whale|Arctic]",FALSE,FALSE
+"Delphinus capensis",32000,20000,87000,1,0,"unexploited:entire[Long-beaked common dolphin|entire]",TRUE,FALSE
+"Delphinus delphis",3837584.61119661,3106277.2316467,5392855.41474995,3,2,"model[Short beaked common dolphin|ETP]; model[Short beaked common dolphin|NWA]; unexploited:rest[Short beaked common dolphin|rest]",FALSE,TRUE
+"Delphinus tropicalis",10000,5000,15000,1,0,"unexploited:entire[Arabian common dolphin|entire]",TRUE,FALSE
+"Dugong dugon",80000,160000,320000,1,0,"unexploited:entire[Dugong|entire]",TRUE,FALSE
+"Erignathus barbatus",419046.668873777,208719.598110849,578267.503861275,2,1,"model[Bearded seal|Chukchi_Sea]; unexploited:rest[Bearded seal|rest]",FALSE,TRUE
+"Eschrichtius robustus",18760.4205243501,17381.8878681631,20205.0689501756,2,2,"model[Gray whale|NEP]; model[Gray whale|NWP]",FALSE,FALSE
+"Eubalaena australis",10734.9712396029,6703.22162628479,13166.3826387986,1,1,"model[Right whale|SH]",FALSE,FALSE
+"Eubalaena glacialis",275.747078057873,251.501233523552,351.59249916436,1,1,"model[Right whale|NA]",FALSE,FALSE
+"Eubalaena japonica",5898.40088414587,5477.54060911286,6003.85109726168,1,1,"model[Right whale|NP]",FALSE,FALSE
+"Eumetopias jubatus",56772.1264713332,50929.0241663533,74450.4924930045,3,2,"model[Steller sea lion|Northeast_Alaska]; model[Steller sea lion|Northwest_Alaska]; unexploited:rest[Steller sea lion|rest]",FALSE,TRUE
+"Feresa attenuata",40000,20000,1e+05,1,0,"unexploited:entire[Pygmy killer whale|entire]",TRUE,FALSE
+"Globicephaia melas",2e+05,63000,337000,1,0,"unexploited:rest[Long-finned pilot whale|rest]",FALSE,TRUE
+"Globicephala macrorhynchus",224745.177942886,163143.445793096,502624.912366663,2,1,"model[Short-finned pilot whale|Japan]; unexploited:rest[Short-finned pilot whale|rest]",FALSE,TRUE
+"Globicephala melas",810520.628306029,687345.01955719,924324.697032833,2,2,"model[Long-finned pilot whale|Faroe_Islands]; model[Long-finned pilot whale|Newfoundland]",FALSE,FALSE
+"Grampus griseus",308000,170000,1e+06,1,0,"unexploited:entire[Risso's dolphin|entire]",TRUE,FALSE
+"Halichoerus grypus",296270.148131615,203501.492266993,410631.208926946,3,2,"model[Gray seal|Iceland]; model[Gray seal|Scotland]; unexploited:rest[Gray seal|rest]",FALSE,TRUE
+"Histriophoca fasciata",135317.570719833,114103.558356366,160676.020541456,1,1,"model[Ribbon seal|Bering_sea]",FALSE,FALSE
+"Hydrurga leptonyx",296454,220000,440000,1,0,"unexploited:entire[Leopard seal|entire]",TRUE,FALSE
+"Hyperoodon ampullatus",52578.6508825229,38733.0240426351,74647.3704107379,1,1,"model[Northern bottlenose whale|NA]",FALSE,FALSE
+"Hyperoodon planifrons",560000,450000,7e+05,1,0,"unexploited:entire[Southern bottlenose whale|entire]",TRUE,FALSE
+"Indopacetus pacificus",5000,1000,10000,1,0,"unexploited:entire[Longman's beaked whale|entire]",TRUE,FALSE
+"Inia geoffrensis",1e+05,10000,2e+05,1,0,"unexploited:entire[Amazon River dolphin|entire]",TRUE,FALSE
+"Kogia breviceps",5300,3200,15000,1,0,"unexploited:entire[Pygmy sperm whale|entire]",TRUE,FALSE
+"Kogia simus",12500,8000,36000,1,0,"unexploited:entire[Dwarf sperm whale|entire]",TRUE,FALSE
+"Lagenodelphis hosei",3e+05,150000,1e+06,1,0,"unexploited:entire[Fraser's dolphin|entire]",TRUE,FALSE
+"Lagenorhynchus acutus",102829.041473933,52093.8403203924,217082.013373442,2,1,"model[Atlantic white-sided dolphin|NWA_US]; unexploited:rest[Atlantic white-sided dolphin|rest]",FALSE,TRUE
+"Lagenorhynchus albirostris",26000,16000,60000,1,0,"unexploited:entire[White-beaked dolphin|entire]",TRUE,FALSE
+"Lagenorhynchus australis",3000,1000,10000,1,0,"unexploited:entire[Peale's dolphin|entire]",TRUE,FALSE
+"Lagenorhynchus cruciger",145000,1e+05,2e+05,1,0,"unexploited:entire[Hourglass dolphin|entire]",TRUE,FALSE
+"Lagenorhynchus obliquidens",990000,2e+05,4200000,1,0,"unexploited:entire[Pacific white-sided dolphin|entire]",TRUE,FALSE
+"Lagenorhynchus obscurus",10000,4039,20000,1,0,"unexploited:entire[Dusky dolphin|entire]",TRUE,FALSE
+"Leptonychotes weddellii",4e+05,2e+05,1e+06,1,0,"unexploited:entire[Weddell seal|entire]",TRUE,FALSE
+"Lipotes vexillifer",500,10,1000,1,0,"unexploited:entire[Baiji|entire]",TRUE,FALSE
+"Lissodelphis borealis",331066.055952022,184512.076566837,421019.090136722,1,1,"model[Northern right whale dolphin|NP]",FALSE,FALSE
+"Lissodelphis peronii",270000,50000,1e+06,1,0,"unexploited:entire[Southern right whale dolphin|entire]",TRUE,FALSE
+"Lobodon carcinophaga",8e+06,2e+06,7.5e+07,1,0,"unexploited:entire[Crabeater seal|entire]",TRUE,FALSE
+"Megaptera novaeangliae",57969.1722284152,31607.4671108335,94468.3061180746,3,3,"model[Humpback whale|NA]; model[Humpback whale|NP]; model[Humpback whale|SH]",FALSE,FALSE
+"Mesoplodon bidens",1500,1000,3000,1,0,"unexploited:entire[Sowerby's beaked whale|entire]",TRUE,FALSE
+"Mesoplodon bowdoini",1500,1000,3000,1,0,"unexploited:entire[Andrews' beaked whale|entire]",TRUE,FALSE
+"Mesoplodon carlhubbsi",1500,1000,3000,1,0,"unexploited:entire[Hubb's beaked whale|entire]",TRUE,FALSE
+"Mesoplodon densirostris",15000,10000,30000,1,0,"unexploited:entire[Blainville's beaked whale|entire]",TRUE,FALSE
+"Mesoplodon europaeus",1500,1000,3000,1,0,"unexploited:entire[Gervais' beaked whale|entire]",TRUE,FALSE
+"Mesoplodon ginkgodens",1500,1000,3000,1,0,"unexploited:entire[Ginkgo-toothed beaked whale|entire]",TRUE,FALSE
+"Mesoplodon grayi",1500,1000,3000,1,0,"unexploited:entire[Gray's beaked whale|entire]",TRUE,FALSE
+"Mesoplodon hectori",1500,1000,3000,1,0,"unexploited:entire[Hector's beaked whale|entire]",TRUE,FALSE
+"Mesoplodon layardii",1500,1000,3000,1,0,"unexploited:entire[Strap-toothed whale|entire]",TRUE,FALSE
+"Mesoplodon mirus",1500,1000,3000,1,0,"unexploited:entire[True's beaked whale|entire]",TRUE,FALSE
+"Mesoplodon perrini",1500,1000,3000,1,0,"unexploited:entire[Perrin's beaked whale|entire]",TRUE,FALSE
+"Mesoplodon peruvianus",2500,1000,5000,1,0,"unexploited:entire[Pygmy beaked whale|entire]",TRUE,FALSE
+"Mesoplodon stejnegeri",1500,1000,3000,1,0,"unexploited:entire[Stejneger's beaked whale|entire]",TRUE,FALSE
+"Mesoplodon traversii",1500,1000,3000,1,0,"unexploited:entire[Spade-toothed beaked whale|entire]",TRUE,FALSE
+"Mirounga angustirostris",2e+05,100,1e+06,1,0,"unexploited:entire[Northern elephant seal|entire]",TRUE,FALSE
+"Mirounga leonina",726995.747342259,558427.456193267,991649.946707556,1,1,"model[Southern elephant seal|SH]",FALSE,FALSE
+"Monachus monachus",380,300,470,1,0,"unexploited:entire[Mediterranean monk seal|entire]",TRUE,FALSE
+"Monodon monoceros",65006.636895024,45426.4665898923,87726.9547158756,4,3,"model[Narwhal|Baffin_Bay_Canada]; model[Narwhal|Baffin_Bay_Greenland]; model[Narwhal|Hudson_Bay]; unexploited:rest[Narwhal|rest]",FALSE,TRUE
+"Neomonachus schauinslandi",1463,1437,1500,1,0,"unexploited:entire[Hawaiian monk seal|entire]",TRUE,FALSE
+"Neophoca cinerea",10500,9300,11700,1,0,"unexploited:entire[Australian sea lion|entire]",TRUE,FALSE
+"Neophocaena phocaenoides",20000,10000,40000,1,0,"unexploited:entire[Finless porpoise|entire]",TRUE,FALSE
+"Odobenus rosmarus",251216.144235221,178088.532811382,303850.494537674,6,5,"model[Walrus|Chukchi_Bering_Sea]; model[Walrus|East_Greenland]; model[Walrus|Northwater]; model[Walrus|Spitsbergen_&_Franz_Josef_Land]; model[Walrus|West_Greenland]; unexploited:rest[Walrus|rest]",FALSE,TRUE
+"Ommatophoca rossii",130000,1e+05,4e+05,1,0,"unexploited:entire[Ross seal|entire]",TRUE,FALSE
+"Orcaella brevirostris",1300,2600,1000,1,0,"unexploited:entire[Irrawaddy dolphin|entire]",TRUE,FALSE
+"Orcinus orca",49426.9748926051,30314.5928124084,77512.1922455058,4,3,"model[Killer whale|NA]; model[Killer whale|NP]; model[Killer whale|SH]; unexploited:rest[Killer whale|rest]",FALSE,TRUE
+"Otaria flavescens",567903.340953165,461972.666847947,674881.317211045,3,1,"model[South American sea lion|North_Patagonia_(Falklands)]; unexploited:entire[South American sea lion|entire]; unexploited:rest[South American sea lion|rest]",TRUE,TRUE
+"Pagophilus groenlandicus",11066998.1754617,7455743.90245521,14389729.054064,4,3,"model[Harp seal|NWA]; model[Harp seal|West_Ice]; model[Harp seal|White_Sea]; unexploited:rest[Harp seal|rest]",FALSE,TRUE
+"Peponocephala electra",51000,39000,2e+05,1,0,"unexploited:entire[Melon-headed whale|entire]",TRUE,FALSE
+"Phoca largha",459554.476117915,349582.754128502,603736.260362228,4,3,"model[Largha or spotted seal|Bering_Sea]; model[Largha or spotted seal|Northeast_Pacific_(Alaska)]; model[Largha or spotted seal|Sea_of_Okhotsk_]; unexploited:rest[Largha or spotted seal|rest]",FALSE,TRUE
+"Phoca vitulina",382692.868242802,376660.531825003,419152.115097742,2,1,"model[Harbour seal|California]; unexploited:rest[Harbour seal|rest]",FALSE,TRUE
+"Phocarctos hookeri",12500,11100,14000,1,0,"unexploited:entire[Hooker's or New Zealand sea lion|entire]",TRUE,FALSE
+"Phocoena dioptrica",3000,1000,10000,1,0,"unexploited:entire[Spectacled porpoise|entire]",TRUE,FALSE
+"Phocoena phocoena",579106.903072856,362579.559105367,794127.08679337,5,4,"model[Harbour porpoise|Baltic]; model[Harbour porpoise|Greenland]; model[Harbour porpoise|North_Sea]; model[Harbour porpoise|NWA]; unexploited:rest[Harbour porpoise|rest]",FALSE,TRUE
+"Phocoena sinus",567,77,1073,1,0,"unexploited:entire[Vaquita|entire]",TRUE,FALSE
+"Phocoena spinipinnis",10000,5000,50000,1,0,"unexploited:entire[Burmeister's porpoise|entire]",TRUE,FALSE
+"Phocoenoides dalli",1107797.88318212,427338.755389772,1492089.0034097,2,1,"model[Dall's porpoise|Japan]; unexploited:rest[Dall's porpoise|rest]",FALSE,TRUE
+"Physeter macrocephalus",859980.141993103,492527.82692229,1227432.45706392,1,1,"model[Sperm whale|G]",FALSE,FALSE
+"Platanista gangetica",5000,1000,10000,1,0,"unexploited:entire[Ganges River dolphin|entire]",TRUE,FALSE
+"Platanista minor",5000,1000,10000,1,0,"unexploited:entire[Indus River dolphin|entire]",TRUE,FALSE
+"Pontoporia blainvillei",120000,14000,260000,2,0,"unexploited:entire[Franciscana|entire]; unexploited:entire[Franciscana|entire]",TRUE,FALSE
+"Pseudorca crassidens",57076.2525275977,26059.1975084743,238924.491361599,2,1,"model[False killer whale|Japan]; unexploited:rest[False killer whale|rest]",FALSE,TRUE
+"Pusa hispida",7201500.06836127,3566555.08789622,9155145.83054947,3,3,"model[Ringed seal|Baltic]; model[Ringed seal|NA_&_Arctic]; model[Ringed seal|NP_&_Arctic]",FALSE,FALSE
+"Sotalia fluviatilis",3000,1000,10000,1,0,"unexploited:entire[Tucuxi|entire]",TRUE,FALSE
+"Sousa chinensis",1300,2600,1100,1,0,"unexploited:entire[Pacific hump-backed dolphin|entire]",TRUE,FALSE
+"Sousa plumbea",1200,600,2400,1,0,"unexploited:entire[Indian hump-backed dolphin|entire]",TRUE,FALSE
+"Sousa teuszii",500,120,1000,1,0,"unexploited:entire[Atlantic hump-backed dolphin|entire]",TRUE,FALSE
+"Stenella attenuata",5350297.69525426,4175983.38612581,6283119.06395933,3,2,"model[Pantropical spotted dolphin|ETP]; model[Pantropical spotted dolphin|Japan]; unexploited:rest[Pantropical spotted dolphin|rest]",FALSE,TRUE
+"Stenella clymene",18000,12000,56000,1,0,"unexploited:entire[Clymene dolphin|entire]",TRUE,FALSE
+"Stenella coeruleoalba",2700000,1960000,7e+06,1,0,"unexploited:entire[Striped dolphin|entire]",TRUE,FALSE
+"Stenella frontalis",80000,40000,4e+05,1,0,"unexploited:entire[Atlantic spotted dolphin|entire]",TRUE,FALSE
+"Stenella longirostris",2166697.7229556,1502178.20595286,2616407.66522271,2,1,"model[Spinner dolphin|ETP]; unexploited:rest[Spinner dolphin|rest]",FALSE,TRUE
+"Steno bredanensis",150000,90000,5e+05,1,0,"unexploited:entire[Rough-toothed dolphin|entire]",TRUE,FALSE
+"Tasmacetus shepherdi",1500,1000,3000,1,0,"unexploited:entire[Tasman or Shepherd's beaked whale|entire]",TRUE,FALSE
+"Trichechus inunguis",15000,30000,60000,1,0,"unexploited:entire[Amazonian Manatee|entire]",TRUE,FALSE
+"Trichechus manatus",2000,4000,8000,1,0,"unexploited:entire[West Indian Manatee|entire]",TRUE,FALSE
+"Trichechus senegalensis",5000,10000,20000,1,0,"unexploited:entire[African Manatees|entire]",TRUE,FALSE
+"Tursiops aduncus",5000,1500,7500,1,0,"unexploited:entire[Indian Ocean bottlenose dolphin|entire]",TRUE,FALSE
+"Tursiops truncatus",522340.047495487,404082.445147569,772553.254578562,3,2,"model[Bottlenose dolphin|Japan]; model[Bottlenose dolphin|NWA]; unexploited:rest[Bottlenose dolphin|rest]",FALSE,TRUE
+"Zalophus californianus",89997.4024821458,33879.0274152194,147292.560338121,2,1,"model[California sea lion|California]; unexploited:rest[California sea lion|rest]",FALSE,TRUE
+"Zalophus wollebaeki",14000,10000,25000,1,0,"unexploited:entire[Galapagos sea lion|entire]",TRUE,FALSE
+"Ziphius cavirostris",28000,21700,70000,1,0,"unexploited:entire[Cuvier's beaked whale|entire]",TRUE,FALSE

@@ -1,16 +1,22 @@
-# データ・結果・認証情報はコミットしない（CLAUDE.md §2-8）
-data/
+# 生データ・大きな中間ファイル・認証情報はコミットしない（README の Data 節を参照）
+data/raw/
+data/derived/*.parquet
+data/derived/gbif_agg/
+data/derived/gbif_cells/
+data/derived/harmonized_*
 .Renviron
 _targets/
 renv/library/
 renv/staging/
 renv/local/
 logs/
-models/*.rds
-models/*.csv
 models/fits/
+models/tierB_eiv
+models/tierA_pln
 *.parquet
 *.zip
 .Rhistory
 .RData
 reports/*_files/
+# LPD の利用規約（再配布不可）により、LPD 由来のファイルは公開しない
+sim/lpd2016_*

@@ -1,0 +1,4 @@
+set,n_census,n_exact,n_synonym,n_unmatched,n_dup_target,n_with_mass,share_gbif_records_matched,unmatched_examples
+mammals_all,4795,4551,231,13,89,4784,0.8273397979088379,Pipistrellus crassulus; Blarina brevicauda; Philander deltae; Pogonomelomys bruijnii; Zaglossus bruijnii; Handleyomys rostratus; Handleyomys saturatior; Delomys collinus; Leopardus jacobita; Myoictis wallacei; Handleyomys rhabdops; Proedromys liangshanensis; Pteronotus paraguanensis
+mammals_report,392,370,21,1,4,390,0.17195767786295513,Leopardus jacobita
+birds_callaghan,9700,9010,680,10,78,9302,0.9867498091348762,Xenops rutilans; Prinia rufifrons; Monticola cinclorhyncha; Tchagra minutus; Tangara cyanoptera; Neocossyphus finschi; Ficedula hodgsoni; Ceyx flumenicolus; Geokichla tanganjicae; Ianthocincla gularis

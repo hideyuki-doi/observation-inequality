@@ -1,0 +1,18 @@
+group_id,variant,query,bold_records,retrieved.x,taxids,nuccore_records,retrieved.y
+prokaryotes,main,tax:kingdom:Pseudomonadati;tax:kingdom:Bacillati;tax:kingdom:Fusobacteriati;tax:kingdom:Thermotogati;tax:kingdom:Thermoproteati;tax:kingdom:Methanobacteriati;tax:kingdom:Nanobdellati;tax:kingdom:Promethearchaeati,0,2026-11-02T16:38:34Z,3379134;1783272;3384189;3384194;1783275;3366610;1783276;1935183,152481289,2026-11-02T16:39:35Z
+bacteria,main,tax:kingdom:Pseudomonadati;tax:kingdom:Bacillati;tax:kingdom:Fusobacteriati;tax:kingdom:Thermotogati,0,2026-11-02T16:38:34Z,3379134;1783272;3384189;3384194,150852642,2026-11-02T16:39:40Z
+archaea,main,tax:kingdom:Thermoproteati;tax:kingdom:Methanobacteriati;tax:kingdom:Nanobdellati;tax:kingdom:Promethearchaeati,0,2026-11-02T16:38:36Z,1783275;3366610;1783276;1935183,1628654,2026-11-02T16:39:45Z
+soil_nematodes,main,tax:phylum:Nematoda,61747,2026-11-02T16:38:37Z,6231,5653802,2026-11-02T16:39:47Z
+springtails,main,tax:class:Collembola,305685,2026-11-02T16:38:38Z,30001,251816,2026-11-02T16:39:49Z
+mites,main,tax:order:Sarcoptiformes;tax:order:Mesostigmata;tax:order:Trombidiformes,226914,2026-11-02T16:38:40Z,83137;34634;83136,863856,2026-11-02T16:39:53Z
+mites,acari_all,tax:order:Sarcoptiformes;tax:order:Mesostigmata;tax:order:Trombidiformes;tax:order:Ixodida;tax:order:Opilioacarida;tax:order:Holothyrida,247258,2026-11-02T16:38:42Z,83137;34634;83136;6935;91340;65651,2685140,2026-11-02T16:39:59Z
+ants,main,tax:family:Formicidae,401109,2026-11-02T16:38:44Z,36668,4451402,2026-11-02T16:40:01Z
+enchytraeids,main,tax:family:Enchytraeidae,9110,2026-11-02T16:38:45Z,6388,38406,2026-11-02T16:40:03Z
+copepods,main,tax:class:Copepoda,33020,2026-11-02T16:38:46Z,6830,2112762,2026-11-02T16:40:04Z
+pteropods,main,tax:order:Pteropoda,3617,2026-11-02T16:38:47Z,977783,4781,2026-11-02T16:40:06Z
+jellyfish,main,tax:class:Scyphozoa;tax:class:Cubozoa,7567,2026-11-02T16:38:47Z,6142;6137,337275,2026-11-02T16:40:09Z
+jellyfish,plus_hydrozoa,tax:class:Scyphozoa;tax:class:Cubozoa;tax:class:Hydrozoa,19412,2026-11-02T16:38:49Z,6142;6137;6074,1223954,2026-11-02T16:40:13Z
+mesopelagic_fish,myctophidae_only,tax:family:Myctophidae,5544,2026-11-02T16:38:50Z,68515,277586,2026-11-02T16:40:15Z
+krill,main,tax:species:Euphausia superba,1140,2026-11-02T16:38:51Z,6819,8381,2026-11-02T16:40:16Z
+mammals,main,tax:class:Mammalia,144004,2026-11-02T16:38:51Z,40674,92326486,2026-11-02T16:40:18Z
+birds,main,tax:class:Aves,63354,2026-11-02T16:38:55Z,8782,13705462,2026-11-02T16:40:20Z
