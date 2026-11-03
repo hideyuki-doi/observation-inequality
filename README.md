@@ -31,7 +31,7 @@ cmdstanr::install_cmdstan()   # if CmdStan is not installed
 targets::tar_make()           # main pipeline (after the GBIF aggregation below)
 ```
 
-1. **GBIF records.** The analysis uses the GBIF monthly snapshot of 1 November 2026 on AWS open data (`s3://gbif-open-data-us-east-1/occurrence/2026-11-01/occurrence.parquet/`), read anonymously with the R package arrow. Run `scripts/phase2_launch.sh` (and `scripts/cells_launch.sh` for the 1° cell aggregation); partial aggregates are written to `data/derived/gbif_agg/` and `data/derived/gbif_cells/` and are not included here because of their size (~0.8 GB). Dataset classes come from the GBIF API (`scripts/phase2_datasets.R`).
+1. **GBIF records.** The analysis uses the GBIF monthly snapshot of 1 November 2026 (GBIF.org, https://doi.org/10.15468/dl.jeesns; CC BY-NC 4.0) on AWS open data (`s3://gbif-open-data-us-east-1/occurrence/2026-11-01/occurrence.parquet/`), read anonymously with the R package arrow. Run `scripts/phase2_launch.sh` (and `scripts/cells_launch.sh` for the 1° cell aggregation); partial aggregates are written to `data/derived/gbif_agg/` and `data/derived/gbif_cells/` and are not included here because of their size (~0.8 GB). Dataset classes come from the GBIF API (`scripts/phase2_datasets.R`).
 2. **Census and trait data.** Raw source files are not redistributed. `docs/data_provenance.md` lists every source with URL/DOI, file names, checksums and the exact values used. Place downloaded files under `data/raw/<source>/` as named there.
 3. **Living Planet Database.** The body-size analysis of the Living Planet Index uses the 2016 public release distributed with the rlpi package. Its terms do not allow redistribution, so LPD-derived files are excluded; obtain the data from the Living Planet Index team and run `R/phase6_lpi.R`.
 
@@ -39,11 +39,11 @@ All figures and tables are produced by code; random seed 20261103.
 
 ## Third-party data and licences
 
-Derived files include values from: GBIF-mediated data (individual dataset licences; to be cited via a GBIF derived-dataset DOI), Bar-On et al. 2018 and Greenspoon et al. 2023/2025 (Milo lab repositories, MIT), Callaghan et al. 2021 (Zenodo, CC BY 4.0), AVONET (Tobias et al. 2022, CC BY 4.0), COMBINE (Soria et al. 2021), Rosenberg et al. 2023, van den Hoogen et al. 2019, Potapov et al. 2023, Schultheiss et al. 2022, Atkinson et al. 2009, BOLD Systems. Please cite the original sources when reusing these values.
+Derived files include values from: GBIF-mediated data (snapshot DOI 10.15468/dl.jeesns, CC BY-NC 4.0; a GBIF derived-dataset DOI listing the contributing datasets will be registered), Bar-On et al. 2018 and Greenspoon et al. 2023/2025 (Milo lab repositories, MIT), Callaghan et al. 2021 (Zenodo, CC BY 4.0), AVONET (Tobias et al. 2022, CC BY 4.0), COMBINE (Soria et al. 2021), Rosenberg et al. 2023, van den Hoogen et al. 2019, Potapov et al. 2023, Schultheiss et al. 2022, Atkinson et al. 2009, BOLD Systems. Please cite the original sources when reusing these values.
 
 ## Licence
 
-Code: MIT. Derived data: CC BY 4.0, subject to the licences of the original sources. See `LICENSE`.
+Code: MIT. Derived data: CC BY-NC 4.0 (inherited from the GBIF snapshot), subject also to the licences of the original sources. See `LICENSE`.
 
 ## Note on AI assistance
 

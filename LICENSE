@@ -20,6 +20,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Derived data (data/derived/*.csv, sim/*.csv, models/*.csv): CC BY 4.0
-(https://creativecommons.org/licenses/by/4.0/). These files contain values
-derived from third-party sources that keep their own licences; see README.md.
+Derived data (data/derived/*.csv, sim/*.csv, models/*.csv): CC BY-NC 4.0
+(https://creativecommons.org/licenses/by-nc/4.0/), because record counts are
+derived from the GBIF occurrence snapshot of 1 November 2026, which is
+distributed under CC BY-NC 4.0 (GBIF.org, https://doi.org/10.15468/dl.jeesns).
+These files also contain values derived from other third-party sources that
+keep their own licences; see README.md.
