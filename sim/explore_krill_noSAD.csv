@@ -1,0 +1,4 @@
+tercile,T_med_post,T_med_lo,T_med_hi,undetect_25_med,undetect_25_lo,undetect_25_hi,undetect_100_med,groups,variant
+lower,Inf,Inf,Inf,1,1,1,0.9144034022687546,"copepods,mites,soil_nematodes",no_SAD_for_single_species
+middle,Inf,Inf,Inf,1,1,1,0.7617919669581084,"ants,enchytraeids,jellyfish,pteropods,springtails",no_SAD_for_single_species
+upper,Inf,Inf,Inf,1,1,1,0.8950791091226404,"krill,mesopelagic_fish",no_SAD_for_single_species

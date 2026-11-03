@@ -21,7 +21,8 @@ described_species <- function(census_main) {
   s
 }
 
-map_tdetect <- function(res, grid, eff, S, sigma10 = 1.5, Tcol = "T_a", Ts = c(3:100), n_draw = 1000, seed = 20261103) {
+map_tdetect <- function(res, grid, eff, S, sigma10 = 1.5, Tcol = "T_a", Ts = c(3:100), n_draw = 1000, seed = 20261103,
+                        no_sad_single = FALSE) {   # 探索的 (ii)：種数 1 のグループでは SAD を外す
   set.seed(seed)
   dr <- res$draws[sample(nrow(res$draws), n_draw), ]
   k <- match("all", res$types); c0 <- res$data$lnM_c
@@ -34,12 +35,13 @@ map_tdetect <- function(res, grid, eff, S, sigma10 = 1.5, Tcol = "T_a", Ts = c(3
     g <- labs[gi]
     lnN <- dr[[sprintf("lnN[%d]", gi)]]; lnM <- dr[[sprintf("lnM[%d]", gi)]]
     lnr <- dr[[sprintf("a[%d]", k)]] + dr[[sprintf("b[%d]", k)]] * (lnM - c0)
-    mu <- lnr + log(w$w[w$group_id == g]) + lnN - log(S[[g]]) - sig^2 / 2
-    tibble::tibble(group_id = g, draw = seq_len(n_draw), lnM = lnM, mu = mu, S = S[[g]])
+    sg <- if (no_sad_single && S[[g]] == 1) 1e-6 else sig
+    mu <- lnr + log(w$w[w$group_id == g]) + lnN - log(S[[g]]) - sg^2 / 2
+    tibble::tibble(group_id = g, draw = seq_len(n_draw), lnM = lnM, mu = mu, S = S[[g]], sg = sg)
   }) |> purrr::list_rbind()
   # 検出できる割合 F_g(T) = P(ln λ ≥ ln λ*(T))
   Fg <- out |> dplyr::rowwise() |>
-    dplyr::mutate(F = list(1 - pnorm((lstar[[group_id]] - mu) / sig))) |> dplyr::ungroup()
+    dplyr::mutate(F = list(1 - pnorm((lstar[[group_id]] - mu) / sg))) |> dplyr::ungroup()
   list(Fg = Fg, Ts = Ts, sigma10 = sigma10, Tcol = Tcol)
 }
 

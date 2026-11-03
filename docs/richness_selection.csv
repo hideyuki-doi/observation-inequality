@@ -1,0 +1,9 @@
+group_id,S_total_point,S_total_lo,S_total_hi,source,note
+soil_nematodes,500000,400000,1000000,Chapman 2009,Nematoda whole phylum (not soil only); Hodda 2022a range 500k-10M as sensitivity
+mites,,100000,500000,Chapman 2009,range only; point = geometric mean of range (derived); Hodda 2022b 500k sensitivity
+springtails,50000,,,Chapman 2009 (Hopkin 1997),no range
+ants,,28000,42000,Oberski 2025 (Ward 2014 multiplier 2-3x of 14260),derived range; point = geometric mean (derived)
+copepods,50125,40125,60125,Appeltans 2012,marine Copepoda only (derived sum of described + unknown)
+jellyfish,,338,383,Appeltans 2012,Scyphozoa only; point = geometric mean (derived)
+mammals,5500,,,Chapman 2009,
+birds,10000,,,Chapman 2009,Barrowclough 2016 18043 (different species concept) as sensitivity

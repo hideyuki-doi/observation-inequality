@@ -98,6 +98,14 @@ list(
   tar_target(fig_p5_lambda, fig_tdetect_lambda(p5_grid_main), format = "file"),
   tar_target(fig_p5_mass, fig_tdetect_mass(dplyr::filter(p5_gu, grid == "main")), format = "file"),
 
+  # Phase 6: H5（探索的）
+  tar_target(rich_csv, "docs/richness_selection.csv", format = "file"),
+  tar_target(rich, richness_targets(rich_csv)),
+  tar_target(rec_spp, recorded_species_counts(group_recs, tb_groups)),
+  tar_target(h5, dplyr::bind_rows(lapply(c(1, 1.5, 2), \(s) h5_predict(tb_main, rich, p5_S, rec_spp, sigma10 = s)))),
+  tar_target(h5_csv, write_csv_target(h5, "sim/h5_unrecorded.csv"), format = "file"),
+  tar_target(fig_h5_file, fig_h5(h5), format = "file"),
+
   # Phase 4: Tier A（PREREG §4）
   tar_target(ta_mam_report_d, tierA_data(mam_sp, mam_gy, subset = "report")),
   tar_target(ta_mam_all_d, tierA_data(mam_sp, mam_gy, subset = "all")),

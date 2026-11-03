@@ -1,0 +1,12 @@
+suppressMessages({library(readr);library(dplyr)})
+d <- read_csv("data/raw/lpd/rlpi_example/LPI_LPR2016data_public.csv", col_types=cols(.default="c"), na=character())
+cat("rows",nrow(d),"unique ID",n_distinct(d$ID),"species",n_distinct(d$Binomial),"\n")
+print(problems(d))
+cat("cols:",paste(names(d)[1:28],collapse=", "),"\n")
+yrs <- names(d)[29:ncol(d)]; cat("year cols", min(yrs), max(yrs),"\n")
+print(as.data.frame(d %>% group_by(Class) %>% summarise(pops=n(), species=n_distinct(Binomial)) %>% arrange(desc(pops))))
+print(as.data.frame(count(d,System)))
+print(as.data.frame(d %>% group_by(System, Class) %>% summarise(pops=n(),species=n_distinct(Binomial),.groups="drop")))
+# check binomial vs Genus_Species
+cat("Binomial != Genus_Species:", sum(d$Binomial != paste(d$Genus,d$Species,sep="_")),"\n")
+cat("Binomial with >1 underscore:", sum(lengths(strsplit(d$Binomial,"_"))!=2),"\n")
