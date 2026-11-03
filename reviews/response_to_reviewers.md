@@ -7,9 +7,9 @@ I thank the six reviewers for exceptionally careful reports. Several checked num
 ## Summary of the main changes
 
 1. **The records-per-individual scaling (β = 0.72, "optical 2/3") is withdrawn as an interpretation.**
-   - Five reviewers showed that it is a ratio artefact: records vary little across groups while abundance and body mass are collinear (r = −0.96).
+   - Four reviewers (1, 3, 5 and 6) showed that it is a ratio artefact: records vary little across groups while abundance and body mass are collinear (r = −0.96).
    - I confirm this. Constant records give β = 0.89, and permuted records give 0.88 [0.69, 1.08] (Table S11).
-   - In a free-coefficient errors-in-variables model, records are unrelated to abundance (γ = −0.06 [−0.87, 0.65]) and body mass (0.01 [−0.74, 0.72]) and rise with described species (0.43; P > 0 = 0.97). This holds after scope corrections (0.48 [0.05, 0.89]), with sampling events as the response (0.61 [0.12, 1.07]), without the three largest datasets (0.58 [0.27, 0.87]), and under all census and prior alternatives (Table S12).
+   - In a free-coefficient errors-in-variables model, records are unrelated to abundance (γ = −0.07 [−0.87, 0.66]) and body mass (0.00 [−0.74, 0.72]) and rise with described species (0.43 [−0.01, 0.86]; P > 0 = 0.97). This holds after scope corrections (0.48 [0.05, 0.89]), with sampling events as the response (0.62 [0.15, 1.08]), without the three largest datasets (0.58 [0.29, 0.89]), and under all census and prior alternatives (Table S12).
    - The new first result is that **records follow species, not individuals** (Fig. 1).
 2. **Vertebrate premium recast in species terms, without census extrapolation.** Birds and mammals receive 1,900 and 54 times more records than invertebrate groups of equal described richness (Fig. 1A). Within mammals, records do track abundance (N^0.64).
 3. **The detection floor is now derived analytically and decomposed.**
@@ -62,7 +62,7 @@ I thank the six reviewers for exceptionally careful reports. Several checked num
 **9. Framing.** Title, abstract and significance statement are rewritten. Exploratory results are marked.
 
 **Minor comments and numbers.**
-- The sensitivity range is now reported as 0.59–0.84 (Table S2).
+- The sensitivity range is now reported as 0.59–0.84 (Results and Table S2).
 - The invertebrate φ range is replaced by Table S16.
 - "43–44 years in every group" is replaced by the analytic floor and group-specific values.
 
@@ -70,12 +70,12 @@ I thank the six reviewers for exceptionally careful reports. Several checked num
 
 **1. Records are not comparable units.** I added a sampling-event response: unique species × dataset × 0.1° cell × date (Table S9). It reduces krill from 95,798 records to 8,447 events (KRILLBASE), and the conclusions are unchanged (Table S12). An audit of individualCount per dataset was not attempted beyond the preregistered S3.
 
-**2. Dataset dominance.** Top-3 dataset shares range from 0.29 to 0.91 (Table S9). Removing the three largest datasets per group leaves the dependence on described species intact (0.58 [0.27, 0.87]).
+**2. Dataset dominance.** Top-3 dataset shares range from 0.29 to 0.91 (Table S9). Removing the three largest datasets per group leaves the dependence on described species intact (0.58 [0.29, 0.89]).
 
 **3. Basis of record does not identify detection.** Agreed; the optical interpretation is withdrawn.
 
 **4. DNA type is mostly iBOL plus a few metabarcoding datasets.**
-- Confirmed: iBOL is one dataset with 0.93 million records, against 148 metabarcoding/eDNA datasets with 1.15 million (Table S10). EUKARYOME is classed as a reference database and excluded.
+- Confirmed: iBOL is one dataset with 0.93 million records, against 147 metabarcoding/eDNA datasets with 1.13 million (Table S10). EUKARYOME (0.02 million) is classed as a reference database and excluded.
 - The H4 result holds for metabarcoding/eDNA but not for iBOL barcodes (Table S14), and the text now says so.
 - GenBank-derived records without the extension remain unclassified as DNA; this is stated.
 
@@ -116,7 +116,7 @@ I thank the six reviewers for exceptionally careful reports. Several checked num
 - (a) Monotonicity of power in T for method (a) was checked on a dense grid (`sim/rev_monotonicity_summary.csv`). Power is not strictly monotone: it drops by up to 0.16, mostly at short T where the Wald test is anti-conservative. The first T with power ≥ 0.8 on the dense grid (45, 46 and 63 years for 100, 10 and 1 records per year) agrees with the bisection results to within 1–3 years.
 - (b) Failed fits are almost all all-zero series.
 - (c) The short-series anti-conservatism of method (a) is now reported (2–12%) rather than called nominal.
-- (d) False-increase rates are given by record rate (Table S5).
+- (d) False-increase rates are given by record rate (Table S5), and the autocorrelation result is reported by record rate (Results, Table S17).
 - Method (b) T_detect values are no longer compared with method (a).
 
 **8. H3 mapping double-counts effort declines.** Disclosed (SI §11). The revised detectability analysis does not use this mapping.
@@ -218,6 +218,22 @@ I thank the six reviewers for exceptionally careful reports. Several checked num
 The new references Eisenhauer et al. 2019 and Boyd et al. 2023 were added.
 
 ---
+
+## Corrections from a final numerical check
+
+Before resubmission, an independent check of all 192 numerical statements against the output files found 29 discrepancies. All were corrected:
+- The jellyfish species count (297, including Cubozoa) is now used in every model.
+- The preregistered detection floor is stated by record rate.
+- The direction of the overdispersion wording is corrected.
+- The autocorrelation range is 0.02–0.50, with false-decline rates given by record rate.
+- Enchytraeids are 85%.
+- The source of the alternative species counts is Hodda 2022b.
+- There are 147 metabarcoding datasets.
+- The record total is 3.74 × 10⁹ after removing fossils.
+- Exploratory results are labelled in the abstract, Results and figure legends.
+- Statements this letter describes as added are now in the text.
+
+The check is in `reviews/qa_v2.md`.
 
 ## Items not addressed
 

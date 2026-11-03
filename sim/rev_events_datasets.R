@@ -25,7 +25,7 @@ tab <- ds |> left_join(ev, by = "group_id") |> left_join(types, by = "group_id")
 print(tab, width = 220); readr::write_csv(tab, "sim/rev_events_datasets.csv")
 
 # 自由係数モデルを、応答だけ替えて当てはめ直す
-labs <- sort(unique(tb_obs$label)); S <- p5_S[labs]
+labs <- sort(unique(tb_obs$label)); S <- p5_S[labs]; S["jellyfish"] <- 297   # 箱虫類を加える（QA で不一致を修正）
 lnM_obs <- vapply(labs, \(l) { o <- tb_obs[tb_obs$label == l, ]; if (any(o$type == 3)) o$val[o$type == 3] else o$val[o$type == 2] - o$val[o$type == 1] }, 0)
 lnN_obs <- vapply(labs, \(l) { o <- tb_obs[tb_obs$label == l, ]; if (any(o$type == 1)) o$val[o$type == 1] else o$val[o$type == 2] - o$val[o$type == 3] }, 0)
 m <- cmdstanr::cmdstan_model("models/tierB_free.stan")
@@ -52,4 +52,4 @@ h4 <- purrr::map(c("dna_all", "dna_barcode", "dna_metabarcoding", "specimen"), f
   tibble(contrast = paste0(k, " / human_obs"), slope = median(b), lo = quantile(b, .025), hi = quantile(b, .975), P_lt0 = mean(b < 0),
          groups_with_zero_numerator = sum(num[ord] == 0))
 }) |> bind_rows()
-print(h4); readr::write_csv(h4, "sim/rev_h4_contrast.csv")
+print(h4)   # 正式な区間（残差を含む）は sim/rev_h4_contrast.R が書く。ここでは保存しない

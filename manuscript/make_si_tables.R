@@ -24,7 +24,7 @@ add("Table S2. Preregistered analysis: exponents of records per individual on bo
       left_join(s |> filter(type == "all") |> select(analysis, R2_med, H1, H2), by = "analysis") |> left_join(h |> select(analysis, P_dna_lt_human, H4), by = "analysis") |>
       transmute(Analysis = analysis, `β all` = all, `β human obs.` = human_obs, `β specimen` = specimen, `β DNA` = dna, `R² (all)` = f2(R2_med), H1, H2,
                 `P(β_DNA<β_human)` = f2(P_dna_lt_human, 3), H4),
-    "Preregistered decision labels are reported as computed; they are not interpretable as evidence about detection because the exponent is not identifiable (Tables S11–S12).")
+    "Preregistered decision labels are reported as computed; they are not interpretable as evidence about detection because the exponent is not identifiable (Tables S11–S12). The S13 interval propagates census uncertainty only (not the regression sampling uncertainty) and is therefore narrower than the credible intervals. Sensitivity results are a robustness range, not independent replications.")
 # S3
 ta <- r("models/tierA_summary.csv")
 m <- tar_read(ta_mam_report_d); fo <- summary(lm(log10(R + 0.5) ~ log10(N) + log10(M_g), data = m))$coefficients
@@ -89,9 +89,11 @@ fe <- bind_rows(r("sim/rev_free_exponent.csv") |> transmute(Analysis = model, pa
                 r("sim/rev_free_sensitivity.csv") |> transmute(Analysis = paste0(analysis, ", N + M + log S"), param, med, lo, hi, P_gt0))
 add("Table S12. Errors-in-variables models of log records with free coefficients (exploratory)",
     fe |> transmute(Analysis, Parameter = param, `Estimate [95% CrI]` = ci(med, lo, hi), `P(>0)` = f2(P_gt0)),
-    "γ = 1 would mean records proportional to individuals. Posterior predictive coverage of observed records by 95% intervals was 10/10 in all variants (sim/rev_free_sensitivity.csv).")
+    "γ = 1 would mean records proportional to individuals. Posterior predictive coverage of observed records by 95% intervals was 10/10 in all variants (sim/rev_free_sensitivity.csv). R̂ ≤ 1.01 throughout; 2–9 divergent transitions of 8,000 in models with described species.")
 # S13
-add("Table S13. Records per described species and share of species without records",
+add13 <- function(df) add("Table S13. Records per described species and share of species without records", df,
+  "For birds, GBIF (COL eXtended Release) recognises more species than the Catalogue of Life count of described species used here, so the share without records is truncated at zero.")
+add13(
     r("sim/rev_species_rates.csv") |> transmute(Group = group_id, `log10 M` = f2(log10M), `Described species` = format(S, big.mark = ","),
                                                 `Recorded 2015–2024` = format(recorded, big.mark = ","), `No records 2015–2024` = paste0(f2(100 * pmax(share_zero, 0), 1), "%"),
                                                 `Records/species/yr (2000–2024)` = f2(R_per_species, 1), `Median λ, recorded species` = f2(median_recorded)))

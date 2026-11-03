@@ -4,7 +4,8 @@
 source("sim/explore_common.R")
 tar_load(c(tb_obs, tb_R, p5_S))
 labs <- sort(unique(tb_obs$label)); R <- tb_R$all[match(labs, tb_R$label)]
-S <- p5_S[labs]; habitat_soil <- as.numeric(labs %in% c("soil_nematodes", "springtails", "mites", "ants", "enchytraeids"))
+S <- p5_S[labs]; S["jellyfish"] <- 297   # 箱虫類を加える（QA で不一致を修正）
+habitat_soil <- as.numeric(labs %in% c("soil_nematodes", "springtails", "mites", "ants", "enchytraeids"))
 lnM_obs <- vapply(labs, \(l) { o <- tb_obs[tb_obs$label == l, ]; if (any(o$type == 3)) o$val[o$type == 3] else o$val[o$type == 2] - o$val[o$type == 1] }, 0)
 lnN_obs <- vapply(labs, \(l) { o <- tb_obs[tb_obs$label == l, ]; if (any(o$type == 1)) o$val[o$type == 1] else o$val[o$type == 2] - o$val[o$type == 3] }, 0)
 m <- cmdstanr::cmdstan_model("models/tierB_free.stan")

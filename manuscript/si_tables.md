@@ -52,7 +52,7 @@
 |S14_dna_strict            |0.73 [0.51, 0.95] |0.75 [0.50, 1.01] |0.66 [0.38, 0.95] |0.50 [0.24, 0.76] |0.90     |scaling (limited precision) |indistinguishable from optical |0.949            |supported    |
 |S13_mc_ols                |0.73 [0.61, 0.88] |0.75 [0.62, 0.90] |0.67 [0.53, 0.79] |0.51 [0.38, 0.64] |NA       |NA                          |NA                             |NA               |NA           |
 
-*Preregistered decision labels are reported as computed; they are not interpretable as evidence about detection because the exponent is not identifiable (Tables S11–S12).*
+*Preregistered decision labels are reported as computed; they are not interpretable as evidence about detection because the exponent is not identifiable (Tables S11–S12). The S13 interval propagates census uncertainty only (not the regression sampling uncertainty) and is therefore narrower than the credible intervals. Sensitivity results are a robustness range, not independent replications.*
 
 
 ### Table S3. Species-level models within mammals and birds
@@ -194,25 +194,25 @@
 |:----------------------------------------------------|:-----------|:-------------------|:-----|
 |free: N + M                                          |gamma (lnN) |-0.01 [-1.03, 0.80] |0.49  |
 |free: N + M                                          |delta (lnM) |-0.17 [-1.09, 0.59] |0.32  |
-|free: N + M + log S                                  |gamma (lnN) |-0.06 [-0.87, 0.65] |0.43  |
-|free: N + M + log S                                  |delta (lnM) |0.01 [-0.74, 0.72]  |0.51  |
-|free: N + M + log S                                  |lnS         |0.43 [-0.02, 0.84]  |0.97  |
+|free: N + M + log S                                  |gamma (lnN) |-0.07 [-0.87, 0.66] |0.42  |
+|free: N + M + log S                                  |delta (lnM) |0.00 [-0.74, 0.72]  |0.50  |
+|free: N + M + log S                                  |lnS         |0.43 [-0.01, 0.86]  |0.97  |
 |free: N + M + soil                                   |gamma (lnN) |0.18 [-1.10, 1.18]  |0.65  |
 |free: N + M + soil                                   |delta (lnM) |0.06 [-1.20, 1.08]  |0.55  |
 |free: N + M + soil                                   |soil        |0.75 [-2.00, 3.59]  |0.70  |
-|free: N + M + log S + soil                           |gamma (lnN) |-0.21 [-1.16, 0.98] |0.35  |
-|free: N + M + log S + soil                           |delta (lnM) |-0.14 [-1.03, 1.06] |0.40  |
-|free: N + M + log S + soil                           |lnS         |0.48 [-0.04, 0.93]  |0.97  |
-|free: N + M + log S + soil                           |soil        |-0.51 [-3.01, 2.55] |0.37  |
+|free: N + M + log S + soil                           |gamma (lnN) |-0.18 [-1.14, 0.92] |0.37  |
+|free: N + M + log S + soil                           |delta (lnM) |-0.12 [-1.02, 1.02] |0.41  |
+|free: N + M + log S + soil                           |lnS         |0.47 [-0.03, 0.94]  |0.97  |
+|free: N + M + log S + soil                           |soil        |-0.41 [-2.97, 2.64] |0.39  |
 |scope-corrected records, N + M + log S               |gamma (lnN) |0.06 [-0.74, 0.76]  |0.57  |
 |scope-corrected records, N + M + log S               |delta (lnM) |0.20 [-0.56, 0.88]  |0.74  |
 |scope-corrected records, N + M + log S               |lnS         |0.48 [0.05, 0.89]   |0.98  |
-|species-events, N + M + log S                        |gamma (lnN) |-0.01 [-0.92, 0.77] |0.49  |
-|species-events, N + M + log S                        |delta (lnM) |0.20 [-0.64, 0.94]  |0.70  |
-|species-events, N + M + log S                        |lnS         |0.61 [0.12, 1.07]   |0.99  |
-|records without top-3 datasets, N + M + log S        |gamma (lnN) |0.10 [-0.45, 0.59]  |0.67  |
-|records without top-3 datasets, N + M + log S        |delta (lnM) |0.17 [-0.33, 0.66]  |0.78  |
-|records without top-3 datasets, N + M + log S        |lnS         |0.58 [0.27, 0.87]   |1.00  |
+|species-events, N + M + log S                        |gamma (lnN) |-0.00 [-0.93, 0.79] |0.50  |
+|species-events, N + M + log S                        |delta (lnM) |0.20 [-0.64, 0.96]  |0.71  |
+|species-events, N + M + log S                        |lnS         |0.62 [0.15, 1.08]   |0.99  |
+|records without top-3 datasets, N + M + log S        |gamma (lnN) |0.10 [-0.46, 0.57]  |0.67  |
+|records without top-3 datasets, N + M + log S        |delta (lnM) |0.18 [-0.35, 0.65]  |0.78  |
+|records without top-3 datasets, N + M + log S        |lnS         |0.58 [0.29, 0.89]   |1.00  |
 |main (priors N(0,2)), N + M + log S                  |gamma (lnN) |-0.06 [-0.85, 0.71] |0.43  |
 |main (priors N(0,2)), N + M + log S                  |delta (lnM) |0.01 [-0.72, 0.77]  |0.51  |
 |main (priors N(0,2)), N + M + log S                  |lnS         |0.43 [-0.00, 0.87]  |0.97  |
@@ -232,7 +232,7 @@
 |S5b springtails from Rosenberg re-run, N + M + log S |delta (lnM) |-0.04 [-0.75, 0.60] |0.44  |
 |S5b springtails from Rosenberg re-run, N + M + log S |lnS         |0.42 [-0.02, 0.86]  |0.97  |
 
-*γ = 1 would mean records proportional to individuals. Posterior predictive coverage of observed records by 95% intervals was 10/10 in all variants (sim/rev_free_sensitivity.csv).*
+*γ = 1 would mean records proportional to individuals. Posterior predictive coverage of observed records by 95% intervals was 10/10 in all variants (sim/rev_free_sensitivity.csv). R̂ ≤ 1.01 throughout; 2–9 divergent transitions of 8,000 in models with described species.*
 
 
 ### Table S13. Records per described species and share of species without records
@@ -251,6 +251,9 @@
 |mesopelagic_fish |0.49    |252               |180                |28.6%                |20.2                           |2.65                       |
 |birds            |1.56    |10,868            |11,244             |0.0%                 |6813.4                         |289.90                     |
 |mammals          |1.81    |6,368             |4,844              |23.9%                |240.8                          |3.40                       |
+
+*For birds, GBIF (COL eXtended Release) recognises more species than the Catalogue of Life count of described species used here, so the share without records is truncated at zero.*
+
 
 ### Table S14. DNA-derived relative to human-observation records against body mass (abundance cancels; exploratory)
 

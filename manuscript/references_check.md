@@ -100,3 +100,4 @@ So "a 30% decline over 10 years or 3 generations" is the **Vulnerable threshold 
 | taylor1993 | yes | Crossref (added at revision) |
 | boyd2023 | yes | Crossref (added at revision) |
 | eisenhauer2019 | yes | Crossref (added at revision) |
+| hodda2022b | yes | Crossref (added at QA) |

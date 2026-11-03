@@ -54,7 +54,7 @@ For the five Bar-On groups, abundance is biomass divided by an assumed individua
 
 ### 3. Occurrence records
 
-**GBIF snapshot.** All records in the GBIF snapshot of 1 November 2026 were read from the AWS open-data bucket with the R package arrow (GBIF.org, https://doi.org/10.15468/dl.jeesns; 3,887,364,403 records). Absences and fossil specimens were excluded, leaving 3.75 × 10⁹ records. The records were aggregated three ways:
+**GBIF snapshot.** All records in the GBIF snapshot of 1 November 2026 were read from the AWS open-data bucket with the R package arrow (GBIF.org, https://doi.org/10.15468/dl.jeesns; 3,887,364,403 records). Excluding absences left 3.75 × 10⁹ records, and excluding fossil specimens as well left 3.74 × 10⁹. The records were aggregated three ways:
 1. taxon × year × basis of record × dataset class
 2. for the analysed groups and mammals, species × year × dataset × basis of record
 3. unique sampling events (species × dataset × 0.1° cell × date)
@@ -64,14 +64,14 @@ The event count was used as an alternative response because some datasets publis
 **Dataset classes.** These were obtained from the GBIF API: eBird, iNaturalist research-grade, and datasets with the DNA-derived data extension. DNA-extension datasets were further classified from their titles and descriptions into three types (`data/derived/dna_dataset_types.csv`):
 - specimen barcodes (the International Barcode of Life dataset)
 - reference sequence databases (EUKARYOME, excluded from DNA comparisons)
-- metabarcoding and environmental DNA (148 datasets)
+- metabarcoding and environmental DNA (147 datasets)
 
 **Taxonomic matching.** Census groups were matched to GBIF taxa (COL eXtended Release taxonomy) by explicit rules (Table S1). In revision, scope-corrected variants were defined (`docs/taxon_scope_variants.csv`; lists compiled during review):
 - **mites:** excluding water-mite, plant-associated, animal-associated and stored-product families
 - **nematodes:** excluding marine-dominated orders and animal-parasitic families and orders
 - **mesopelagic fishes:** 15 families instead of Myctophidae only
 
-**Described species.** Counts came from the Catalogue of Life (ChecklistBank dataset 316595), with Scyphozoa plus Cubozoa (297) for jellyfish. Alternative counts for mites (55,000) and nematodes (29,000) come from literature compilations (Table S20).
+**Described species.** Counts came from the Catalogue of Life (ChecklistBank dataset 316595), with Scyphozoa plus Cubozoa (297) for jellyfish. Alternative counts for mites (55,000) and nematodes (29,000) come from ref. [@hodda2022b] (Table S20). For birds, more species are recorded in GBIF (COL eXtended Release) than are counted in the Catalogue of Life release used for described species, so the share of birds without records is truncated at zero (Table S13).
 
 **Species-level names.** Census names were resolved to accepted names with the GBIF species-matching service.
 
@@ -97,6 +97,7 @@ Three analysis methods were compared (effort-offset NB regression, binomial rela
   - responses: scope-corrected records; sampling events; records without the three largest datasets of each group
   - census alternatives: jellyfish mass ×50 for gelatinous carbon content; nematode carbon-to-fresh 0.105; krill abundance from unadjusted nets
 - **Posterior predictive checks:** coverage of observed ln R by 95% prediction intervals.
+- **Diagnostics:** R̂ ≤ 1.01 in all fits; the models with described species had 2 (log S only) and 9 (log S and habitat) divergent transitions out of 8,000, which were not removed by adapt_delta = 0.99.
 
 **Ratio null.** Records were permuted among groups (5,000 times), and records-per-individual slopes were computed by OLS on point estimates.
 
@@ -228,7 +229,7 @@ The work was carried out with Claude (Anthropic), an AI system, under the author
 |S14_dna_strict            |0.73 [0.51, 0.95] |0.75 [0.50, 1.01] |0.66 [0.38, 0.95] |0.50 [0.24, 0.76] |0.90     |scaling (limited precision) |indistinguishable from optical |0.949            |supported    |
 |S13_mc_ols                |0.73 [0.61, 0.88] |0.75 [0.62, 0.90] |0.67 [0.53, 0.79] |0.51 [0.38, 0.64] |NA       |NA                          |NA                             |NA               |NA           |
 
-*Preregistered decision labels are reported as computed; they are not interpretable as evidence about detection because the exponent is not identifiable (Tables S11–S12).*
+*Preregistered decision labels are reported as computed; they are not interpretable as evidence about detection because the exponent is not identifiable (Tables S11–S12). The S13 interval propagates census uncertainty only (not the regression sampling uncertainty) and is therefore narrower than the credible intervals. Sensitivity results are a robustness range, not independent replications.*
 
 
 ### Table S3. Species-level models within mammals and birds
@@ -370,25 +371,25 @@ The work was carried out with Claude (Anthropic), an AI system, under the author
 |:----------------------------------------------------|:-----------|:-------------------|:-----|
 |free: N + M                                          |gamma (lnN) |-0.01 [-1.03, 0.80] |0.49  |
 |free: N + M                                          |delta (lnM) |-0.17 [-1.09, 0.59] |0.32  |
-|free: N + M + log S                                  |gamma (lnN) |-0.06 [-0.87, 0.65] |0.43  |
-|free: N + M + log S                                  |delta (lnM) |0.01 [-0.74, 0.72]  |0.51  |
-|free: N + M + log S                                  |lnS         |0.43 [-0.02, 0.84]  |0.97  |
+|free: N + M + log S                                  |gamma (lnN) |-0.07 [-0.87, 0.66] |0.42  |
+|free: N + M + log S                                  |delta (lnM) |0.00 [-0.74, 0.72]  |0.50  |
+|free: N + M + log S                                  |lnS         |0.43 [-0.01, 0.86]  |0.97  |
 |free: N + M + soil                                   |gamma (lnN) |0.18 [-1.10, 1.18]  |0.65  |
 |free: N + M + soil                                   |delta (lnM) |0.06 [-1.20, 1.08]  |0.55  |
 |free: N + M + soil                                   |soil        |0.75 [-2.00, 3.59]  |0.70  |
-|free: N + M + log S + soil                           |gamma (lnN) |-0.21 [-1.16, 0.98] |0.35  |
-|free: N + M + log S + soil                           |delta (lnM) |-0.14 [-1.03, 1.06] |0.40  |
-|free: N + M + log S + soil                           |lnS         |0.48 [-0.04, 0.93]  |0.97  |
-|free: N + M + log S + soil                           |soil        |-0.51 [-3.01, 2.55] |0.37  |
+|free: N + M + log S + soil                           |gamma (lnN) |-0.18 [-1.14, 0.92] |0.37  |
+|free: N + M + log S + soil                           |delta (lnM) |-0.12 [-1.02, 1.02] |0.41  |
+|free: N + M + log S + soil                           |lnS         |0.47 [-0.03, 0.94]  |0.97  |
+|free: N + M + log S + soil                           |soil        |-0.41 [-2.97, 2.64] |0.39  |
 |scope-corrected records, N + M + log S               |gamma (lnN) |0.06 [-0.74, 0.76]  |0.57  |
 |scope-corrected records, N + M + log S               |delta (lnM) |0.20 [-0.56, 0.88]  |0.74  |
 |scope-corrected records, N + M + log S               |lnS         |0.48 [0.05, 0.89]   |0.98  |
-|species-events, N + M + log S                        |gamma (lnN) |-0.01 [-0.92, 0.77] |0.49  |
-|species-events, N + M + log S                        |delta (lnM) |0.20 [-0.64, 0.94]  |0.70  |
-|species-events, N + M + log S                        |lnS         |0.61 [0.12, 1.07]   |0.99  |
-|records without top-3 datasets, N + M + log S        |gamma (lnN) |0.10 [-0.45, 0.59]  |0.67  |
-|records without top-3 datasets, N + M + log S        |delta (lnM) |0.17 [-0.33, 0.66]  |0.78  |
-|records without top-3 datasets, N + M + log S        |lnS         |0.58 [0.27, 0.87]   |1.00  |
+|species-events, N + M + log S                        |gamma (lnN) |-0.00 [-0.93, 0.79] |0.50  |
+|species-events, N + M + log S                        |delta (lnM) |0.20 [-0.64, 0.96]  |0.71  |
+|species-events, N + M + log S                        |lnS         |0.62 [0.15, 1.08]   |0.99  |
+|records without top-3 datasets, N + M + log S        |gamma (lnN) |0.10 [-0.46, 0.57]  |0.67  |
+|records without top-3 datasets, N + M + log S        |delta (lnM) |0.18 [-0.35, 0.65]  |0.78  |
+|records without top-3 datasets, N + M + log S        |lnS         |0.58 [0.29, 0.89]   |1.00  |
 |main (priors N(0,2)), N + M + log S                  |gamma (lnN) |-0.06 [-0.85, 0.71] |0.43  |
 |main (priors N(0,2)), N + M + log S                  |delta (lnM) |0.01 [-0.72, 0.77]  |0.51  |
 |main (priors N(0,2)), N + M + log S                  |lnS         |0.43 [-0.00, 0.87]  |0.97  |
@@ -408,7 +409,7 @@ The work was carried out with Claude (Anthropic), an AI system, under the author
 |S5b springtails from Rosenberg re-run, N + M + log S |delta (lnM) |-0.04 [-0.75, 0.60] |0.44  |
 |S5b springtails from Rosenberg re-run, N + M + log S |lnS         |0.42 [-0.02, 0.86]  |0.97  |
 
-*γ = 1 would mean records proportional to individuals. Posterior predictive coverage of observed records by 95% intervals was 10/10 in all variants (sim/rev_free_sensitivity.csv).*
+*γ = 1 would mean records proportional to individuals. Posterior predictive coverage of observed records by 95% intervals was 10/10 in all variants (sim/rev_free_sensitivity.csv). R̂ ≤ 1.01 throughout; 2–9 divergent transitions of 8,000 in models with described species.*
 
 
 ### Table S13. Records per described species and share of species without records
@@ -427,6 +428,9 @@ The work was carried out with Claude (Anthropic), an AI system, under the author
 |mesopelagic_fish |0.49    |252               |180                |28.6%                |20.2                           |2.65                       |
 |birds            |1.56    |10,868            |11,244             |0.0%                 |6813.4                         |289.90                     |
 |mammals          |1.81    |6,368             |4,844              |23.9%                |240.8                          |3.40                       |
+
+*For birds, GBIF (COL eXtended Release) recognises more species than the Catalogue of Life count of described species used here, so the share without records is truncated at zero.*
+
 
 ### Table S14. DNA-derived relative to human-observation records against body mass (abundance cancels; exploratory)
 

@@ -47,7 +47,7 @@ For the five Bar-On groups, abundance is biomass divided by an assumed individua
 
 ### 3. Occurrence records
 
-**GBIF snapshot.** All records in the GBIF snapshot of 1 November 2026 were read from the AWS open-data bucket with the R package arrow (GBIF.org, https://doi.org/10.15468/dl.jeesns; 3,887,364,403 records). Absences and fossil specimens were excluded, leaving 3.75 × 10⁹ records. The records were aggregated three ways:
+**GBIF snapshot.** All records in the GBIF snapshot of 1 November 2026 were read from the AWS open-data bucket with the R package arrow (GBIF.org, https://doi.org/10.15468/dl.jeesns; 3,887,364,403 records). Excluding absences left 3.75 × 10⁹ records, and excluding fossil specimens as well left 3.74 × 10⁹. The records were aggregated three ways:
 1. taxon × year × basis of record × dataset class
 2. for the analysed groups and mammals, species × year × dataset × basis of record
 3. unique sampling events (species × dataset × 0.1° cell × date)
@@ -57,14 +57,14 @@ The event count was used as an alternative response because some datasets publis
 **Dataset classes.** These were obtained from the GBIF API: eBird, iNaturalist research-grade, and datasets with the DNA-derived data extension. DNA-extension datasets were further classified from their titles and descriptions into three types (`data/derived/dna_dataset_types.csv`):
 - specimen barcodes (the International Barcode of Life dataset)
 - reference sequence databases (EUKARYOME, excluded from DNA comparisons)
-- metabarcoding and environmental DNA (148 datasets)
+- metabarcoding and environmental DNA (147 datasets)
 
 **Taxonomic matching.** Census groups were matched to GBIF taxa (COL eXtended Release taxonomy) by explicit rules (Table S1). In revision, scope-corrected variants were defined (`docs/taxon_scope_variants.csv`; lists compiled during review):
 - **mites:** excluding water-mite, plant-associated, animal-associated and stored-product families
 - **nematodes:** excluding marine-dominated orders and animal-parasitic families and orders
 - **mesopelagic fishes:** 15 families instead of Myctophidae only
 
-**Described species.** Counts came from the Catalogue of Life (ChecklistBank dataset 316595), with Scyphozoa plus Cubozoa (297) for jellyfish. Alternative counts for mites (55,000) and nematodes (29,000) come from literature compilations (Table S20).
+**Described species.** Counts came from the Catalogue of Life (ChecklistBank dataset 316595), with Scyphozoa plus Cubozoa (297) for jellyfish. Alternative counts for mites (55,000) and nematodes (29,000) come from ref. [@hodda2022b] (Table S20). For birds, more species are recorded in GBIF (COL eXtended Release) than are counted in the Catalogue of Life release used for described species, so the share of birds without records is truncated at zero (Table S13).
 
 **Species-level names.** Census names were resolved to accepted names with the GBIF species-matching service.
 
@@ -90,6 +90,7 @@ Three analysis methods were compared (effort-offset NB regression, binomial rela
   - responses: scope-corrected records; sampling events; records without the three largest datasets of each group
   - census alternatives: jellyfish mass ×50 for gelatinous carbon content; nematode carbon-to-fresh 0.105; krill abundance from unadjusted nets
 - **Posterior predictive checks:** coverage of observed ln R by 95% prediction intervals.
+- **Diagnostics:** R̂ ≤ 1.01 in all fits; the models with described species had 2 (log S only) and 9 (log S and habitat) divergent transitions out of 8,000, which were not removed by adapt_delta = 0.99.
 
 **Ratio null.** Records were permuted among groups (5,000 times), and records-per-individual slopes were computed by OLS on point estimates.
 
