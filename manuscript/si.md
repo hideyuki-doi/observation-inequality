@@ -1,5 +1,5 @@
 ---
-title: "Supplementary Information for: Biodiversity records follow species, not individuals, leaving declines of most small animals undetectable"
+title: "Supplementary Information for: A ten-trillion-fold gap in how animals are recorded leaves declines of most small species undetectable"
 author: "Hideyuki Doi"
 bibliography: references.bib
 csl: pnas.csl

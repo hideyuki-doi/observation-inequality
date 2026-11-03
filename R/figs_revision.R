@@ -98,3 +98,50 @@ fig_rev3 <- function(dg, dv, tab, census, h4, out = "figs/rev_main_3_detectabili
     patchwork::plot_annotation(caption = "(a) For every described species, the time needed to detect a 30% decline per decade from its observed GBIF record rate (2015–2024), using the curves in Fig. 2a.\nInvertebrate and small marine groups ordered by typical body mass; mammals and birds by body-mass class. (b) Ratio of DNA-derived to human-observation records against body mass\n(abundance cancels in the ratio); slopes with 95% intervals propagating census and residual uncertainty.")
   ggplot2::ggsave(out, p, width = 12, height = 5.2, device = grDevices::cairo_pdf); out
 }
+
+# 図1（v3）：1 個体あたりの観測の不平等（記述）と、その原因が種への配分であること
+fig_rev1_v3 <- function(pts, vert, rates, census, free, out = "figs/rev3_main_1_inequality.pdf") {
+  d <- dplyr::filter(pts, analysis == "main", type == "all")
+  v <- dplyr::filter(vert, set %in% c("census_independent", "report_land")) |> dplyr::mutate(log10r = log10((R + 0.5) / N))
+  nem <- d$log10r_med[d$label == "soil_nematodes"]; mam <- median(v$log10r[v$set == "census_independent"])
+  pa <- ggplot2::ggplot() +
+    ggplot2::geom_point(data = v, ggplot2::aes(log10M, log10r, colour = set), size = 0.8, alpha = 0.55) +
+    ggplot2::scale_colour_manual(values = c(census_independent = "#1f78b4", report_land = "#a6cee3"),
+                                 labels = c("Mammal species, survey-based census", "Mammal species, reported populations"), name = NULL) +
+    ggplot2::geom_errorbar(data = d, ggplot2::aes(x = log10M_med, ymin = log10r_lo, ymax = log10r_hi), width = 0, colour = "grey40") +
+    ggplot2::geom_point(data = d, ggplot2::aes(log10M_med, log10r_med), size = 2) +
+    ggplot2::geom_text(data = d, ggplot2::aes(log10M_med, log10r_med, label = lab_g[label]), size = 2.3, hjust = -0.12, vjust = 1.3) +
+    ggplot2::annotate("segment", x = 7.6, xend = 7.6, y = nem, yend = mam, arrow = ggplot2::arrow(ends = "both", length = ggplot2::unit(0.15, "cm")), colour = "#b2182b") +
+    ggplot2::annotate("text", x = 7.4, y = (nem + mam) / 2, label = sprintf("~10^%.0f", mam - nem), parse = TRUE, hjust = 1, colour = "#b2182b", size = 3) +
+    ggplot2::labs(x = expression(log[10]~"body mass (g)"), y = expression(log[10]~"GBIF records per individual, 2000–2024"), tag = "a") + theme_rev() +
+    ggplot2::theme(legend.position = c(0.32, 0.9), legend.background = ggplot2::element_blank(), legend.key.size = ggplot2::unit(0.3, "cm"))
+  r <- rates |> dplyr::mutate(vert = group_id %in% c("mammals", "birds"))
+  inv <- dplyr::filter(r, !vert, S > 1); fit <- lm(log10(R) ~ log10(S), data = inv)
+  pb <- ggplot2::ggplot(dplyr::filter(r, S > 1), ggplot2::aes(log10(S), log10(R))) +
+    ggplot2::geom_abline(intercept = coef(fit)[1], slope = coef(fit)[2], colour = "grey40") +
+    ggplot2::geom_point(ggplot2::aes(shape = vert, colour = vert), size = 2.2) +
+    ggplot2::geom_text(ggplot2::aes(label = lab_g[group_id]), size = 2.3, vjust = -0.9) +
+    ggplot2::scale_colour_manual(values = c(`FALSE` = "black", `TRUE` = "#b2182b"), guide = "none") +
+    ggplot2::scale_shape_manual(values = c(`FALSE` = 16, `TRUE` = 17), guide = "none") +
+    ggplot2::annotate("text", x = -Inf, y = Inf, hjust = -0.05, vjust = 1.3, size = 2.5,
+                      label = sprintf("invertebrate and fish groups: slope %.2f (R² = %.2f)", coef(fit)[2], summary(fit)$r.squared)) +
+    ggplot2::scale_x_continuous(expand = ggplot2::expansion(mult = 0.08)) +
+    ggplot2::labs(x = expression(log[10]~"described species"), y = expression(log[10]~"GBIF records 2000–2024"), tag = "b") + theme_rev()
+  cn <- census |> dplyr::filter(role == "main") |> dplyr::select(group_id, N) |> dplyr::left_join(r, by = "group_id")
+  pc <- ggplot2::ggplot(cn, ggplot2::aes(log10(N), log10(R))) +
+    ggplot2::geom_abline(intercept = mean(log10(cn$R)) - mean(log10(cn$N)), slope = 1, linetype = 2, colour = "grey50") +
+    ggplot2::geom_point(size = 2.2) + ggplot2::geom_text(ggplot2::aes(label = lab_g[group_id]), size = 2.3, vjust = -0.9) +
+    ggplot2::coord_cartesian(ylim = range(log10(cn$R)) + c(-0.3, 0.4)) +
+    ggplot2::annotate("text", x = Inf, y = -Inf, hjust = 1.05, vjust = -0.6, size = 2.5, label = "dashed: records proportional to individuals") +
+    ggplot2::labs(x = expression(log[10]~"census abundance (individuals)"), y = expression(log[10]~"GBIF records 2000–2024"), tag = "c") + theme_rev()
+  fc <- free |> dplyr::filter(model == "free: N + M + log S") |>
+    dplyr::mutate(param = factor(param, c("gamma (lnN)", "delta (lnM)", "lnS"), c("abundance", "body mass", "described species")))
+  pd <- ggplot2::ggplot(fc, ggplot2::aes(med, param)) + ggplot2::geom_vline(xintercept = 0, colour = "grey60") +
+    ggplot2::geom_vline(xintercept = 1, linetype = 2, colour = "grey60") +
+    ggplot2::geom_pointrange(ggplot2::aes(xmin = lo, xmax = hi)) +
+    ggplot2::annotate("text", x = 1, y = 3.45, label = "proportional", size = 2.4, colour = "grey40", hjust = 1.05) +
+    ggplot2::coord_cartesian(xlim = c(-1, 1.1)) +
+    ggplot2::labs(x = "coefficient on log records (95% CrI)", y = NULL, tag = "d") + theme_rev()
+  p <- patchwork::wrap_plots(pa, pb, pc, pd, ncol = 2, widths = c(1.25, 1))
+  ggplot2::ggsave(out, p, width = 10, height = 8, device = grDevices::cairo_pdf); out
+}

@@ -219,6 +219,10 @@ The new references Eisenhauer et al. 2019 and Boyd et al. 2023 were added.
 
 ---
 
+## Note on framing after revision
+
+After the revision, I kept one descriptive result of the first version that the ratio artefact does not affect: the magnitude of the inequality in records per individual (about 10¹³ between soil nematodes and mammals with survey-based censuses; Fig. 1A). The artefact concerns interpreting the slope of this relationship as a law of detection, not the size of the gap. The paper now opens with the gap and then shows that it arises from allocation of records to species rather than from visibility (Fig. 1B–D).
+
 ## Corrections from a final numerical check
 
 Before resubmission, an independent check of all 192 numerical statements against the output files found 29 discrepancies. All were corrected:
