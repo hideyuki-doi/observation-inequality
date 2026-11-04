@@ -5,7 +5,7 @@ fig_records_by_year <- function(rg, out = "figs/phase2_records_by_year.pdf") {
   p <- ggplot2::ggplot(d, ggplot2::aes(year, n, colour = rtype)) + ggplot2::geom_line() +
     ggplot2::scale_y_log10() + ggplot2::facet_wrap(~group_id, scales = "free_y") +
     ggplot2::annotate("rect", xmin = 2000, xmax = 2024, ymin = 0, ymax = Inf, alpha = 0.08) +
-    ggplot2::labs(y = "GBIF records per year (log)", colour = "record type") + ggplot2::theme_bw(9)
-  ggplot2::ggsave(out, p, width = 11, height = 8)
+    ggplot2::labs(y = "GBIF records per year (log)", colour = "record type") + ggplot2::theme_bw(9, base_family = "Times New Roman")
+  ggplot2::ggsave(out, p, width = 11, height = 8, device = grDevices::cairo_pdf)
   out
 }

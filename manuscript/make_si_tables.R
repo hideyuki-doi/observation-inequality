@@ -29,9 +29,9 @@ add("Table S2. Preregistered analysis: exponents of records per individual on bo
 ta <- r("models/tierA_summary.csv")
 m <- tar_read(ta_mam_report_d); fo <- summary(lm(log10(R + 0.5) ~ log10(N) + log10(M_g), data = m))$coefficients
 add("Table S3. Species-level models within mammals and birds",
-    bind_rows(ta |> transmute(Model = paste0("Preregistered PLN, ", set), Species = n_species, `Exponent [95% CrI]` = ci(beta_med, beta_lo, beta_hi), Note = "exponent of records per individual on body mass"),
+    bind_rows(ta |> transmute(Model = paste0("Preregistered PLN, ", set), Species = n_species, `Exponent [95% CI]` = ci(beta_med, beta_lo, beta_hi), Note = "exponent of records per individual on body mass"),
               tibble(Model = "OLS log10(R+0.5) ~ log10 N + log10 M, mammals with reported populations", Species = nrow(m),
-                     `Exponent [95% CrI]` = paste0("N: ", f2(fo[2, 1]), " (SE ", f2(fo[2, 2]), "); M: ", f2(fo[3, 1]), " (SE ", f2(fo[3, 2]), ")"), Note = "exploratory")))
+                     `Exponent [95% CI]` = paste0("N: ", f2(fo[2, 1]), " (SE ", f2(fo[2, 2]), "); M: ", f2(fo[3, 1]), " (SE ", f2(fo[3, 2]), ")"), Note = "exploratory")))
 # S4
 pm <- r("sim/phi_estimate.csv"); pb <- r("sim/explore_phi_by_mean.csv")
 add("Table S4. Overdispersion of annual record counts: preregistered estimate and by recording intensity (mammals, species + year effects)",
@@ -88,7 +88,7 @@ fe <- bind_rows(r("sim/rev_free_exponent.csv") |> transmute(Analysis = model, pa
                 r("sim/rev_events_free_exponent.csv") |> transmute(Analysis = paste0(response, ", N + M + log S"), param, med, lo, hi, P_gt0),
                 r("sim/rev_free_sensitivity.csv") |> transmute(Analysis = paste0(analysis, ", N + M + log S"), param, med, lo, hi, P_gt0))
 add("Table S12. Errors-in-variables models of log records with free coefficients (exploratory)",
-    fe |> transmute(Analysis, Parameter = param, `Estimate [95% CrI]` = ci(med, lo, hi), `P(>0)` = f2(P_gt0)),
+    fe |> transmute(Analysis, Parameter = param, `Estimate [95% CI]` = ci(med, lo, hi), `P(>0)` = f2(P_gt0)),
     "γ = 1 would mean records proportional to individuals. Posterior predictive coverage of observed records by 95% intervals was 10/10 in all variants (sim/rev_free_sensitivity.csv). R̂ ≤ 1.01 throughout; 2–9 divergent transitions of 8,000 in models with described species.")
 # S13
 add13 <- function(df) add("Table S13. Records per described species and share of species without records", df,

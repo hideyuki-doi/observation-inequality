@@ -17,3 +17,12 @@ The v1 claim about optical scaling was withdrawn in revision: the exponent is a 
 | `v4_main_submission.docx` | Title changed to "Occurrence records follow described species, not individuals, and cannot detect declines in most small animals"; sober abstract and significance statement; new paragraphs on why poorly recorded small animals matter (ecosystem function, invertebrate-decline debate, conservation priorities) |
 | `v4_SI_submission.docx` | SI with the new title |
 | `v4_response_to_reviewers.docx` | Response to reviewers (unchanged from v3) |
+
+## v5 (submission to PNAS)
+
+| File | Content |
+|---|---|
+| `v5_main_submission.docx` | Main text revised after the author's comments (Times New Roman, bold black headings, no bullet lists, new Fig. 1 world map, figures at the end with legends directly below) |
+| `v5_SI_submission.docx` | SI with the same formatting; methods rewritten as prose |
+| `v5_cover_letter_PNAS.docx` | Cover letter to PNAS |
+| `v5_comment_response_memo_ja.docx` | How each of the author's comments was addressed (Japanese) |

@@ -57,7 +57,7 @@
 
 ### Table S3. Species-level models within mammals and birds
 
-|Model                                                                   | Species|Exponent [95% CrI]                   |Note                                            |
+|Model                                                                   | Species|Exponent [95% CI]                    |Note                                            |
 |:-----------------------------------------------------------------------|-------:|:------------------------------------|:-----------------------------------------------|
 |Preregistered PLN, mammals_report (main)                                |     388|0.32 [0.18, 0.47]                    |exponent of records per individual on body mass |
 |Preregistered PLN, mammals_all (sens; SVR allometry-derived)            |    4726|0.48 [0.41, 0.55]                    |exponent of records per individual on body mass |
@@ -190,7 +190,7 @@
 
 ### Table S12. Errors-in-variables models of log records with free coefficients (exploratory)
 
-|Analysis                                             |Parameter   |Estimate [95% CrI]  |P(>0) |
+|Analysis                                             |Parameter   |Estimate [95% CI]   |P(>0) |
 |:----------------------------------------------------|:-----------|:-------------------|:-----|
 |free: N + M                                          |gamma (lnN) |-0.01 [-1.03, 0.80] |0.49  |
 |free: N + M                                          |delta (lnM) |-0.17 [-1.09, 0.59] |0.32  |

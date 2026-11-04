@@ -27,7 +27,7 @@ fig_tierB_scaling <- function(res, pts, out = "figs/phase4_tierB_scaling.pdf") {
     ggplot2::facet_wrap(~type, scales = "free_y") +
     ggplot2::labs(x = "log10 body mass M (g wet)", y = "log10 records per individual r (2000–2024)",
                   caption = "black: main groups (fit = posterior median, 95% CrI); dashed: slope 2/3 through fitted centre;\nred open: not in main fit (birds, mammals: S9; prokaryotes: S12)") +
-    ggplot2::theme_bw(9)
+    ggplot2::theme_bw(9, base_family = "Times New Roman")
   ggplot2::ggsave(out, p, width = 10, height = 8, device = grDevices::cairo_pdf); out
 }
 ggrepel_text <- function(d) ggplot2::geom_text(ggplot2::aes(label = label), size = 2.5, vjust = -0.8)
@@ -38,7 +38,7 @@ fig_sensitivity <- function(sumtab, s13, out = "figs/phase4_sensitivity_beta.pdf
   p <- ggplot2::ggplot(d, ggplot2::aes(beta_med, analysis, colour = type)) +
     ggplot2::geom_vline(xintercept = 2/3, linetype = 2) +
     ggplot2::geom_pointrange(ggplot2::aes(xmin = beta_lo, xmax = beta_hi), position = ggplot2::position_dodge(width = 0.6), size = 0.2) +
-    ggplot2::labs(x = "β (slope of log r on log M), 95% CrI", y = NULL) + ggplot2::theme_bw(8)
+    ggplot2::labs(x = "β (slope of log r on log M), 95% CI", y = NULL) + ggplot2::theme_bw(8, base_family = "Times New Roman")
   ggplot2::ggsave(out, p, width = 7, height = 9, device = grDevices::cairo_pdf); out
 }
 
@@ -48,6 +48,6 @@ fig_tierA <- function(dm, out = "figs/phase4_tierA_mammals.pdf") {
     ggplot2::geom_smooth(method = "lm", formula = y ~ x, se = FALSE, colour = "grey30", linewidth = 0.5) +
     ggplot2::labs(x = "log10 body mass (g)", y = "log10 (R+0.5)/N, 2000–2024",
                   caption = "Report-based mammal species (Greenspoon 2023); line: descriptive OLS only (model estimate in models/tierA_summary.csv)") +
-    ggplot2::theme_bw(9)
+    ggplot2::theme_bw(9, base_family = "Times New Roman")
   ggplot2::ggsave(out, p, width = 6, height = 5, device = grDevices::cairo_pdf); out
 }

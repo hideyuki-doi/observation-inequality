@@ -1,5 +1,5 @@
 # 改訂版の主図（コードから生成）
-theme_rev <- function() ggplot2::theme_bw(9) + ggplot2::theme(panel.grid.minor = ggplot2::element_blank())
+theme_rev <- function() ggplot2::theme_bw(9, base_family = "Times New Roman") + ggplot2::theme(panel.grid.minor = ggplot2::element_blank())
 lab_g <- c(soil_nematodes = "Nematodes", mites = "Mites", copepods = "Copepods", springtails = "Springtails", enchytraeids = "Enchytraeids",
            ants = "Ants", pteropods = "Pteropods", jellyfish = "Jellyfish", krill = "Antarctic krill", mesopelagic_fish = "Mesopelagic fish",
            mammals = "Mammals", birds = "Birds")
@@ -28,8 +28,7 @@ fig_rev1 <- function(rates, census, free, out = "figs/rev_main_1_records.pdf") {
   pc <- ggplot2::ggplot(fc, ggplot2::aes(med, param)) + ggplot2::geom_vline(xintercept = c(0, 1), linetype = c(1, 2), colour = "grey60") +
     ggplot2::geom_pointrange(ggplot2::aes(xmin = lo, xmax = hi)) +
     ggplot2::labs(x = "coefficient on log records (95% CrI)", y = NULL, tag = "c") + theme_rev()
-  p <- patchwork::wrap_plots(pa, pb, pc, widths = c(1.15, 1.15, 0.9)) +
-    patchwork::plot_annotation(caption = "(a) Records against described species for invertebrate and small marine groups (circles, line) and vertebrates (triangles).\n(b) Records against census abundance for the ten groups with independent censuses. (c) Errors-in-variables model of log records on log abundance, log body mass and log described species.")
+  p <- patchwork::wrap_plots(pa, pb, pc, widths = c(1.15, 1.15, 0.9))
   ggplot2::ggsave(out, p, width = 11, height = 4.2, device = grDevices::cairo_pdf); out
 }
 
@@ -61,15 +60,14 @@ fig_rev2 <- function(tg, phis, uk, ukm, out = "figs/rev_main_2_detection.pdf") {
                                       ukm$false_declines[ukm$method == "a"], ukm$uk_not_declining[ukm$method == "a"])) +
     ggplot2::labs(x = "UKBMS trend (% per year)", y = "trend from GBIF records (% per year)", tag = "c") + theme_rev() +
     ggplot2::theme(legend.position = "right", legend.key.size = ggplot2::unit(0.35, "cm"))
-  p <- patchwork::wrap_plots(pa, pb, pc, widths = c(1.1, 0.8, 1.3)) +
-    patchwork::plot_annotation(caption = "(a) Simulated years to detect a 30% decline per decade (power 0.8; negative binomial regression with effort offset; constant effort), using overdispersion\nestimated for each group and record rate after removing species-specific trends. 105 = not within 100 years. (b) Overdispersion of annual record counts by record rate.\n(c) British butterflies 2000–2019: trends from unstructured GBIF records (effort offset) vs the UK Butterfly Monitoring Scheme (48 species).")
-  ggplot2::ggsave(out, p, width = 12, height = 4.4, device = grDevices::cairo_pdf); out
+  p <- patchwork::wrap_plots(pa, pb, pc, widths = c(1.1, 0.8, 1.3))
+  ggplot2::ggsave(out, p, width = 12, height = 4.4, device = grDevices::cairo_pdf); ggplot2::ggsave(sub("pdf$","png",out), p, width = 12, height = 4.4, dpi = 200); out
 }
 
 mass_lab <- function(lo) c(`-1` = "0.1–1 g", `0` = "1–10 g", `1` = "10–100 g", `2` = "0.1–1 kg", `3` = "1–10 kg", `4` = "10–100 kg", `5` = "0.1–1 t", `6` = "1–10 t", `7` = "10–100 t")[as.character(lo)]
 
 # 図3：種ごとの検出可能性（記載種すべて）と DNA 記録の体サイズ依存
-fig_rev3 <- function(dg, dv, tab, census, h4, out = "figs/rev_main_3_detectability.pdf") {
+fig_rev3 <- function(dg, dv, tab, census, h4, out = "figs/rev_main_3_detectability.pdf", which = "both") {
   cls <- c("≤25 yr", "26–50 yr", "51–100 yr", "recorded, >100 yr", "never recorded")
   pal <- c("#1a9850", "#a6d96a", "#fee08b", "#f46d43", "#a50026")
   a <- dplyr::bind_rows(dplyr::mutate(dg, x = lab_g[group_id], o = log10M),
@@ -94,9 +92,10 @@ fig_rev3 <- function(dg, dv, tab, census, h4, out = "figs/rev_main_3_detectabili
     ggplot2::facet_wrap(~type, ncol = 1) +
     ggplot2::geom_text(data = lab, ggplot2::aes(x = -Inf, y = -Inf, label = txt), hjust = -0.05, vjust = -0.6, size = 2.5, inherit.aes = FALSE) +
     ggplot2::labs(x = expression(log[10]~"body mass (g)"), y = expression(log[10]~"DNA-derived / human-observation records"), tag = "b") + theme_rev()
-  p <- patchwork::wrap_plots(pa, pb, widths = c(2.2, 1)) +
-    patchwork::plot_annotation(caption = "(a) For every described species, the time needed to detect a 30% decline per decade from its observed GBIF record rate (2015–2024), using the curves in Fig. 2a.\nInvertebrate and small marine groups ordered by typical body mass; mammals and birds by body-mass class. (b) Ratio of DNA-derived to human-observation records against body mass\n(abundance cancels in the ratio); slopes with 95% intervals propagating census and residual uncertainty.")
-  ggplot2::ggsave(out, p, width = 12, height = 5.2, device = grDevices::cairo_pdf); out
+  if (identical(which, "detectability")) { p <- pa + ggplot2::labs(tag = NULL); w <- 10; h <- 5.6 }
+  else if (identical(which, "dna")) { p <- pb + ggplot2::labs(tag = NULL) + ggplot2::facet_wrap(~type, ncol = 2); w <- 9; h <- 4.2 }
+  else { p <- patchwork::wrap_plots(pa, pb, widths = c(2.2, 1)); w <- 12; h <- 5.2 }
+  ggplot2::ggsave(out, p, width = w, height = h, device = grDevices::cairo_pdf); ggplot2::ggsave(sub("pdf$","png",out), p, width = w, height = h, dpi = 200); out
 }
 
 # 図1（v3）：1 個体あたりの観測の不平等（記述）と、その原因が種への配分であること
@@ -143,5 +142,5 @@ fig_rev1_v3 <- function(pts, vert, rates, census, free, out = "figs/rev3_main_1_
     ggplot2::coord_cartesian(xlim = c(-1, 1.1)) +
     ggplot2::labs(x = "coefficient on log records (95% CrI)", y = NULL, tag = "d") + theme_rev()
   p <- patchwork::wrap_plots(pa, pb, pc, pd, ncol = 2, widths = c(1.25, 1))
-  ggplot2::ggsave(out, p, width = 10, height = 8, device = grDevices::cairo_pdf); out
+  ggplot2::ggsave(out, p, width = 10, height = 8, device = grDevices::cairo_pdf); ggplot2::ggsave(sub("pdf$","png",out), p, width = 10, height = 8, dpi = 200); out
 }

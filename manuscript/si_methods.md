@@ -2,168 +2,56 @@
 
 ### 1. Preregistration and its limitations
 
-The analysis plan (PREREG v1.0, Japanese original with an English translation in `PREREG_en.md`) was finalised at commit 01a2fe7 on 3 November 2026. It fixed the data versions, models, priors, decision criteria, exclusion rules and 15 sensitivity analyses.
+The analysis plan (PREREG v1.0, with a Japanese original and an English translation in the public repository) was finalised at commit 01a2fe7 on 3 November 2026. It fixed the data versions, models, priors, decision criteria, exclusion rules and 15 sensitivity analyses. Before the plan was written, I had already inspected the census values of each group and the total GBIF records per group with their breakdown by record type; records per individual and all regressions had not yet been computed. All commits, from the set-up of the project to the first manuscript, are dated the same day. To remove files derived from the Living Planet Database, whose terms do not allow redistribution, the repository history was later rewritten; commits before 01a2fe7 were unaffected, so the preregistration commit is unchanged.
 
-**What was already known when the plan was written.** Before the plan was written, I had already inspected:
-- the census values for each group
-- the total GBIF records per group and their breakdown by record type
-
-Records per individual and all regressions had not been computed.
-
-**Repository history.** All commits, from setup to the first manuscript, are dated the same day. During review, the repository history was rewritten to remove files derived from the Living Planet Database, whose terms do not allow redistribution. Commits before 01a2fe7 were unaffected, so the preregistration commit is unchanged.
-
-**Changes after finalisation.** All were appended to the plan with dates and reasons (Section 11). Peer review identified two problems with the plan itself:
-- records per individual on body mass is not identifiable when abundance and mass are collinear
-- the H3 mapping double-counted effort declines
-
-Both are reported, and every analysis added in revision is labelled exploratory.
+All changes after finalisation were appended to the plan with dates and reasons (Section 11). An internal pre-submission review identified two problems with the plan itself: the regression of records per individual on body mass is not identifiable when abundance and body mass are collinear, and the preregistered mapping of detection times onto body mass double-counted declines in recording effort. Both problems are reported, and all analyses added after the preregistration are identified as such below and in the table captions.
 
 ### 2. Census data
 
-**Sources and classification.** Global abundance (N) and biomass (B) estimates were compiled with their sources, uncertainties and estimation methods (`docs/data_provenance.md`, verbatim quotations). Each was classified into one of four classes:
-- **independent:** extrapolated from field samples, or from survey- or catch-based population models
-- **occurrence-derived:** using citizen-science or occurrence data
-- **allometry-derived:** density predicted from body mass or traits
-- **mixed**
+Global abundance (N) and biomass (B) estimates were compiled with their sources, uncertainties and estimation methods; the provenance of every value, with verbatim quotations from the sources, is recorded in the repository (`docs/data_provenance.md`). Each estimate was classified as independent when it was extrapolated from field samples or from survey- or catch-based population models, as occurrence-derived when it used citizen-science or other occurrence data, as allometry-derived when density was predicted from body mass or other traits, or as mixed. Birds [@callaghan2021pnas] were classed as occurrence-derived because eBird data inform the density of every species, and for 92% of land mammal species the abundances of ref. [@greenspoon2023] come from a model with body mass among its predictors and were therefore classed as allometry-derived.
 
-Birds [@callaghan2021pnas] were classed occurrence-derived because eBird data inform every species' density. For 92% of land mammal species, abundances in ref. [@greenspoon2023] come from a model with body mass among its predictors, so these were classed allometry-derived.
-
-**The ten groups analysed.** Ten groups had independent estimates (Table S1):
-- soil nematodes [@vandenhoogen2019]
-- springtails [@potapov2023]
-- soil mites, obtained by rerunning the code of ref. [@rosenberg2023] with a fixed seed
-- non-arboreal ants [@rosenberg2023]
-- Antarctic krill [@atkinson2009]
-- enchytraeids, copepods, pteropods, planktonic cnidarians and mesopelagic fishes [@baron2018]
-
-For the five Bar-On groups, abundance is biomass divided by an assumed individual mass. Biomass was realigned to the same subgroup, and the assumed mass entered the model as an observation.
-
-**Unit conversion.** Wet mass used each source's factors (Rosenberg dry-to-wet ratios; the Potapov carbon-to-fresh equivalence) or a carbon-to-wet-mass ratio of 0.15 [@baron2018].
-
-**Uncertainty.** Census uncertainties were converted to log-normal standard deviations:
-- 95% intervals and ranges: (ln hi − ln lo)/3.92
-- fold f: ln f/1.96
-- otherwise a default fold of 10 (assumed masses: fold 3)
+Ten groups had independent estimates (Table S1): soil nematodes [@vandenhoogen2019]; springtails [@potapov2023]; soil mites, obtained by rerunning the code of ref. [@rosenberg2023] with a fixed random seed; non-arboreal ants [@rosenberg2023]; Antarctic krill [@atkinson2009]; and enchytraeids, copepods, pteropods, planktonic cnidarians and mesopelagic fishes [@baron2018]. For the last five groups, abundance is biomass divided by an assumed individual mass, so biomass was realigned to the same subgroup and the assumed mass entered the model as an observation. Biomass was converted to wet mass with each source's own factors (the dry-to-wet ratios of ref. [@rosenberg2023] and the carbon-to-fresh-mass equivalence of ref. [@potapov2023]) or otherwise with a carbon-to-wet-mass ratio of 0.15 [@baron2018]. Census uncertainties were converted to log-normal standard deviations, as (ln hi − ln lo)/3.92 for 95% intervals and reported ranges and as ln f/1.96 for a fold uncertainty f; where no uncertainty was reported, a fold of 10 was assumed, and a fold of 3 for assumed individual masses.
 
 ### 3. Occurrence records
 
-**GBIF snapshot.** All records in the GBIF snapshot of 1 November 2026 were read from the AWS open-data bucket with the R package arrow (GBIF.org, https://doi.org/10.15468/dl.jeesns; 3,887,364,403 records). Excluding absences left 3.75 × 10⁹ records, and excluding fossil specimens as well left 3.74 × 10⁹. The records were aggregated three ways:
-1. taxon × year × basis of record × dataset class
-2. for the analysed groups and mammals, species × year × dataset × basis of record
-3. unique sampling events (species × dataset × 0.1° cell × date)
+All records in the GBIF snapshot of 1 November 2026 (GBIF.org, https://doi.org/10.15468/dl.jeesns; 3,887,364,403 records) were read from the Amazon Web Services open-data bucket with the R package arrow. Excluding absences left 3.75 × 10⁹ records, and excluding fossil specimens as well left 3.74 × 10⁹. The records were aggregated by taxon, year, basis of record and dataset class; for the analysed groups and mammals also by species, year, dataset and basis of record; by species, year and 1° grid cell; and as unique sampling events, defined as unique combinations of species, dataset, 0.1° grid cell and date. The event count was used as an alternative response because some datasets publish one record per individual or per sequence variant, as KRILLBASE does for krill.
 
-The event count was used as an alternative response because some datasets publish one record per individual or per sequence variant (e.g. KRILLBASE).
+Dataset classes (eBird, iNaturalist research-grade observations, and datasets with the DNA-derived data extension) were obtained from the GBIF application programming interface. From their titles and descriptions, datasets with the DNA-derived data extension were further classified as specimen barcodes (the International Barcode of Life dataset), reference sequence databases (EUKARYOME, excluded from DNA comparisons) or metabarcoding and environmental DNA (147 datasets) (`data/derived/dna_dataset_types.csv`).
 
-**Dataset classes.** These were obtained from the GBIF API: eBird, iNaturalist research-grade, and datasets with the DNA-derived data extension. DNA-extension datasets were further classified from their titles and descriptions into three types (`data/derived/dna_dataset_types.csv`):
-- specimen barcodes (the International Barcode of Life dataset)
-- reference sequence databases (EUKARYOME, excluded from DNA comparisons)
-- metabarcoding and environmental DNA (147 datasets)
-
-**Taxonomic matching.** Census groups were matched to GBIF taxa (COL eXtended Release taxonomy) by explicit rules (Table S1). In revision, scope-corrected variants were defined (`docs/taxon_scope_variants.csv`; lists compiled during review):
-- **mites:** excluding water-mite, plant-associated, animal-associated and stored-product families
-- **nematodes:** excluding marine-dominated orders and animal-parasitic families and orders
-- **mesopelagic fishes:** 15 families instead of Myctophidae only
-
-**Described species.** Counts came from the Catalogue of Life (ChecklistBank dataset 316595), with Scyphozoa plus Cubozoa (297) for jellyfish. Alternative counts for mites (55,000) and nematodes (29,000) come from ref. [@hodda2022b] (Table S20). For birds, more species are recorded in GBIF (COL eXtended Release) than are counted in the Catalogue of Life release used for described species, so the share of birds without records is truncated at zero (Table S13).
-
-**Species-level names.** Census names were resolved to accepted names with the GBIF species-matching service.
+Census groups were matched to GBIF taxa, which follow the Catalogue of Life eXtended Release, by explicit rules (Table S1). In analyses added after the preregistration, scope-corrected variants excluded water-mite, plant-associated, animal-associated and stored-product families from mites, excluded marine-dominated orders and animal-parasitic families and orders from nematodes, and extended mesopelagic fishes from Myctophidae to 15 families (`docs/taxon_scope_variants.csv`). Numbers of described species came from the Catalogue of Life (ChecklistBank dataset 316595), with Scyphozoa and Cubozoa combined (297 species) for jellyfish; alternative counts for mites (55,000) and nematodes (29,000) were taken from ref. [@hodda2022b] (Table S20). For birds, GBIF recognises more species than the Catalogue of Life count of described species used here, so the share of birds without records is truncated at zero (Table S13). Names of species with census estimates were resolved to accepted names with the GBIF species-matching service.
 
 ### 4. Preregistered models
 
-**Tier B (records per individual on body mass).** ln R_gk ~ Normal(ln N_g + a_k + b_k(ln M_g − c), √(τ_k² + 1/R_gk)). Latent ln N_g and ln M_g were informed by the census observations, four record types were fitted jointly, and the priors were b ~ N(0, 2), a ~ N(−25, 10) and τ ~ Half-Normal(0, 2). The 1/R term approximates Poisson variance; a Poisson likelihood mixed poorly in parameter-recovery tests at these counts.
+In the preregistered model of records per individual, ln R_gk ~ Normal(ln N_g + a_k + b_k(ln M_g − c), √(τ_k² + 1/R_gk)) for group g and record type k, with latent ln N_g and ln M_g informed by the census observations. The four record types were fitted jointly, with priors b ~ N(0, 2), a ~ N(−25, 10) and τ ~ Half-Normal(0, 2). The 1/R term approximates Poisson variance; a Poisson likelihood mixed poorly in parameter-recovery tests at these large counts. Records of 388 mammal species with reported population sizes were analysed with a Poisson–log-normal model with order effects, in which the measurement error on ln N and the residual were combined into one term with a centred parameterisation after the planned brms implementation failed to converge; this is equivalent to the planned model only under a flat prior on latent abundance. In the preregistered detection simulations, annual counts were simulated as NegBin(λ₀E_te^(−dt), φ), with φ estimated from report-based mammals using species and year fixed effects, E_t the observed record trajectory of each group and d corresponding to a 30% decline per decade. Three analysis methods were compared (negative binomial regression with an effort offset, a binomial model of the relative reporting rate, and negative binomial regression of raw counts), and the time to detection was found by bisection.
 
-**Tier A (mammals).** A Poisson–log-normal model with order effects for 388 species with reported population sizes. The measurement error on ln N and the residual were combined into one term with a centred parameterisation, after the planned brms implementation failed to converge. This is equivalent to the plan only with a flat prior on latent abundance.
+### 5. Models of record allocation (added after the preregistration)
 
-**Detection simulations.** Annual counts were simulated as NegBin(λ₀E_te^(−dt), φ) with:
-- φ estimated from report-based mammals using species and year fixed effects
-- E_t, each group's observed record trajectory
-- d, a 30% decline per decade
+Records were modelled directly with a Bayesian errors-in-variables regression, ln R_g ~ Normal(a + γ(ln N_g − c_N) + δ(ln M_g − c_M) + Xη, √(τ² + 1/R_g)), with latent N and M as above, fitted to all records only so that overlapping record types were not fitted jointly. The covariates X were the log number of described species and, in sensitivity analyses, an indicator of soil versus marine habitat. Priors were N(0, 2) for γ, δ and η, and N(0, 5) in a sensitivity analysis. Further variants replaced the response by scope-corrected records, by sampling events or by records without the three largest datasets of each group, and changed census inputs (jellyfish mass multiplied by 50 to reflect the low carbon content of gelatinous animals, a carbon-to-fresh-mass ratio of 0.105 for nematodes, krill abundance from unadjusted net samples, and springtail abundance and biomass from a rerun of the code of ref. [@rosenberg2023]). Posterior predictive checks compared observed ln R with 95% prediction intervals. All fits had R̂ ≤ 1.01; the models with described species had 2 (log number of species only) and 9 (with habitat) divergent transitions out of 8,000, which were not removed by setting adapt_delta to 0.99.
 
-Three analysis methods were compared (effort-offset NB regression, binomial relative reporting rate, raw counts). T_detect was found by bisection.
+For the ratio null model, records were permuted among groups 5,000 times and slopes of records per individual on body mass were computed by ordinary least squares on point estimates. For the DNA comparison, log(R_DNA/R_human) was regressed on log M, so that abundance cancels; census uncertainty was propagated by Monte Carlo simulation (4,000 draws) and the residual sampling uncertainty of the slope by draws from the t distribution.
 
-### 5. Review-driven models of record allocation (exploratory)
+### 6. Detection: analytical results, overdispersion and simulations (added after the preregistration unless stated)
 
-**Free-coefficient model.** ln R_g ~ Normal(a + γ(ln N_g − c_N) + δ(ln M_g − c_M) + Xη, √(τ² + 1/R_g)), with latent N and M as above, fitted to all records only (no joint fitting of overlapping record types).
-- **Covariates X:** log described species, and/or a soil-versus-marine indicator.
-- **Priors:** N(0, 2) for γ, δ and η, with N(0, 5) in sensitivity.
-- **Variants:**
-  - responses: scope-corrected records; sampling events; records without the three largest datasets of each group
-  - census alternatives: jellyfish mass ×50 for gelatinous carbon content; nematode carbon-to-fresh 0.105; krill abundance from unadjusted nets
-- **Posterior predictive checks:** coverage of observed ln R by 95% prediction intervals.
-- **Diagnostics:** R̂ ≤ 1.01 in all fits; the models with described species had 2 (log S only) and 9 (log S and habitat) divergent transitions out of 8,000, which were not removed by adapt_delta = 0.99.
+For a log-linear decline at rate d observed for T years with residual variance σ² on the log scale, the standard error of the slope is σ/√(T(T² − 1)/12). For a negative binomial count with mean λ and shape φ, σ² ≈ 1/λ + 1/φ. Power 1 − β at one-sided level α therefore requires T(T² − 1)/12 = (1/λ + 1/φ)(z_α + z_β)²/d², which gives the lower limit T ≈ [12(z_α + z_β)²/(φd²)]^(1/3) as λ → ∞. From the same expression I also derived the minimum decline per decade detectable within 10 years and the share of the population lost by the time of detection (Table S15).
 
-**Ratio null.** Records were permuted among groups (5,000 times), and records-per-individual slopes were computed by OLS on point estimates.
+To estimate overdispersion net of population trends, I fitted three negative binomial regressions to the annual records (2000–2024) of each species recorded at least once per year on average, all with an offset for the total records of the species' group: an intercept-only model, a model with a linear trend and a model with a quadratic trend. The shape φ and the lag-1 autocorrelation of Pearson residuals were summarised by group, data source and record-rate stratum, with up to 200 species per stratum; bird records were split into eBird and non-eBird records, and mammal records were analysed with and without machine observations. The time to detection of a 30% decline per decade under constant effort was then recomputed for each group, using the trend-removed φ of the record-rate stratum corresponding to λ₀ (31 values from 10⁻² to 10⁴, 500 replicates). To assess the effect of temporal autocorrelation, latent log-normal year effects followed a first-order autoregressive process with ρ = 0.44, with variance chosen so that the marginal overdispersion equalled φ = 0.69, and stable and declining series were analysed with the effort-offset method.
 
-**DNA contrast.** log(R_DNA/R_human) was regressed on log M, so that abundance cancels. Census uncertainty was propagated by Monte Carlo (4,000 draws) and the residual sampling uncertainty of the slope by t draws.
+### 7. Validation against structured monitoring (added after the preregistration)
 
-### 6. Detection: analytic results, overdispersion and simulations (exploratory unless stated)
+For 48 British butterfly species, I compared trends from 2000 to 2019 estimated in two ways. Trends from records used unstructured GBIF records, after removing the UK Butterfly Monitoring Scheme and the Wider Countryside Butterfly Survey (GBIF download https://doi.org/10.15468/dl.u8s7s5), and were analysed with the three methods described above. Trends from monitoring used UK Butterfly Monitoring Scheme site indices (2024 release; values of −2, which denote insufficient monitoring, were treated as missing), fitted with a quasi-Poisson generalised linear model with site fixed effects and a linear year term. The comparison ends in 2019, the last year before the largest unstructured dataset ends, and trends were classed as significant at two-sided α = 0.05.
 
-**Analytic detection time.** For a log-linear decline at rate d observed for T years with residual variance σ² on the log scale, the slope's standard error is σ/√(T(T²−1)/12). For a negative binomial count with mean λ and shape φ, σ² ≈ 1/λ + 1/φ. Power 1 − β at one-sided α therefore requires
+### 8. Detectability of described species (added after the preregistration)
 
-T(T² − 1)/12 = (1/λ + 1/φ)(z_α + z_β)²/d²,
+For every described species in each group, λ was the mean number of records per year from 2015 to 2024, with λ = 0 for species without records. The time to detect a 30% decline per decade was read from the group's curve in Section 6, taking the lower adjacent grid point, which is conservative. Mammal and bird species with body masses from COMBINE [@soria2021] and AVONET [@tobias2022] were binned by order of magnitude of body mass, and bird species used the curve estimated from eBird records.
 
-which gives the floor T ≈ [12(z_α + z_β)²/(φd²)]^(1/3) as λ → ∞. Also reported (Table S15):
-- the minimum decline per decade detectable within 10 years
-- the share of the population lost by the time of detection
+### 9. Other analyses added after the preregistration
 
-**Overdispersion net of trends.** For each species recorded at least once per year on average, three negative binomial regressions were fitted to annual records 2000–2024, all with an offset for the group's total records:
-- intercept only
-- linear trend
-- quadratic trend
-
-φ and the lag-1 autocorrelation of Pearson residuals were summarised by group, data source and record-rate stratum, with up to 200 species per stratum. Groups included eBird and non-eBird bird records, and mammal records with and without machine observations.
-
-**Simulations with record-rate-dependent φ.** T_detect for a 30% decline per decade under constant effort was recomputed for each group, using the trend-removed φ of the record-rate stratum corresponding to λ₀ (31 values from 10⁻² to 10⁴, 500 replicates).
-
-**Autocorrelation.** Latent log-normal year effects followed AR(1) with ρ = 0.44, with variance chosen so that the marginal overdispersion equalled φ = 0.69. These were analysed with the effort-offset method for stable and declining series.
-
-### 7. Validation against structured monitoring (exploratory)
-
-For 48 British butterfly species, two trend estimates for 2000–2019 were compared:
-- **From GBIF:** unstructured records (UKBMS and the Wider Countryside Butterfly Survey removed; GBIF download https://doi.org/10.15468/dl.u8s7s5), analysed with the three methods.
-- **From UKBMS:** site indices (2024 release; values of −2, which denote insufficient monitoring, treated as missing), using a quasi-Poisson GLM with site fixed effects and a linear year term.
-
-2019 was the last year before the largest unstructured dataset ends. A trend was classed as significant at two-sided α = 0.05.
-
-### 8. Detectability of described species (exploratory)
-
-For every described species in each group, λ was the mean annual records 2015–2024, with λ = 0 for species without records. The time to detect a 30% decline per decade was read from the group's curve in Section 6 (taking the lower adjacent grid point, which is conservative). For mammals and birds, species with body masses (COMBINE [@soria2021]; AVONET [@tobias2022]) were binned by order of magnitude; birds used the eBird curve.
-
-### 9. Other exploratory analyses retained from the first version
-
-- **Vertebrates with survey-based censuses.** 50 mammal species, after removing a duplicated elephant entry and an unverified polar bear value. Compared with the extrapolated preregistered relationship (Table S7).
-- **Occupancy index.** Occupied 1° cells per species and year, compared with record counts (Table S6, Fig. S3).
-- **Multi-species indicators.** Pooled NB regressions of K species with independent noise.
-- **Never-recorded species (H5).** Predicted from the observation model with literature totals of species richness. It shares those totals with the benchmark and over-predicts the number of recorded species by 4–11 times in four groups (Table S8), so it is reported as unsupported.
-
-The Living Planet Database analysis of the first version was removed. It used an outdated public release, its data-use terms were uncertain, and indicators are not built from occurrence records.
+Fifty mammal species with survey-based censuses, after removing a duplicated elephant entry and an unverified polar bear value, were compared with the extrapolated preregistered relationship (Table S7). The number of occupied 1° grid cells per species and year was compared with record counts as a coarse occupancy index (Table S6, Fig. S3). Multi-species indicators were simulated as pooled negative binomial regressions of K species with independent noise. The share of species never recorded was predicted from the observation model with literature totals of species richness; because this prediction shares those totals with the benchmark and over-predicts the number of recorded species by 4–11 times in four groups (Table S8), it is reported as unsupported. An analysis of the Living Planet Database in an earlier draft was removed, because it used an outdated public release, the terms of data use were uncertain, and the index is not built from occurrence records.
 
 ### 10. Software, reproducibility and AI assistance
 
-R 4.6.1 with renv, targets, cmdstanr (CmdStan 2.40), brms, arrow and tidyverse; seed 20261103. All figures and tables are generated by code in the public repository (https://github.com/hideyuki-doi/observation-inequality), which also contains the review reports and the response.
-
-The work was carried out with Claude (Anthropic), an AI system, under the author's direction. The system wrote and ran code, retrieved and summarised literature and data documentation, and drafted text. The author approved each analysis stage at predefined gates and checked the results. Bibliographic entries were verified against Crossref or original documents. Census values were checked against source files, with verbatim quotations recorded.
+Analyses used R 4.6.1 with renv, targets, cmdstanr (CmdStan 2.40), brms, arrow and tidyverse, with random seed 20261103. All figures and tables are generated by code in the public repository (https://github.com/hideyuki-doi/observation-inequality), which also contains the internal pre-submission review reports and responses. The work was carried out with Claude (Anthropic), an AI system, under the author's direction. The system wrote and ran code, retrieved and summarised literature and data documentation, and drafted text, and the author approved each stage of analysis at predefined points and checked the results. Bibliographic entries were verified against Crossref or the original documents, and census values were checked against the source files, with verbatim quotations recorded.
 
 ### 11. Deviations from the preregistration
 
-1. **Likelihood (implementation, before finalisation).** A Gaussian likelihood on ln R with variance τ² + 1/R was used instead of a Poisson likelihood.
-2. **Species-level model (implementation).** The single combined error term described in Section 4 replaced brms with me(); it is equivalent only under a flat prior on latent abundance.
-3. **Detection simulations (implementation).** T_detect was found by bisection, with a minimum T of 3. The denominator of the relative reporting rate was the group's other records. Failed fits counted as non-detections.
-4. **H3 mapping (error disclosed in review).** λ₀ was scaled to the 2024 record rate while the effort trajectory started in 2000, which double-counts effort declines. This affects krill and mesopelagic fishes in the upper size third.
-5. **H3 interpretation (addendum after results).** The criterion was met formally because detection failed in every size third, not because of a size gradient. H3 is reported as not substantively supported.
-6. **Preregistered sensitivity analyses not run in the first version.** S5b (Rosenberg springtails), S6c (nematodes without parasitic families), S6d (extended mesopelagic families) and S15 (undescribed-species correction). S6c and S6d were run in revision as scope corrections (Table S20). S5b and S15 were not run.
-7. **H1/H2 interpretation (review).** The records-per-individual exponent is not identifiable from the records (ratio artefact; Tables S11–S12). The preregistered decisions are reported but not interpreted as evidence about detection.
-8. **Tier A consistency (preregistered check).** The within-mammal exponent (0.32) did not overlap the Tier B exponent (0.72). This was not reported in the first version.
-9. **All revision analyses** are exploratory (Sections 5–8).
-
-### Supplementary figures
-
-![**Fig. S1.** Preregistered scaling exponents β (posterior median and 95% CrI) of records per individual on body mass in the main and sensitivity analyses (dashed line, 2/3). The exponent is not identifiable from the records (Table S11).](../figs/phase4_sensitivity_beta.png){width=100%}
-
-![**Fig. S2.** Preregistered simulations: years to detect a 30% decline per decade against initial expected records per species-year by group and method, using mammal overdispersion (φ = 0.69) and each group's effort trajectory.](../figs/phase5_tdetect_vs_lambda.png){width=100%}
-
-![**Fig. S3.** Years to detect a 30% decline per decade using record counts or the number of occupied 1° cells, by group and recording stratum (exploratory).](../figs/supp_occupancy_vs_records.png){width=100%}
-
-![**Fig. S4.** Annual GBIF records by group and record type, 1950–2025 (shaded: 2000–2024).](../figs/phase2_records_by_year.png){width=100%}
-
-![**Fig. S5.** Preregistered analysis of records per individual against body mass (first version's Fig. 1), with mammal species with census abundances (exploratory). Records per individual largely mirror abundance (main text).](../figs/supp_prereg_scaling.png){width=100%}
+Before finalisation, a Gaussian likelihood on ln R with variance τ² + 1/R replaced the planned Poisson likelihood. For the species-level mammal model, the single combined error term described in Section 4 replaced the planned brms model with a measurement-error term, which is equivalent only under a flat prior on latent abundance. In the detection simulations, the time to detection was found by bisection with a minimum of three years, the denominator of the relative reporting rate was the group's other records, and failed fits were counted as non-detections. The preregistered mapping of detection times onto body mass scaled λ₀ to the 2024 record rate while the effort trajectory started in 2000, which double-counts declines in effort and affects krill and mesopelagic fishes in the upper third of the body-size range; this mapping is not used in the main text. The preregistered criterion for a size-structured detection delay was met formally because detection failed in every third of the size range, not because of a size gradient, so this hypothesis is reported as not substantively supported (addendum after results). The preregistered sensitivity analyses S6c (nematodes without parasitic families) and S6d (extended mesopelagic families) were not run initially and were later run as scope corrections (Table S20); S5b (springtail census of ref. [@rosenberg2023]) was run as a variant of the allocation model (Table S12); S15 (correction for undescribed species) was not run. The preregistered exponent of records per individual is not identifiable from the records because of the ratio problem (Tables S11 and S12), so the preregistered decisions on visibility are reported but not interpreted as evidence about detection. The preregistered consistency check between the within-mammal exponent (0.32) and the cross-group exponent (0.72) failed and was not reported in the first draft. All analyses in Sections 5–9 were added after the preregistration.

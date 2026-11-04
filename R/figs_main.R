@@ -1,5 +1,5 @@
 # Phase 7：主図（すべてコードから生成）
-theme_main <- function() ggplot2::theme_bw(9) + ggplot2::theme(panel.grid.minor = ggplot2::element_blank())
+theme_main <- function() ggplot2::theme_bw(9, base_family = "Times New Roman") + ggplot2::theme(panel.grid.minor = ggplot2::element_blank())
 lab_group <- c(soil_nematodes = "Soil nematodes", mites = "Mites", copepods = "Copepods", springtails = "Springtails",
                enchytraeids = "Enchytraeids", ants = "Ants", pteropods = "Pteropods", jellyfish = "Jellyfish",
                krill = "Antarctic krill", mesopelagic_fish = "Mesopelagic fish", birds_callaghan = "Birds*",
@@ -35,8 +35,7 @@ fig_main1 <- function(res, pts, vert = NULL, out = "figs/main_1_scaling.pdf") {
   pb <- ggplot2::ggplot(bd, ggplot2::aes(b, type)) + ggplot2::geom_violin(fill = "grey85", scale = "width") +
     ggplot2::stat_summary(fun = median, geom = "point") + ggplot2::geom_vline(xintercept = 2/3, linetype = 2, colour = "grey50") +
     ggplot2::labs(x = expression("scaling exponent"~beta), y = NULL, tag = "b") + theme_main()
-  p <- patchwork::wrap_plots(pa, pb, widths = c(2.2, 1)) +
-    patchwork::plot_annotation(caption = "Black: ten groups with census N independent of occurrence data (main fit, 95% CrI). Dashed grey: slope 2/3 (optical expectation).\nRed open, not fitted: *census derived from occurrence data or allometry (sensitivity S9); †DNA-only records (S12).\nBlue: individual mammal species with census independent of occurrence data (exploratory; Greenspoon 2025 surveys, rhino/elephant counts, IUCN reports).")
+  p <- patchwork::wrap_plots(pa, pb, widths = c(2.2, 1))
   ggplot2::ggsave(out, p, width = 10, height = 4.8, device = grDevices::cairo_pdf); out
 }
 
@@ -59,8 +58,7 @@ fig_main2 <- function(const_grid, inv_tab, vert_bins, out = "figs/main_2_detecti
     ggplot2::scale_y_continuous(labels = scales::percent, limits = c(0, 1)) +
     ggplot2::labs(x = expression(log[10]~"body mass (g)"), y = "described species whose 30%/10-yr decline\nis undetectable within 100 yr", colour = NULL, tag = "b") +
     theme_main() + ggplot2::theme(legend.position = c(0.75, 0.85))
-  p <- patchwork::wrap_plots(pa, pb, widths = c(1, 1.4)) +
-    patchwork::plot_annotation(caption = "(a) NB-GLM with effort offset, constant effort, φ = 0.69 (mammal species-year records). (b) Exploratory: observed GBIF λ (2015–2024 mean),\ndescribed species without records λ = 0; triangles use each group's own φ (by record-rate stratum), mammals and birds use φ = 0.69.")
+  p <- patchwork::wrap_plots(pa, pb, widths = c(1, 1.4))
   ggplot2::ggsave(out, p, width = 10, height = 4.6, device = grDevices::cairo_pdf); out
 }
 
@@ -81,8 +79,7 @@ fig_main3 <- function(h5, lpd_bins, out = "figs/main_3_consequences.pdf") {
     ggplot2::scale_colour_manual(values = c(Aves = "#d95f02", Mammalia = "#1b9e77"), labels = c("Birds", "Mammals")) +
     ggplot2::labs(x = expression(log[10]~"body mass (g)"), y = "species with ≥1 Living Planet population", colour = NULL, tag = "b") +
     theme_main() + ggplot2::theme(legend.position = c(0.2, 0.85))
-  p <- patchwork::wrap_plots(pa, pb) +
-    patchwork::plot_annotation(caption = "Exploratory. (a) ×: literature share undescribed (1 − described/estimated total; Chapman 2009, Appeltans 2012, Oberski 2025).\n(b) Living Planet Database, 2016 public release (rlpi repository).")
+  p <- patchwork::wrap_plots(pa, pb)
   ggplot2::ggsave(out, p, width = 10, height = 4.6, device = grDevices::cairo_pdf); out
 }
 
@@ -95,8 +92,7 @@ fig_occupancy <- function(occ, out = "figs/supp_occupancy_vs_records.pdf") {
     ggplot2::facet_wrap(~ lab_group[ifelse(group_id == "mammals", "mammals_greenspoon_all", group_id)] |> sub("\\*", "", x = _), nrow = 2) +
     ggplot2::geom_hline(yintercept = 100, linetype = 3) +
     ggplot2::scale_colour_manual(values = c("black", "#1f78b4")) +
-    ggplot2::labs(x = "species stratum by mean GBIF records per year", y = "years to detect 30%/10-yr decline (105 = never)", colour = NULL,
-                  caption = "Exploratory. φ estimated separately for each index (NB, species + year effects). Occupancy index assumed to decline in proportion to abundance (optimistic).") +
+    ggplot2::labs(x = "species stratum by mean GBIF records per year", y = "years to detect 30%/10-yr decline (105 = never)", colour = NULL) +
     theme_main()
   ggplot2::ggsave(out, p, width = 10, height = 5, device = grDevices::cairo_pdf); out
 }
