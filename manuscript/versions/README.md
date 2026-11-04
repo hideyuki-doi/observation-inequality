@@ -9,3 +9,11 @@
 | `v3_response_to_reviewers.docx` | v3 | Point-by-point response to the six reviews |
 
 The v1 claim about optical scaling was withdrawn in revision: the exponent is a ratio artefact (see `reviews/response_to_reviewers.md`). v1 is kept for reference only.
+
+## v4 (submission draft)
+
+| File | Content |
+|---|---|
+| `v4_main_submission.docx` | Title changed to "Occurrence records follow described species, not individuals, and cannot detect declines in most small animals"; sober abstract and significance statement; new paragraphs on why poorly recorded small animals matter (ecosystem function, invertebrate-decline debate, conservation priorities) |
+| `v4_SI_submission.docx` | SI with the new title |
+| `v4_response_to_reviewers.docx` | Response to reviewers (unchanged from v3) |
