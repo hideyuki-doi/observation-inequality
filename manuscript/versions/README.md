@@ -26,3 +26,12 @@ The v1 claim about optical scaling was withdrawn in revision: the exponent is a 
 | `v5_SI_submission.docx` | SI with the same formatting; methods rewritten as prose |
 | `v5_cover_letter_PNAS.docx` | Cover letter to PNAS |
 | `v5_comment_response_memo_ja.docx` | How each of the author's comments was addressed (Japanese) |
+
+## v6 (current; submission to PNAS)
+
+| File | Content |
+|---|---|
+| `v6_main_submission.docx` | Preregistration and internal-review framing removed (additional analyses described as sensitivity and preliminary analyses); all figures in Helvetica; Fig. 3 (DNA-derived records) redesigned |
+| `v6_SI_submission.docx` | SI with Preregistration/Deviations sections removed and methods renumbered (Sections 1–9) |
+| `v6_cover_letter_PNAS.docx` | Cover letter without the preregistration paragraph |
+| `v6_comment_response_memo_ja.docx` | Memo of responses to the author's comments, updated for v6 (Japanese) |

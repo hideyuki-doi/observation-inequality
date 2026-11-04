@@ -1,5 +1,5 @@
 # Phase 7：主図（すべてコードから生成）
-theme_main <- function() ggplot2::theme_bw(9, base_family = "Times New Roman") + ggplot2::theme(panel.grid.minor = ggplot2::element_blank())
+theme_main <- function() ggplot2::theme_bw(9, base_family = "Helvetica") + ggplot2::theme(panel.grid.minor = ggplot2::element_blank())
 lab_group <- c(soil_nematodes = "Soil nematodes", mites = "Mites", copepods = "Copepods", springtails = "Springtails",
                enchytraeids = "Enchytraeids", ants = "Ants", pteropods = "Pteropods", jellyfish = "Jellyfish",
                krill = "Antarctic krill", mesopelagic_fish = "Mesopelagic fish", birds_callaghan = "Birds*",

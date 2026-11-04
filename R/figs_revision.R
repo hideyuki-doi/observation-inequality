@@ -1,5 +1,5 @@
 # 改訂版の主図（コードから生成）
-theme_rev <- function() ggplot2::theme_bw(9, base_family = "Times New Roman") + ggplot2::theme(panel.grid.minor = ggplot2::element_blank())
+theme_rev <- function() ggplot2::theme_bw(9, base_family = "Helvetica") + ggplot2::theme(panel.grid.minor = ggplot2::element_blank())
 lab_g <- c(soil_nematodes = "Nematodes", mites = "Mites", copepods = "Copepods", springtails = "Springtails", enchytraeids = "Enchytraeids",
            ants = "Ants", pteropods = "Pteropods", jellyfish = "Jellyfish", krill = "Antarctic krill", mesopelagic_fish = "Mesopelagic fish",
            mammals = "Mammals", birds = "Birds")

@@ -18,64 +18,64 @@
 *All ten abundances classified independent. Provenance, verbatim quotations and uncertainty conversions: docs/data_provenance.md.*
 
 
-### Table S2. Preregistered analysis: exponents of records per individual on body mass (main and sensitivity analyses)
+### Table S2. Initial analysis: exponents of records per individual on body mass (main and sensitivity analyses)
 
-|Analysis                  |β all             |β human obs.      |β specimen        |β DNA             |R² (all) |H1                          |H2                             |P(β_DNA<β_human) |H4           |
-|:-------------------------|:-----------------|:-----------------|:-----------------|:-----------------|:--------|:---------------------------|:------------------------------|:----------------|:------------|
-|main                      |0.72 [0.49, 0.94] |0.75 [0.48, 1.01] |0.66 [0.38, 0.95] |0.51 [0.24, 0.79] |0.90     |scaling (limited precision) |indistinguishable from optical |0.935            |supported    |
-|S1_cumulative             |0.78 [0.57, 1.00] |0.80 [0.58, 1.02] |0.66 [0.37, 0.93] |0.53 [0.27, 0.79] |0.93     |scaling (limited precision) |indistinguishable from optical |0.972            |supported    |
-|S2_S9_no_ebird            |1.22 [1.04, 1.43] |1.29 [1.10, 1.53] |1.06 [0.90, 1.24] |0.89 [0.73, 1.06] |0.96     |scaling (limited precision) |human interest dominant        |0.999            |supported    |
-|S3_individualcount        |0.83 [0.41, 1.24] |0.89 [0.43, 1.36] |0.59 [0.27, 0.90] |0.51 [0.18, 0.87] |0.70     |not confirmed               |indistinguishable from optical |0.917            |supported    |
-|S4_species_level          |0.80 [0.56, 1.02] |0.82 [0.53, 1.11] |0.71 [0.44, 0.99] |0.63 [0.36, 0.88] |0.90     |scaling (limited precision) |indistinguishable from optical |0.872            |inconclusive |
-|S5a_nematodes_baron       |0.63 [0.42, 0.84] |0.66 [0.42, 0.91] |0.57 [0.32, 0.84] |0.42 [0.17, 0.67] |0.91     |scaling (limited precision) |indistinguishable from optical |0.962            |supported    |
-|S5c_ants_schultheiss      |0.76 [0.50, 1.01] |0.79 [0.49, 1.07] |0.70 [0.38, 1.01] |0.55 [0.23, 0.85] |0.86     |scaling (limited precision) |indistinguishable from optical |0.905            |supported    |
-|S6a_acari_all             |0.72 [0.48, 0.95] |0.74 [0.48, 1.02] |0.66 [0.38, 0.93] |0.50 [0.22, 0.78] |0.90     |scaling (limited precision) |indistinguishable from optical |0.932            |supported    |
-|S6b_plus_hydrozoa         |0.75 [0.54, 0.95] |0.77 [0.52, 1.01] |0.71 [0.46, 0.96] |0.56 [0.28, 0.82] |0.93     |scaling (limited precision) |indistinguishable from optical |0.931            |supported    |
-|S7a_fold5                 |0.73 [0.48, 0.97] |0.76 [0.48, 1.05] |0.66 [0.37, 0.96] |0.51 [0.22, 0.81] |0.85     |scaling (limited precision) |indistinguishable from optical |0.905            |supported    |
-|S7b_fold20                |0.73 [0.50, 0.92] |0.76 [0.50, 0.99] |0.67 [0.39, 0.93] |0.51 [0.25, 0.77] |0.94     |scaling (limited precision) |indistinguishable from optical |0.957            |supported    |
-|S7c_mfold10               |0.71 [0.48, 0.93] |0.74 [0.49, 1.00] |0.66 [0.38, 0.93] |0.51 [0.23, 0.77] |0.90     |scaling (limited precision) |indistinguishable from optical |0.946            |supported    |
-|S8a_plankton_Cx10         |0.71 [0.47, 0.93] |0.74 [0.48, 0.99] |0.65 [0.36, 0.93] |0.49 [0.22, 0.77] |0.89     |scaling (limited precision) |indistinguishable from optical |0.935            |supported    |
-|S9_add_birds_mammals      |1.27 [1.07, 1.48] |1.33 [1.12, 1.58] |1.07 [0.89, 1.24] |0.89 [0.73, 1.07] |0.96     |scaling (limited precision) |human interest dominant        |0.998            |supported    |
-|S10_drop_soil_nematodes   |0.59 [0.34, 0.84] |0.61 [0.32, 0.91] |0.50 [0.18, 0.83] |0.35 [0.04, 0.66] |0.84     |scaling (limited precision) |indistinguishable from optical |0.925            |supported    |
-|S10_drop_springtails      |0.73 [0.48, 0.99] |0.75 [0.45, 1.05] |0.67 [0.36, 0.97] |0.53 [0.24, 0.81] |0.88     |scaling (limited precision) |indistinguishable from optical |0.904            |supported    |
-|S10_drop_mites            |0.79 [0.53, 1.06] |0.84 [0.55, 1.14] |0.75 [0.42, 1.07] |0.57 [0.24, 0.89] |0.90     |scaling (limited precision) |indistinguishable from optical |0.926            |supported    |
-|S10_drop_ants             |0.62 [0.46, 0.79] |0.64 [0.44, 0.85] |0.54 [0.32, 0.77] |0.39 [0.18, 0.60] |0.95     |scaling (limited precision) |indistinguishable from optical |0.980            |supported    |
-|S10_drop_enchytraeids     |0.72 [0.49, 0.95] |0.75 [0.47, 1.02] |0.66 [0.37, 0.97] |0.51 [0.22, 0.80] |0.90     |scaling (limited precision) |indistinguishable from optical |0.921            |supported    |
-|S10_drop_copepods         |0.70 [0.44, 0.94] |0.72 [0.45, 0.99] |0.65 [0.34, 0.95] |0.47 [0.17, 0.76] |0.89     |scaling (limited precision) |indistinguishable from optical |0.935            |supported    |
-|S10_drop_pteropods        |0.75 [0.52, 0.96] |0.78 [0.52, 1.02] |0.68 [0.38, 0.97] |0.53 [0.26, 0.80] |0.93     |scaling (limited precision) |indistinguishable from optical |0.947            |supported    |
-|S10_drop_jellyfish        |0.73 [0.48, 0.96] |0.74 [0.47, 0.99] |0.71 [0.43, 0.97] |0.53 [0.23, 0.82] |0.90     |scaling (limited precision) |indistinguishable from optical |0.893            |inconclusive |
-|S10_drop_mesopelagic_fish |0.84 [0.55, 1.11] |0.86 [0.51, 1.20] |0.67 [0.31, 1.05] |0.55 [0.20, 0.92] |0.90     |scaling (limited precision) |indistinguishable from optical |0.928            |supported    |
-|S10_drop_krill            |0.77 [0.51, 0.99] |0.82 [0.52, 1.09] |0.76 [0.44, 1.04] |0.62 [0.33, 0.88] |0.92     |scaling (limited precision) |indistinguishable from optical |0.898            |inconclusive |
-|S11a_no_inat              |0.72 [0.51, 0.92] |0.75 [0.52, 0.98] |0.67 [0.39, 0.94] |0.51 [0.24, 0.78] |0.92     |scaling (limited precision) |indistinguishable from optical |0.947            |supported    |
-|S11b_inat_only            |0.66 [0.17, 1.18] |0.66 [0.16, 1.18] |NA                |NA                |0.49     |not confirmed               |indistinguishable from optical |NA               |NA           |
-|S12_add_prokaryotes       |1.01 [0.90, 1.12] |1.22 [1.07, 1.37] |1.26 [1.09, 1.43] |0.91 [0.77, 1.04] |0.98     |clean scaling               |human interest dominant        |1.000            |supported    |
-|S14_dna_strict            |0.73 [0.51, 0.95] |0.75 [0.50, 1.01] |0.66 [0.38, 0.95] |0.50 [0.24, 0.76] |0.90     |scaling (limited precision) |indistinguishable from optical |0.949            |supported    |
-|S13_mc_ols                |0.73 [0.61, 0.88] |0.75 [0.62, 0.90] |0.67 [0.53, 0.79] |0.51 [0.38, 0.64] |NA       |NA                          |NA                             |NA               |NA           |
+|Analysis                  |β all             |β human obs.      |β specimen        |β DNA             |R² (all) |P(β_DNA<β_human) |
+|:-------------------------|:-----------------|:-----------------|:-----------------|:-----------------|:--------|:----------------|
+|main                      |0.72 [0.49, 0.94] |0.75 [0.48, 1.01] |0.66 [0.38, 0.95] |0.51 [0.24, 0.79] |0.90     |0.935            |
+|S1_cumulative             |0.78 [0.57, 1.00] |0.80 [0.58, 1.02] |0.66 [0.37, 0.93] |0.53 [0.27, 0.79] |0.93     |0.972            |
+|S2_S9_no_ebird            |1.22 [1.04, 1.43] |1.29 [1.10, 1.53] |1.06 [0.90, 1.24] |0.89 [0.73, 1.06] |0.96     |0.999            |
+|S3_individualcount        |0.83 [0.41, 1.24] |0.89 [0.43, 1.36] |0.59 [0.27, 0.90] |0.51 [0.18, 0.87] |0.70     |0.917            |
+|S4_species_level          |0.80 [0.56, 1.02] |0.82 [0.53, 1.11] |0.71 [0.44, 0.99] |0.63 [0.36, 0.88] |0.90     |0.872            |
+|S5a_nematodes_baron       |0.63 [0.42, 0.84] |0.66 [0.42, 0.91] |0.57 [0.32, 0.84] |0.42 [0.17, 0.67] |0.91     |0.962            |
+|S5c_ants_schultheiss      |0.76 [0.50, 1.01] |0.79 [0.49, 1.07] |0.70 [0.38, 1.01] |0.55 [0.23, 0.85] |0.86     |0.905            |
+|S6a_acari_all             |0.72 [0.48, 0.95] |0.74 [0.48, 1.02] |0.66 [0.38, 0.93] |0.50 [0.22, 0.78] |0.90     |0.932            |
+|S6b_plus_hydrozoa         |0.75 [0.54, 0.95] |0.77 [0.52, 1.01] |0.71 [0.46, 0.96] |0.56 [0.28, 0.82] |0.93     |0.931            |
+|S7a_fold5                 |0.73 [0.48, 0.97] |0.76 [0.48, 1.05] |0.66 [0.37, 0.96] |0.51 [0.22, 0.81] |0.85     |0.905            |
+|S7b_fold20                |0.73 [0.50, 0.92] |0.76 [0.50, 0.99] |0.67 [0.39, 0.93] |0.51 [0.25, 0.77] |0.94     |0.957            |
+|S7c_mfold10               |0.71 [0.48, 0.93] |0.74 [0.49, 1.00] |0.66 [0.38, 0.93] |0.51 [0.23, 0.77] |0.90     |0.946            |
+|S8a_plankton_Cx10         |0.71 [0.47, 0.93] |0.74 [0.48, 0.99] |0.65 [0.36, 0.93] |0.49 [0.22, 0.77] |0.89     |0.935            |
+|S9_add_birds_mammals      |1.27 [1.07, 1.48] |1.33 [1.12, 1.58] |1.07 [0.89, 1.24] |0.89 [0.73, 1.07] |0.96     |0.998            |
+|S10_drop_soil_nematodes   |0.59 [0.34, 0.84] |0.61 [0.32, 0.91] |0.50 [0.18, 0.83] |0.35 [0.04, 0.66] |0.84     |0.925            |
+|S10_drop_springtails      |0.73 [0.48, 0.99] |0.75 [0.45, 1.05] |0.67 [0.36, 0.97] |0.53 [0.24, 0.81] |0.88     |0.904            |
+|S10_drop_mites            |0.79 [0.53, 1.06] |0.84 [0.55, 1.14] |0.75 [0.42, 1.07] |0.57 [0.24, 0.89] |0.90     |0.926            |
+|S10_drop_ants             |0.62 [0.46, 0.79] |0.64 [0.44, 0.85] |0.54 [0.32, 0.77] |0.39 [0.18, 0.60] |0.95     |0.980            |
+|S10_drop_enchytraeids     |0.72 [0.49, 0.95] |0.75 [0.47, 1.02] |0.66 [0.37, 0.97] |0.51 [0.22, 0.80] |0.90     |0.921            |
+|S10_drop_copepods         |0.70 [0.44, 0.94] |0.72 [0.45, 0.99] |0.65 [0.34, 0.95] |0.47 [0.17, 0.76] |0.89     |0.935            |
+|S10_drop_pteropods        |0.75 [0.52, 0.96] |0.78 [0.52, 1.02] |0.68 [0.38, 0.97] |0.53 [0.26, 0.80] |0.93     |0.947            |
+|S10_drop_jellyfish        |0.73 [0.48, 0.96] |0.74 [0.47, 0.99] |0.71 [0.43, 0.97] |0.53 [0.23, 0.82] |0.90     |0.893            |
+|S10_drop_mesopelagic_fish |0.84 [0.55, 1.11] |0.86 [0.51, 1.20] |0.67 [0.31, 1.05] |0.55 [0.20, 0.92] |0.90     |0.928            |
+|S10_drop_krill            |0.77 [0.51, 0.99] |0.82 [0.52, 1.09] |0.76 [0.44, 1.04] |0.62 [0.33, 0.88] |0.92     |0.898            |
+|S11a_no_inat              |0.72 [0.51, 0.92] |0.75 [0.52, 0.98] |0.67 [0.39, 0.94] |0.51 [0.24, 0.78] |0.92     |0.947            |
+|S11b_inat_only            |0.66 [0.17, 1.18] |0.66 [0.16, 1.18] |NA                |NA                |0.49     |NA               |
+|S12_add_prokaryotes       |1.01 [0.90, 1.12] |1.22 [1.07, 1.37] |1.26 [1.09, 1.43] |0.91 [0.77, 1.04] |0.98     |1.000            |
+|S14_dna_strict            |0.73 [0.51, 0.95] |0.75 [0.50, 1.01] |0.66 [0.38, 0.95] |0.50 [0.24, 0.76] |0.90     |0.949            |
+|S13_mc_ols                |0.73 [0.61, 0.88] |0.75 [0.62, 0.90] |0.67 [0.53, 0.79] |0.51 [0.38, 0.64] |NA       |NA               |
 
-*Preregistered decision labels are reported as computed; they are not interpretable as evidence about detection because the exponent is not identifiable (Tables S11–S12). The S13 interval propagates census uncertainty only (not the regression sampling uncertainty) and is therefore narrower than the credible intervals. Sensitivity results are a robustness range, not independent replications.*
+*The exponent is not interpretable as evidence about detection because it is not identifiable from the records (Tables S11–S12). The S13 interval propagates census uncertainty only (not the regression sampling uncertainty) and is therefore narrower than the credible intervals. Sensitivity results are a robustness range, not independent replications.*
 
 
 ### Table S3. Species-level models within mammals and birds
 
 |Model                                                                   | Species|Exponent [95% CI]                    |Note                                            |
 |:-----------------------------------------------------------------------|-------:|:------------------------------------|:-----------------------------------------------|
-|Preregistered PLN, mammals_report (main)                                |     388|0.32 [0.18, 0.47]                    |exponent of records per individual on body mass |
-|Preregistered PLN, mammals_all (sens; SVR allometry-derived)            |    4726|0.48 [0.41, 0.55]                    |exponent of records per individual on body mass |
-|Preregistered PLN, birds_callaghan (sens; occurrence-derived)           |    9263|0.11 [0.06, 0.16]                    |exponent of records per individual on body mass |
-|OLS log10(R+0.5) ~ log10 N + log10 M, mammals with reported populations |     388|N: 0.64 (SE 0.05); M: 0.20 (SE 0.04) |exploratory                                     |
+|Poisson–log-normal, mammals_report (main)                               |     388|0.32 [0.18, 0.47]                    |exponent of records per individual on body mass |
+|Poisson–log-normal, mammals_all (sens; SVR allometry-derived)           |    4726|0.48 [0.41, 0.55]                    |exponent of records per individual on body mass |
+|Poisson–log-normal, birds_callaghan (sens; occurrence-derived)          |    9263|0.11 [0.06, 0.16]                    |exponent of records per individual on body mass |
+|OLS log10(R+0.5) ~ log10 N + log10 M, mammals with reported populations |     388|N: 0.64 (SE 0.05); M: 0.20 (SE 0.04) |least squares                                   |
 
-### Table S4. Overdispersion of annual record counts: preregistered estimate and by recording intensity (mammals, species + year effects)
+### Table S4. Overdispersion of annual record counts in mammals, overall and by recording intensity (species and year effects)
 
 |Set                                |φ                 |
 |:----------------------------------|:-----------------|
-|Preregistered (382 species)        |0.69 [0.66, 0.71] |
+|All species (382)                  |0.69 [0.66, 0.71] |
 |Mean records/yr <1 (85 spp.)       |0.46 (SE 0.054)   |
 |Mean records/yr 1-10 (96 spp.)     |0.56 (SE 0.023)   |
 |Mean records/yr 10-100 (102 spp.)  |0.73 (SE 0.020)   |
 |Mean records/yr 100-1000 (67 spp.) |0.93 (SE 0.030)   |
 |Mean records/yr >1000 (32 spp.)    |0.87 (SE 0.039)   |
 
-### Table S5. Spurious significant trends in preregistered simulations without decline, by record rate
+### Table S5. Spurious significant trends in simulations without decline, by record rate
 
 | Years|Records/species-yr |(a) false decline |(b) false decline |(c) false decline |(c) false increase |
 |-----:|:------------------|:-----------------|:-----------------|:-----------------|:------------------|
@@ -92,7 +92,7 @@
 *Ten groups, 1,000 replicates each; independent years. (a) NB regression with effort offset; (b) binomial relative reporting rate; (c) NB regression on raw counts.*
 
 
-### Table S6. Record counts versus occupied 1° cells: overdispersion and years to detect a 30% decline per decade (exploratory)
+### Table S6. Record counts versus occupied 1° cells: overdispersion and years to detect a 30% decline per decade
 
 |Group            |Stratum | Species|φ records |φ cells |Years, records |Years, cells |
 |:----------------|:-------|-------:|:---------|:-------|:--------------|:------------|
@@ -127,7 +127,7 @@
 |springtails      |1-10    |     300|0.16      |0.91    |77             |68           |
 |springtails      |>=10    |     206|0.40      |1.84    |53             |36           |
 
-### Table S7. Mammal species with census abundances relative to the extrapolated preregistered relationship (exploratory)
+### Table S7. Mammal species with census abundances relative to the extrapolated relationship of the initial analysis
 
 |Set                | Species|log10 M range |Median residual (log10) |95% interval over line uncertainty |Within-set slope |
 |:------------------|-------:|:-------------|:-----------------------|:----------------------------------|:----------------|
@@ -139,7 +139,7 @@
 *census_independent: survey- or survey/catch-model-based abundances (duplicated elephant entry and unverified polar bear removed).*
 
 
-### Table S8. Never-recorded species predicted by the observation model (H5; exploratory, not supported)
+### Table S8. Never-recorded species predicted by the observation model (preliminary analysis, not supported)
 
 |Group          |Estimated total species |Literature undescribed share |Predicted never recorded (25 yr) |Predicted recorded species |Observed recorded 2000–2024 |Ratio predicted/observed |
 |:--------------|:-----------------------|:----------------------------|:--------------------------------|:--------------------------|:---------------------------|:------------------------|
@@ -153,7 +153,7 @@
 *The prediction and the benchmark share the literature richness totals; predicted recorded species exceed observed by 4–11 times in four groups.*
 
 
-### Table S9. Records, sampling events and dataset concentration, 2000–2024 (exploratory)
+### Table S9. Records, sampling events and dataset concentration, 2000–2024
 
 |Group            |Records   |Sampling events | Datasets|Top-1 share |Top-3 share |Human obs. |Specimens |DNA barcodes (iBOL) |DNA metabarcoding/eDNA |
 |:----------------|:---------|:---------------|--------:|:-----------|:-----------|:----------|:---------|:-------------------|:----------------------|
@@ -186,9 +186,9 @@
 |Observed records (OLS on point estimates) |0.73              |
 |Identical records in every group          |0.89              |
 |Records permuted among groups (5,000)     |0.88 [0.69, 1.08] |
-|Preregistered EIV estimate                |0.72 [0.49, 0.94] |
+|Initial errors-in-variables estimate      |0.72 [0.49, 0.94] |
 
-### Table S12. Errors-in-variables models of log records with free coefficients (exploratory)
+### Table S12. Errors-in-variables models of log records with free coefficients
 
 |Analysis                                             |Parameter   |Estimate [95% CI]   |P(>0) |
 |:----------------------------------------------------|:-----------|:-------------------|:-----|
@@ -255,7 +255,7 @@
 *For birds, GBIF (COL eXtended Release) recognises more species than the Catalogue of Life count of described species used here, so the share without records is truncated at zero.*
 
 
-### Table S14. DNA-derived relative to human-observation records against body mass (abundance cancels; exploratory)
+### Table S14. DNA-derived relative to human-observation records against body mass (abundance cancels)
 
 |Contrast                      |Slope per log10 g [95%] |P(<0) |
 |:-----------------------------|:-----------------------|:-----|
@@ -289,7 +289,7 @@
 | 6.00|10                 |25.0              |16.0              |76%                              |59%                            |
 | 6.00|∞                  |21.4              |13.7              |67%                              |53%                            |
 
-### Table S16. Overdispersion and residual autocorrelation estimated per species with an effort offset (exploratory)
+### Table S16. Overdispersion and residual autocorrelation estimated per species with an effort offset
 
 |Set                       |Records/yr | Species|φ, no trend |φ, linear trend |φ, quadratic trend |Lag-1 autocorrelation |
 |:-------------------------|:----------|-------:|:-----------|:---------------|:------------------|:---------------------|
@@ -330,7 +330,7 @@
 |springtails               |10-100     |     175|0.45        |0.64            |0.76               |0.07                  |
 |springtails               |>=100      |      31|0.83        |1.64            |2.04               |0.07                  |
 
-### Table S17. Effect of year-to-year autocorrelation on the effort-offset method (φ = 0.69; exploratory)
+### Table S17. Effect of year-to-year autocorrelation on the effort-offset method (φ = 0.69)
 
 |Scenario                   | Records/species-yr| Years|ρ = 0 |ρ = 0.44 |
 |:--------------------------|------------------:|-----:|:-----|:--------|
@@ -356,7 +356,7 @@
 *Share of 1,000 series flagged as significantly declining (one-sided α = 0.05).*
 
 
-### Table S18. British butterflies 2000–2019: GBIF record-based trends versus UK Butterfly Monitoring Scheme trends (48 species; exploratory)
+### Table S18. British butterflies 2000–2019: GBIF record-based trends versus UK Butterfly Monitoring Scheme trends (48 species)
 
 |Method                      |Pearson r |Spearman ρ |UKBMS declines detected |False declines | Opposite significant sign|
 |:---------------------------|:---------|:----------|:-----------------------|:--------------|-------------------------:|
@@ -364,7 +364,7 @@
 |(b) relative reporting rate |0.40      |0.38       |11/14                   |20/34          |                        11|
 |(c) raw counts              |0.42      |0.43       |0/14                    |1/34           |                        12|
 
-### Table S19. Share of described species by time to detect a 30% decline per decade (exploratory)
+### Table S19. Share of described species by time to detect a 30% decline per decade
 
 |Group            | Species|Never recorded 2015–2024 |Undetectable within 100 yr |Among recorded species |Detectable within 50 yr |Detectable within 25 yr |
 |:----------------|-------:|:------------------------|:--------------------------|:----------------------|:-----------------------|:-----------------------|
@@ -380,7 +380,7 @@
 |soil_nematodes   |   19667|88.8%                    |96.1%                      |65.3%                  |0.0%                    |0.0%                    |
 |springtails      |    8926|82.2%                    |89.6%                      |41.3%                  |2.7%                    |0.0%                    |
 
-### Table S20. Taxonomic scope corrections (exploratory)
+### Table S20. Taxonomic scope corrections
 
 |Group            |Records, main rule |Records, corrected |Described species used |Below 0.32 records/yr |Same, alternative species count |
 |:----------------|:------------------|:------------------|:----------------------|:---------------------|:-------------------------------|

@@ -3,4 +3,4 @@ Title: Scaling of Observation Inequality Across Life and Its Effect on Decline D
 Version: 0.0.1
 Authors@R: person("Hideyuki", "Doi", role = c("aut", "cre"))
 Imports: tidyverse, rgbif, brms, cmdstanr, posterior, loo, targets, tarchetypes,
-    arrow, httr2, jsonlite, yaml, readxl, data.table, patchwork, here
+    arrow, httr2, jsonlite, yaml, readxl, data.table, patchwork, here, ggrepel
